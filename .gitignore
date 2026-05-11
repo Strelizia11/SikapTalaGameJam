@@ -1,3 +1,26 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+# Emacs backup files
+*~
+
+# SolidWorks temporary files
+~$*.SLDPRT
+~$*.SLDASM
+
+# OS X desktop files
+.DS_Store
+
+# FreeCAD temporary files
+*.fcstd1
+*.FCStd1
+*.fcstd2
+*.FCStd2
+*.FCBak
+
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd   
+
+# Other temporary files
+*.bak
+*.tmp
