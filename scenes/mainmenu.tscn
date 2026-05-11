@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://d3st5qwmrqc6t"]
+
+[ext_resource type="Script" uid="uid://dmpi1k6k7q03k" path="res://scenes/camera_2d.gd" id="1_r3g3c"]
+[ext_resource type="Texture2D" uid="uid://ckynqhgi5cso3" path="res://assets/bg.jpg" id="2_3vvtq"]
+[ext_resource type="Script" uid="uid://4i4cfwfv6cty" path="res://scenes/game_manager.gd" id="3_s5g8n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dvvg"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MainMenu" type="Node2D" unique_id=281668364]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1905230056]
+position = Vector2(-1, 6)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("1_r3g3c")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1173992489]
+custom_minimum_size = Vector2(1280, 720)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -646.0
+offset_top = -354.0
+offset_right = 637.0
+offset_bottom = 366.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3vvtq")
+stretch_mode = 6
+
+[node name="Menu" type="Node2D" parent="." unique_id=479611230]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=196528284]
+offset_left = -186.0
+offset_top = 36.0
+offset_right = 195.0
+offset_bottom = 250.0
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Button2" type="Button" parent="Menu/VBoxContainer" unique_id=1752917164]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
+text = "Start"
+
+[node name="Button3" type="Button" parent="Menu/VBoxContainer" unique_id=942328263]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
+text = "Credits"
+
+[node name="Button" type="Button" parent="Menu/VBoxContainer" unique_id=809085529]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
+text = "Quit"
+
+[node name="PlayerNode" type="Node" parent="." unique_id=104507715]
+
+[node name="GameManager" type="Node" parent="." unique_id=898154664]
+script = ExtResource("3_s5g8n")
