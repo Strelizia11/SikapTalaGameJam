@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dqnjiv3shkbv"]
+
+[ext_resource type="Script" uid="uid://7uusf4ginnru" path="res://scripts/corridor.gd" id="1_mus4g"]
+[ext_resource type="Texture2D" uid="uid://17bj3xudgo8q" path="res://assets/sprites/corridor-background.png" id="2_7w20u"]
+[ext_resource type="Texture2D" uid="uid://cot8nw54mwntd" path="res://assets/sprites/kitchen-door-image.png" id="3_n8bhm"]
+[ext_resource type="Texture2D" uid="uid://di56shkn5i0wq" path="res://assets/sprites/toilet-door-image.png" id="4_pblcb"]
+
+[node name="Corridor" type="Control" unique_id=678202067]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mus4g")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1085278777]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7w20u")
+
+[node name="KitchenDoor" type="TextureButton" parent="." unique_id=540994406]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 262.0
+offset_right = 690.0
+offset_bottom = 1030.0
+texture_normal = ExtResource("3_n8bhm")
+
+[node name="ToiletDoor" type="TextureButton" parent="." unique_id=1064743051]
+layout_mode = 0
+offset_left = 1276.0
+offset_top = 241.0
+offset_right = 1514.0
+offset_bottom = 1009.0
+texture_normal = ExtResource("4_pblcb")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1429369495]
+
+[node name="PromtWall" type="RichTextLabel" parent="Node2D" unique_id=683854158]
+offset_left = 872.0
+offset_top = 354.0
+offset_right = 1050.0
+offset_bottom = 544.0
+
+[node name="SubmissionBox" type="Area2D" parent="Node2D" unique_id=433386369]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/SubmissionBox" unique_id=1166887402]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/SubmissionBox" unique_id=1575530615]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=250289925]
+
+[node name="Inventory" type="HBoxContainer" parent="UI" unique_id=547521836]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot1" type="Panel" parent="UI/Inventory" unique_id=955824635]
+layout_mode = 2
+
+[node name="Slot2" type="Panel" parent="UI/Inventory" unique_id=879487]
+layout_mode = 2
+
+[node name="Slot3" type="Panel" parent="UI/Inventory" unique_id=2061168416]
+layout_mode = 2
+
+[connection signal="pressed" from="KitchenDoor" to="." method="_on_kitchen_door_pressed"]
+[connection signal="pressed" from="ToiletDoor" to="." method="_on_toilet_door_pressed"]
