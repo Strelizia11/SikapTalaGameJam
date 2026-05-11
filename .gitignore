@@ -24,3 +24,20 @@ __pycache__/
 # Other temporary files
 *.bak
 *.tmp
+
+# Godot auto-generated files
+.godot/
+
+# Import files
+*.import
+
+# Export settings (contains sensitive paths)
+export_presets.cfg
+
+# Mono/C# specific
+.mono/
+data_*/
+
+# OS-specific
+.DS_Store
+Thumbs.db
