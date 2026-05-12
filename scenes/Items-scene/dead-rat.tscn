@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dj5snknjec2oq"]
+
+[ext_resource type="Texture2D" uid="uid://dhqcyipo3vh8w" path="res://assets/sprites/items/dead_rat.jpg" id="1_828gt"]
+
+[node name="DeadRat" type="Area2D" unique_id=1664426244]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1132232959]
+position = Vector2(944, 511)
+scale = Vector2(0.27734375, 0.25953078)
+texture = ExtResource("1_828gt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=422090289]
+position = Vector2(940, 508.5)
+scale = Vector2(15.800001, 9.649999)
+polygon = PackedVector2Array(0, -4.6114006, 1.898735, -6.4766846, 5.569622, -4.9222794, 8.2911415, -2.849743, 8.227848, -0.9844551, 6.012661, 0.3626938, 3.0379753, 1.3989639, 0.18987274, 1.7098427, -0.25316238, 3.3678741, -1.0126572, 0.67357635, -1.772152, -1.1917114, -7.1518974, -0.88082886, -7.8480988, 1.2953377, -8.607594, 2.5388603, -8.86076, 0.05181122, -7.658226, -2.5388603, -5.8227844, -3.5751305, -2.215187, -3.4715042)

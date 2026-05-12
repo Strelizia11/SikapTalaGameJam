@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6xx4f6rhwwyc"]
 
 [ext_resource type="Script" uid="uid://cr0bgur0bsl3d" path="res://scripts/inventory_ui.gd" id="1_hj2ta"]
-[ext_resource type="Texture2D" uid="uid://p2fmwbvqwap0" path="res://assets/sprites/inventory-slot.png" id="1_qw0r6"]
+[ext_resource type="Texture2D" uid="uid://d0pqlfrdgwch2" path="res://assets/sprites/inventory-slot.png" id="1_qw0r6"]
 
 [node name="Inventory" type="CanvasLayer" unique_id=311189997]
 script = ExtResource("1_hj2ta")

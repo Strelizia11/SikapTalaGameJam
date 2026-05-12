@@ -18,6 +18,18 @@ func _ready():
 	sfx_slider.min_value = 0.0
 	sfx_slider.max_value = 1.0
 	sfx_slider.value = 1.0
+	texture_button.mouse_entered.connect(_on_hover_enter)
+	texture_button.mouse_exited.connect(_on_hover_exit)
+
+func _on_hover_enter():
+	var tween = create_tween()
+	tween.tween_property(texture_button, "scale", Vector2(0.15, 0.135), 0.15)
+	tween.parallel().tween_property(texture_button, "rotation_degrees", 20.0, 0.15)
+
+func _on_hover_exit():
+	var tween = create_tween()
+	tween.tween_property(texture_button, "scale", Vector2(0.1325021, 0.11865279), 0.15)
+	tween.parallel().tween_property(texture_button, "rotation_degrees", 0.0, 0.15)
 
 func _on_settings_button_pressed():
 	settings_panel.show()

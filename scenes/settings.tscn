@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dl4k70o7fma6j"]
 
 [ext_resource type="Script" uid="uid://cj61smrr0gahs" path="res://scripts/settings.gd" id="1_r6d6q"]
-[ext_resource type="Texture2D" uid="uid://dgj23xrj512u3" path="res://assets/sprites/settings/settings.png" id="2_6wm04"]
+[ext_resource type="Texture2D" uid="uid://dl0b5tyxmk7i7" path="res://assets/sprites/settings/settings4 (2).png" id="2_6wm04"]
+[ext_resource type="Texture2D" uid="uid://d0qebk5rskwud" path="res://assets/sprites/settings/settings-hover.png" id="3_6wm04"]
 
 [node name="Settings" type="CanvasLayer" unique_id=2065002682]
 layer = 10
@@ -12,14 +13,15 @@ custom_minimum_size = Vector2(10, 10)
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1782.331
-offset_top = 43.999996
-offset_right = 501.33105
-offset_bottom = -396.0
+offset_left = 1732.0
+offset_top = 24.0
+offset_right = 892.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.1325021, 0.11865279)
 texture_normal = ExtResource("2_6wm04")
+texture_hover = ExtResource("3_6wm04")
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=1742150816]
 anchors_preset = 15

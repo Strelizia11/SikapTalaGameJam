@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://p1fs1efiuwjq"]
+
+[ext_resource type="Texture2D" uid="uid://cddawmbl2jepf" path="res://assets/sprites/items/broken_wine_bottle.jpg" id="1_nq511"]
+
+[node name="WineBottle" type="Area2D" unique_id=755064597]
+position = Vector2(-10, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=897540650]
+position = Vector2(916, 366)
+texture = ExtResource("1_nq511")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=762295773]
+position = Vector2(922, 353)
+scale = Vector2(11.17204, 14.542182)
+polygon = PackedVector2Array(-2.32724, -3.300743, -1.6111679, -4.4009895, -1.4321518, -7.082844, -0.08950806, -7.632967, 0.26852417, -5.1574097, 0.35803223, -4.1946926, 1.4321442, -3.2319775, 1.4321442, 1.5816059, 1.3426361, 6.051363, -0.17902374, 5.226177, -1.16362, 4.8135834, -1.790184, 3.3695087, -2.6852798, 3.0256824)

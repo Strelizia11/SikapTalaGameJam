@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c2ts602ygi6qo"]
+
+[ext_resource type="Texture2D" uid="uid://cmq3fliumndce" path="res://assets/sprites/items/mask.jpg" id="1_gwi4a"]
+
+[node name="Mask" type="Area2D" unique_id=1484588364]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=495247491]
+position = Vector2(755.25, 413.25)
+scale = Vector2(0.3410542, 0.27555907)
+texture = ExtResource("1_gwi4a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1985023526]
+polygon = PackedVector2Array(700, 392, 757, 381, 809, 394, 830, 382, 841, 395, 833, 425, 813, 443, 770, 459, 731, 453, 705, 446, 674, 415, 666, 383, 683, 380)
