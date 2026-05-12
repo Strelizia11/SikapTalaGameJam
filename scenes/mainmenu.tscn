@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://d3st5qwmrqc6t"]
 
 [ext_resource type="Script" uid="uid://uge474spuj3" path="res://scripts/mainmenu.gd" id="1_3vvtq"]
-[ext_resource type="Texture2D" uid="uid://bisiwh3jxspio" path="res://assets/sprites/corridor/bg.png" id="2_3vvtq"]
-[ext_resource type="Texture2D" uid="uid://dxvhn7f40q84o" path="res://assets/sprites/corridor/door-close-kitchen.png" id="3_s5g8n"]
-[ext_resource type="Texture2D" uid="uid://bb6tbirr85iud" path="res://assets/sprites/corridor/door-close-bathroom.png" id="4_7yvfd"]
+[ext_resource type="Texture2D" uid="uid://bg0dfm8tqupol" path="res://assets/sprites/corridor/Updated Corridor (1).png" id="2_3vvtq"]
+[ext_resource type="Texture2D" uid="uid://evq6h6olljf2" path="res://assets/sprites/Mainmenu/title with shadow.png" id="3_s5g8n"]
+[ext_resource type="FontFile" uid="uid://o41nvun1hoi6" path="res://assets/fonts/Capture it.ttf" id="4_7yvfd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dfy5j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dvvg"]
 corner_radius_top_left = 10
@@ -19,45 +21,46 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_3vvtq")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1770784387]
-position = Vector2(428.7, 542.30005)
-texture = ExtResource("3_s5g8n")
-
-[node name="ToiletDoor" type="TextureButton" parent="." unique_id=1109381016]
-offset_left = 1076.0
-offset_top = 331.0
-offset_right = 1314.0
-offset_bottom = 1099.0
-texture_normal = ExtResource("4_7yvfd")
-
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=58938616]
 color = Color(0.5370987, 0.5370987, 0.5370987, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1821528033]
+offset_right = 1920.0
+offset_bottom = 1086.0
+color = Color(0.012617188, 0.012617188, 0.012617188, 0.54300004)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=799864257]
+position = Vector2(972, 347.00003)
+scale = Vector2(1.0109376, 0.996094)
+texture = ExtResource("3_s5g8n")
 
 [node name="Menu" type="Node2D" parent="." unique_id=479611230]
 
 [node name="Button2" type="Button" parent="Menu" unique_id=1752917164]
-offset_left = 750.0
-offset_top = 496.0
-offset_right = 1119.0
-offset_bottom = 547.0
+offset_left = 754.0
+offset_top = 611.0
+offset_right = 1123.0
+offset_bottom = 699.0
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
-text = "Start"
+theme_override_fonts/font = ExtResource("4_7yvfd")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dfy5j")
+text = "START"
 
 [node name="Button3" type="Button" parent="Menu" unique_id=942328263]
-offset_left = 745.0
-offset_top = 579.0
-offset_right = 1126.0
-offset_bottom = 634.0
+offset_left = 200.0
+offset_top = 715.0
+offset_right = 581.0
+offset_bottom = 770.0
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
 text = "Credits"
 
 [node name="Button" type="Button" parent="Menu" unique_id=809085529]
-offset_left = 749.0
-offset_top = 672.0
-offset_right = 1130.0
-offset_bottom = 727.0
+offset_left = 66.0
+offset_top = 800.0
+offset_right = 447.0
+offset_bottom = 855.0
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
 text = "Quit"

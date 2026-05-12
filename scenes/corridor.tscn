@@ -77,7 +77,7 @@ script = ExtResource("4_uiklb")
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/SubmissionBox" unique_id=1575530615]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/SubmissionBox" unique_id=163855683]
-polygon = PackedVector2Array(839, 407, 836, 694, 1057, 698, 1062, 426, 1047, 404)
+polygon = PackedVector2Array(848, 680, 845, 967, 1066, 971, 1071, 699, 1056, 677)
 
 [node name="DoorClickArea" type="Area2D" parent="." unique_id=1510947013]
 script = ExtResource("5_7w20u")
@@ -93,7 +93,7 @@ polygon = PackedVector2Array(1549, 174, 1720, 1, 1805, 1, 1806, 480, 1807, 1081,
 [node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("7_pblcb")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=624790421]
-position = Vector2(935.9999, 798)
+position = Vector2(961.99994, 751)
 scale = Vector2(0.08332913, 0.12453866)
 sprite_frames = SubResource("SpriteFrames_35wme")
 autoplay = "default"
