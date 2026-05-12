@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cwfhyqlwom62x" path="res://scripts/toilet.gd" id="1_yyxms"]
 [ext_resource type="Texture2D" uid="uid://ctq0xt0w7lnr2" path="res://assets/sprites/toilet.png" id="2_5rkpo"]
+[ext_resource type="Texture2D" uid="uid://cfu14y2hh7fem" path="res://assets/sprites/items/hankerchief.jpg" id="3_vwyy6"]
+[ext_resource type="Texture2D" uid="uid://dxsass2g70oh" path="res://assets/sprites/items/medicine.jpg" id="4_5rr3v"]
+[ext_resource type="Texture2D" uid="uid://bn3d4yspeeha2" path="res://assets/sprites/items/mirror.jpg" id="5_ca85b"]
 
-[node name="Control" type="Control" unique_id=2106734742]
+[node name="Toilet" type="Control" unique_id=2106734742]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,3 +27,58 @@ offset_left = 712.0
 offset_top = 51.0
 offset_right = 1175.0
 offset_bottom = 1024.0
+
+[node name="Item" type="Control" parent="." unique_id=123087993]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="handkerchief_img" type="TextureRect" parent="Item" unique_id=2105632137]
+layout_mode = 0
+offset_left = 1416.0
+offset_top = 743.0
+offset_right = 2234.0
+offset_bottom = 1767.0
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture = ExtResource("3_vwyy6")
+
+[node name="handkerchief" type="TextureButton" parent="Item/handkerchief_img" unique_id=968216963]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -30.0
+offset_right = 820.0
+offset_bottom = 979.9995
+
+[node name="medicine_img" type="TextureRect" parent="Item" unique_id=1312479396]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 683.0
+offset_right = 1248.9993
+offset_bottom = 1707.0
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture = ExtResource("4_5rr3v")
+
+[node name="medicine" type="TextureButton" parent="Item/medicine_img" unique_id=988273489]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 970.0
+offset_bottom = 1029.9995
+
+[node name="mirror_img" type="TextureRect" parent="Item" unique_id=1606406461]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 145.0
+offset_right = 814.0
+offset_bottom = 1169.0
+scale = Vector2(0.3, 0.3)
+mouse_filter = 2
+texture = ExtResource("5_ca85b")
+
+[node name="mirror" type="TextureButton" parent="Item/mirror_img" unique_id=325516437]
+layout_mode = 0
+offset_left = 6.6666665
+offset_top = 3.3333435
+offset_right = 830.0
+offset_bottom = 1026.6667
