@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://c54bxdcyhqkk1"]
+[gd_scene format=3 uid="uid://d3st5qwmrqc6t"]
 
+[ext_resource type="Script" uid="uid://uge474spuj3" path="res://scripts/mainmenu.gd" id="1_3vvtq"]
 [ext_resource type="Script" path="res://scenes/camera_2d.gd" id="1_r3g3c"]
 [ext_resource type="Texture2D" uid="uid://cwngghk1qoaaf" path="res://assets/bg.jpg" id="2_3vvtq"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_s5g8n"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="3_s5g8n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dvvg"]
 corner_radius_top_left = 10
@@ -11,6 +12,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="MainMenu" type="Node2D" unique_id=281668364]
+script = ExtResource("1_3vvtq")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1905230056]
 position = Vector2(-1, 6)
@@ -42,19 +44,19 @@ offset_bottom = 250.0
 theme_override_constants/separation = 25
 alignment = 1
 
-[node name="Start" type="Button" parent="Menu/VBoxContainer" unique_id=1752917164]
+[node name="Button2" type="Button" parent="Menu/VBoxContainer" unique_id=1752917164]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
 text = "Start"
 
-[node name="Credits" type="Button" parent="Menu/VBoxContainer" unique_id=942328263]
+[node name="Button3" type="Button" parent="Menu/VBoxContainer" unique_id=942328263]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
 text = "Credits"
 
-[node name="Quit" type="Button" parent="Menu/VBoxContainer" unique_id=809085529]
+[node name="Button" type="Button" parent="Menu/VBoxContainer" unique_id=809085529]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
