@@ -1,3 +1,48 @@
 [gd_scene format=3 uid="uid://boyh51dmvhis1"]
 
-[node name="Kitchen" type="Node2D" unique_id=1296305979]
+[ext_resource type="Texture2D" uid="uid://dhox5jgj1y6f3" path="res://assets/sprites/kitchen.jpeg" id="1_yk5no"]
+[ext_resource type="Texture2D" uid="uid://cjct2gfy1jigp" path="res://assets/sprites/Kitchen_Door-to-Corridor.jpg" id="2_e4uee"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="3_e4uee"]
+
+[sub_resource type="GDScript" id="GDScript_yk5no"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+func _on_kitchen_door_pressed():
+	get_tree().change_scene_to_file(\"res://scenes/corridor.tscn\")
+"
+
+[node name="Control" type="Control" unique_id=221371296]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="." unique_id=1349508605]
+layout_mode = 0
+offset_left = -142.0
+offset_top = -5.0
+offset_right = 2022.0
+offset_bottom = 1097.0
+texture = ExtResource("1_yk5no")
+
+[node name="DoortoCorridor" type="TextureButton" parent="." unique_id=1944171800]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 421.0
+offset_right = 1034.0
+offset_bottom = 1688.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_e4uee")
+script = SubResource("GDScript_yk5no")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1518261803]
+
+[node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=2090081621]
+position = Vector2(969, 556)
+script = ExtResource("3_e4uee")
