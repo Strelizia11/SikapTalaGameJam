@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://p1fs1efiuwjq"]
 
 [ext_resource type="Texture2D" uid="uid://cddawmbl2jepf" path="res://assets/sprites/items/broken_wine_bottle.jpg" id="1_nq511"]
-[ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
+[ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="1_p448l"]
 
 [node name="WineBottle" type="Area2D" unique_id=755064597]
 position = Vector2(-10, 4)
-script = ExtResource("2_item")
-item_name = "wine-bottle"
-room_name = "kitchen"
+script = ExtResource("1_p448l")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=897540650]
 position = Vector2(916, 366)
