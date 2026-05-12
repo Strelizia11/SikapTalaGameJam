@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://bt0olvr55dvt1"]
 
 [ext_resource type="Script" uid="uid://7uusf4ginnru" path="res://scripts/corridor.gd" id="1_mus4g"]
-[ext_resource type="Texture2D" uid="uid://bisiwh3jxspio" path="res://assets/sprites/corridor/bg.png" id="2_mus4g"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_pblcb"]
-[ext_resource type="Texture2D" uid="uid://dxvhn7f40q84o" path="res://assets/sprites/corridor/door-close-kitchen.png" id="3_7w20u"]
-[ext_resource type="Texture2D" uid="uid://bb6tbirr85iud" path="res://assets/sprites/corridor/door-close-bathroom.png" id="4_n8bhm"]
+[ext_resource type="Texture2D" uid="uid://bg0dfm8tqupol" path="res://assets/sprites/corridor/Updated Corridor (1).png" id="3_uiklb"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="4_uiklb"]
 [ext_resource type="Script" uid="uid://dffiuvvm8tnok" path="res://scripts/door_click_area.gd" id="5_7w20u"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_n8bhm"]
@@ -63,7 +61,7 @@ layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
-texture = ExtResource("2_mus4g")
+texture = ExtResource("3_uiklb")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1429369495]
 
@@ -84,20 +82,11 @@ polygon = PackedVector2Array(839, 407, 836, 694, 1057, 698, 1062, 426, 1047, 404
 [node name="DoorClickArea" type="Area2D" parent="." unique_id=1510947013]
 script = ExtResource("5_7w20u")
 
-[node name="KitchenDoorEntry" type="CollisionPolygon2D" parent="DoorClickArea" unique_id=471158176]
-position = Vector2(-0.29999542, 8.300018)
-polygon = PackedVector2Array(295, -1, 400, -1, 629, 248, 604, 907, 556, 914, 357, 1080, 220, 1078)
+[node name="KitchenDoorEntry" type="CollisionPolygon2D" parent="DoorClickArea" unique_id=686993543]
+polygon = PackedVector2Array(116, -2, 203, -2, 367, 174, 368, 905, 356, 924, 330, 923, 206, 1078, 114, 1078)
 
-[node name="Sprite2D" type="Sprite2D" parent="DoorClickArea" unique_id=372083727]
-position = Vector2(428.7, 542.30005)
-texture = ExtResource("3_7w20u")
-
-[node name="ToiletDoorEntry" type="CollisionPolygon2D" parent="DoorClickArea" unique_id=149562672]
-polygon = PackedVector2Array(1136, 407, 1211, 339, 1223, 339, 1234, 578, 1234, 666, 1235, 768, 1230, 828, 1222, 847, 1208, 842, 1211, 825, 1160, 783, 1146, 787, 1147, 732, 1136, 725, 1140, 603, 1137, 566)
-
-[node name="Sprite2D2" type="Sprite2D" parent="DoorClickArea" unique_id=299410265]
-position = Vector2(1173, 596)
-texture = ExtResource("4_n8bhm")
+[node name="ToiletDoorEntry" type="CollisionPolygon2D" parent="DoorClickArea" unique_id=1187493840]
+polygon = PackedVector2Array(1549, 174, 1720, 1, 1805, 1, 1806, 480, 1807, 1081, 1711, 1081, 1584, 927, 1563, 926, 1548, 912, 1549, 587)
 
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_n8bhm")]
 
