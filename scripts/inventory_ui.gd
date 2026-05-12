@@ -15,7 +15,7 @@ var item_textures = {
 	"clock": preload("res://assets/sprites/items/clock.jpg"),
 	"blade": preload("res://assets/sprites/items/rusted_saw_blade.jpg"),
 	"knife": preload("res://assets/sprites/items/knife.jpg"),
-	"wine-bottle": preload("res://assets/sprites/items/broken_wine_bottle.jpg"),
+	"wine-bottle": preload("res://assets/sprites/items/broken_wine_bottle.png"),
 	"bloody-handkerchief": preload("res://assets/sprites/items/handkerchief__0.png"),
 	"envelope": preload("res://assets/sprites/items/envelop_2.png"),
 	"medicine": preload("res://assets/sprites/items/medicine_0.png"),

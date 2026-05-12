@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bg0dfm8tqupol" path="res://assets/sprites/corridor/Updated Corridor (1).png" id="2_3vvtq"]
 [ext_resource type="Texture2D" uid="uid://evq6h6olljf2" path="res://assets/sprites/Mainmenu/title with shadow.png" id="3_s5g8n"]
 [ext_resource type="FontFile" uid="uid://o41nvun1hoi6" path="res://assets/fonts/Capture it.ttf" id="4_7yvfd"]
+[ext_resource type="AudioStream" uid="uid://btj6qypwybmrq" path="res://assets/music/Corridor.wav" id="5_s5g8n"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3vvtq"]
 
@@ -70,3 +71,7 @@ text = "Quit"
 [node name="PlayerNode" type="Node" parent="." unique_id=104507715]
 
 [node name="GameManager" type="Node" parent="." unique_id=898154664]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=344848266]
+stream = ExtResource("5_s5g8n")
+autoplay = true
