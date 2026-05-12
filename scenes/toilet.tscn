@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://drd3psy5pqfpp"]
+[gd_scene format=3 uid="uid://dx5r2bycjsljf"]
 
 [ext_resource type="Script" uid="uid://cwfhyqlwom62x" path="res://scripts/toilet.gd" id="1_yyxms"]
-[ext_resource type="Texture2D" uid="uid://ctq0xt0w7lnr2" path="res://assets/sprites/toilet.png" id="2_5rkpo"]
+[ext_resource type="Texture2D" uid="uid://sa85r4bkrlem" path="res://assets/sprites/toilet.png" id="2_5rkpo"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_trc3a"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="3_5rr3v"]
 [ext_resource type="Texture2D" uid="uid://cfu14y2hh7fem" path="res://assets/sprites/items/hankerchief.jpg" id="3_vwyy6"]
@@ -101,16 +101,17 @@ texture = ExtResource("9_vpw5y")
 polygon = PackedVector2Array(1390, 270, 1590, 270, 1590, 430, 1390, 430)
 
 [node name="PoisonVial" type="Area2D" parent="Item" unique_id=1068169136]
-position = Vector2(-177, 124)
+position = Vector2(748, 668)
 script = ExtResource("3_5rr3v")
 item_name = "poison-vial"
 room_name = "toilet"
 
 [node name="Sprite2D" type="Sprite2D" parent="Item/PoisonVial" unique_id=2012898270]
-position = Vector2(748, 668)
+position = Vector2(-194, 187)
 texture = ExtResource("10_ngyxh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Item/PoisonVial" unique_id=421345326]
+position = Vector2(-939, -478)
 polygon = PackedVector2Array(733, 563, 772, 562, 800, 771, 695, 754)
 
 [node name="ScreamPainting" type="Area2D" parent="Item" unique_id=1152608392]
