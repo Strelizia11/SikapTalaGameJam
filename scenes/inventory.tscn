@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6xx4f6rhwwyc"]
 
 [ext_resource type="Script" uid="uid://cr0bgur0bsl3d" path="res://scripts/inventory_ui.gd" id="1_hj2ta"]
-[ext_resource type="Texture2D" uid="uid://d0pqlfrdgwch2" path="res://assets/sprites/inventory-slot.png" id="1_qw0r6"]
+[ext_resource type="Texture2D" uid="uid://p2fmwbvqwap0" path="res://assets/sprites/inventory-slot.png" id="1_qw0r6"]
 
 [node name="Inventory" type="CanvasLayer" unique_id=311189997]
 script = ExtResource("1_hj2ta")
@@ -27,7 +27,6 @@ custom_minimum_size = Vector2(1500, 1500)
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
 expand_mode = 1
-stretch_mode = 0
 
 [node name="Slot2" type="TextureRect" parent="InventoryBar" unique_id=1302138914]
 clip_contents = true
@@ -35,7 +34,6 @@ custom_minimum_size = Vector2(1500, 1500)
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
 expand_mode = 1
-stretch_mode = 0
 
 [node name="Slot3" type="TextureRect" parent="InventoryBar" unique_id=1930426461]
 clip_contents = true
@@ -43,4 +41,3 @@ custom_minimum_size = Vector2(1500, 1500)
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
 expand_mode = 1
-stretch_mode = 0
