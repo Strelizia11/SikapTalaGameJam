@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7uusf4ginnru" path="res://scripts/corridor.gd" id="1_mus4g"]
 [ext_resource type="Texture2D" uid="uid://bisiwh3jxspio" path="res://assets/sprites/corridor/bg.png" id="2_mus4g"]
+[ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_pblcb"]
 [ext_resource type="Texture2D" uid="uid://dxvhn7f40q84o" path="res://assets/sprites/corridor/door-close-kitchen.png" id="3_7w20u"]
 [ext_resource type="Texture2D" uid="uid://bb6tbirr85iud" path="res://assets/sprites/corridor/door-close-bathroom.png" id="4_n8bhm"]
 [ext_resource type="Script" uid="uid://dffiuvvm8tnok" path="res://scripts/door_click_area.gd" id="5_7w20u"]
@@ -15,6 +16,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mus4g")
+
+[node name="Transition" parent="." unique_id=1276352948 instance=ExtResource("2_pblcb")]
 
 [node name="Background" type="TextureRect" parent="." unique_id=1085278777]
 layout_mode = 1

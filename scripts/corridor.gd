@@ -1,6 +1,7 @@
 extends Control
 
 @onready var prompt_text = $Node2D/PromtWall
+@onready var transition_player = $Transition/Transitions/AnimationPlayer
 
 const PROMPTS = [
 	{"text": "Bring me something that bounces", "answer": "ball"},
@@ -12,6 +13,7 @@ const PROMPTS = [
 var current_prompt = {}
 
 func _ready():
+	transition_player.play("black_to_fade")
 	show_prompt()
 
 func show_prompt():
