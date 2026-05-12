@@ -4,10 +4,13 @@ extends Control
 @onready var transition_player = $Transition/Transitions/AnimationPlayer
 
 const PROMPTS = [
-	{"text": "Bring me something that bounces", "answer": "ball"},
-	{"text": "Bring me something that cuts", "answer": "scissors"},
-	{"text": "Bring me something that holds water", "answer": "cup"},
-	{"text": "Bring me something that makes noise", "answer": "bell"}
+	{"text": "BRING ME WHAT NO LONGER LIVES", "answer": "dead-flower"},
+	{"text": "BRING ME THE FACE YOU HIDE BEHIND", "answer": "surgical-mask"},
+	{"text": "BRING ME WHAT KEEPS WATCHING", "answer": "clock"},
+	{"text": "BRING ME WHAT ENDS THINGS", "answer": "knife"},
+	{"text": "BRING ME THE STAIN THAT REFUSES TO HIDE","answer":"bloody-handkerchief"},
+	{"text": "BRING ME WHAT LETS YOU FORGET THE PAIN","answer":"medicine"},
+	{"text": "BRING ME THE ONE THAT LIES TO YOU","answer":"mirror"}
 ]
 
 var current_prompt = {}

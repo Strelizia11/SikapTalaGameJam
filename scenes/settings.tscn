@@ -4,7 +4,25 @@
 [ext_resource type="Texture2D" uid="uid://copdkkesmgfj0" path="res://assets/sprites/settings/settings.png" id="2_6wm04"]
 
 [node name="Settings" type="CanvasLayer" unique_id=2065002682]
+layer = 10
 script = ExtResource("1_r6d6q")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=952203983]
+offset_left = 1776.0
+offset_top = 44.000004
+offset_right = 2553.0
+offset_bottom = 844.0
+scale = Vector2(0.1325021, 0.11865279)
+texture_normal = ExtResource("2_6wm04")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1742150816]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07444572, 0.07444573, 0.07444573, 0.6039216)
+mouse_filter = 0
 
 [node name="SettingsButton" type="Panel" parent="." unique_id=2124644341]
 custom_minimum_size = Vector2(400, 300)
@@ -19,6 +37,7 @@ offset_right = 200.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 
 [node name="SettingsContainer" type="VBoxContainer" parent="SettingsButton" unique_id=1117290072]
 layout_mode = 0
@@ -63,14 +82,6 @@ text = "MAIN MENU"
 [node name="CloseButton" type="Button" parent="SettingsButton/SettingsContainer" unique_id=420420247]
 layout_mode = 2
 text = "CLOSE"
-
-[node name="TextureButton" type="TextureButton" parent="." unique_id=952203983]
-offset_left = 1776.0
-offset_top = 44.000004
-offset_right = 2553.0
-offset_bottom = 844.0
-scale = Vector2(0.1325021, 0.11865279)
-texture_normal = ExtResource("2_6wm04")
 
 [connection signal="value_changed" from="SettingsButton/SettingsContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="SettingsButton/SettingsContainer/SFXContainer/SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]
