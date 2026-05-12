@@ -21,6 +21,7 @@ func _ready():
 	$Inventory.current_room = "toilet"
 
 func _on_door_pressed():
-	if is_transitioning:
-		return
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	transition_player.play("fade_to_black")
+	await transition_player.animation_finished
 	get_tree().change_scene_to_file("res://scenes/corridor.tscn")
