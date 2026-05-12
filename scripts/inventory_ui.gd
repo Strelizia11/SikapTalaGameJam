@@ -10,7 +10,7 @@ extends CanvasLayer
 var item_textures = {
 	"dead-flower": preload("res://assets/sprites/items/dead_flower.jpg"),
 	"poison-ivy": preload("res://assets/sprites/items/poison_ivy.jpg"),
-	"surgical-mask": preload("res://assets/sprites/items/mask.jpg"),
+	"mask": preload("res://assets/sprites/items/mask.jpg"),
 	"dead-rat": preload("res://assets/sprites/items/dead_rat.jpg"),
 	"clock": preload("res://assets/sprites/items/clock.jpg"),
 	"blade": preload("res://assets/sprites/items/rusted_saw_blade.jpg"),
@@ -27,16 +27,30 @@ var item_textures = {
 var slot_empty_texture = preload("res://assets/sprites/inventory-slot.png")
 var current_room: String = ""
 
+## Logical slot size (layout space). Textures are scaled to fill this rect exactly.
+const SLOT_ICON_SIZE := Vector2(1500, 1500)
+
 # Drag state
 var dragging_item: String = ""
 var dragging_from_slot: int = -1
 var ghost: TextureRect = null
+var drag_start_screen_pos: Vector2 = Vector2.ZERO
+
+## If the pointer barely moves before release, treat it as a click: return the item to its room.
+const CLICK_RETURN_MAX_DISTANCE_PX: float = 24.0
+## InventoryBar uses negative scale; get_global_rect().size can blow up — cap drag ghost size.
+const GHOST_ICON_MAX_PX: float = 512.0
 
 func _ready():
 	add_to_group("inventory_ui")
 	# Flip slots right-side-up (parent has negative Y scale)
 	for slot in slots:
 		slot.flip_v = true
+		# Without EXPAND_IGNORE_SIZE, TextureRect uses the texture's pixel size as minimum → huge slots.
+		slot.custom_minimum_size = SLOT_ICON_SIZE
+		slot.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		slot.stretch_mode = TextureRect.STRETCH_SCALE
+		slot.clip_contents = true
 	refresh()
 	for i in range(slots.size()):
 		slots[i].gui_input.connect(_on_slot_input.bind(i))
@@ -62,13 +76,21 @@ func _on_slot_input(event: InputEvent, slot_index: int):
 func _start_slot_drag(item_name: String, slot_index: int):
 	dragging_item = item_name
 	dragging_from_slot = slot_index
+	drag_start_screen_pos = get_viewport().get_mouse_position()
+
+	# Match ghost to the slot's on-screen size; abs + clamp avoids huge rects from flipped/scaled UI.
+	var r: Rect2 = slots[slot_index].get_global_rect()
+	var slot_px: Vector2 = Vector2(absf(r.size.x), absf(r.size.y))
+	slot_px.x = clampf(slot_px.x, 1.0, GHOST_ICON_MAX_PX)
+	slot_px.y = clampf(slot_px.y, 1.0, GHOST_ICON_MAX_PX)
 
 	# Create a ghost icon that follows the mouse
 	ghost = TextureRect.new()
 	ghost.texture = item_textures.get(item_name, slot_empty_texture)
-	ghost.custom_minimum_size = Vector2(80, 80)
-	ghost.size = Vector2(80, 80)
-	ghost.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	ghost.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	ghost.custom_minimum_size = slot_px
+	ghost.size = slot_px
+	ghost.stretch_mode = TextureRect.STRETCH_SCALE
 	ghost.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	ghost.z_index = 200
 	# Anchor ghost to screen coordinates via a plain Control overlay
@@ -86,7 +108,7 @@ func _update_ghost_position():
 	if ghost == null:
 		return
 	var mp = ghost.get_viewport().get_mouse_position()
-	ghost.position = mp - Vector2(40, 40)
+	ghost.position = mp - ghost.size * 0.5
 
 func _process(_delta):
 	if dragging_item != "":
@@ -101,6 +123,7 @@ func _input(event: InputEvent):
 
 func _stop_slot_drag():
 	var item_to_submit = dragging_item
+	var drag_start = drag_start_screen_pos
 	dragging_item = ""
 	dragging_from_slot = -1
 
@@ -112,10 +135,13 @@ func _stop_slot_drag():
 	# Check if mouse is over a submission_zone Area2D
 	var submitted = false
 	var space_state = get_viewport().world_2d.direct_space_state
+
 	var query = PhysicsPointQueryParameters2D.new()
 	query.position = get_viewport().get_mouse_position()
 	query.collide_with_areas = true
+
 	var results = space_state.intersect_point(query)
+
 	for result in results:
 		if result.collider.is_in_group("submission_zone"):
 			submitted = true
@@ -124,6 +150,34 @@ func _stop_slot_drag():
 	if submitted:
 		# Tell the corridor to check it
 		var corridor = get_tree().current_scene
+
 		if corridor.has_method("check_submission"):
 			corridor.check_submission(item_to_submit)
-	# If not over submission zone, do nothing — item stays in inventory
+
+		# Remove from inventory
+		InventoryManager.remove_item(item_to_submit)
+
+		# Refresh inventory UI
+		refresh()
+
+	elif item_to_submit != "" and drag_start.distance_to(query.position) <= CLICK_RETURN_MAX_DISTANCE_PX:
+		_restore_item_to_world(item_to_submit)
+
+
+func _restore_item_to_world(item_name: String) -> void:
+	var room_name: String = InventoryManager.get_item_room(item_name)
+	InventoryManager.remove_item(item_name)
+	refresh()
+	for node in get_tree().get_nodes_in_group("items"):
+		if not (node is Area2D):
+			continue
+		if node.get("item_name") != item_name:
+			continue
+		if room_name != "" and node.get("room_name") != room_name:
+			continue
+		if node.has_method("restore_from_inventory_pickup"):
+			node.restore_from_inventory_pickup()
+		else:
+			node.visible = true
+			node.transform = InventoryManager.get_spawn_transform(item_name)
+		break

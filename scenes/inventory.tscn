@@ -22,19 +22,25 @@ scale = Vector2(0.07804137, -0.06704653)
 theme_override_constants/separation = 256
 
 [node name="Slot1" type="TextureRect" parent="InventoryBar" unique_id=1227483685]
-custom_minimum_size = Vector2(80, 80)
+clip_contents = true
+custom_minimum_size = Vector2(1500, 1500)
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
-stretch_mode = 5
+expand_mode = 1
+stretch_mode = 0
 
 [node name="Slot2" type="TextureRect" parent="InventoryBar" unique_id=1302138914]
-custom_minimum_size = Vector2(80, 80)
+clip_contents = true
+custom_minimum_size = Vector2(1500, 1500)
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
-stretch_mode = 5
+expand_mode = 1
+stretch_mode = 0
 
 [node name="Slot3" type="TextureRect" parent="InventoryBar" unique_id=1930426461]
-custom_minimum_size = Vector2(80, 80)
+clip_contents = true
+custom_minimum_size = Vector2(1500, 1500)
 layout_mode = 2
 texture = ExtResource("1_qw0r6")
-stretch_mode = 5
+expand_mode = 1
+stretch_mode = 0

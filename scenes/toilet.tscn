@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cwfhyqlwom62x" path="res://scripts/toilet.gd" id="1_yyxms"]
 [ext_resource type="Texture2D" uid="uid://sa85r4bkrlem" path="res://assets/sprites/toilet.png" id="2_5rkpo"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_trc3a"]
-[ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="3_5rr3v"]
+[ext_resource type="Script" uid="uid://dnhc0qfytra0c" path="res://scripts/item-toilet.gd" id="3_5rr3v"]
 [ext_resource type="Texture2D" uid="uid://cfu14y2hh7fem" path="res://assets/sprites/items/hankerchief.jpg" id="3_vwyy6"]
 [ext_resource type="Texture2D" uid="uid://dxsass2g70oh" path="res://assets/sprites/items/medicine.jpg" id="4_5rr3v"]
 [ext_resource type="Texture2D" uid="uid://bn3d4yspeeha2" path="res://assets/sprites/items/mirror.jpg" id="5_ca85b"]

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://dwmbcovjcn7q0"]
 
 [ext_resource type="Texture2D" uid="uid://081yjjtggtah" path="res://assets/sprites/items/dead_flower.jpg" id="1_xd6wh"]
+[ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
 
 [node name="DeadFlower" type="Area2D" unique_id=1851932954]
 position = Vector2(4, 7)
+script = ExtResource("2_item")
+item_name = "dead-flower"
+room_name = "kitchen"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=317111694]
 position = Vector2(415, 375)

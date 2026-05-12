@@ -9,13 +9,13 @@ var slots: Array[Dictionary] = [
 # Tracks items currently stored in inventory
 var picked_up_items: Dictionary = {}
 
-# Original spawn positions
-var item_spawn_positions: Dictionary = {}
+# Local transform (relative to parent) when the item first settled — NOT global_transform.
+# Node2D under Control can round-trip global_transform incorrectly; local keeps instance scale.
+var item_spawn_transforms: Dictionary = {}
 
-func register_item(item_name: String, position: Vector2):
-
-	if not item_spawn_positions.has(item_name):
-		item_spawn_positions[item_name] = position
+func register_item(item_name: String, local_xf: Transform2D) -> void:
+	if not item_spawn_transforms.has(item_name):
+		item_spawn_transforms[item_name] = local_xf
 
 func add_item(item_name: String, room_name: String) -> bool:
 
@@ -83,9 +83,13 @@ func is_picked_up(item_name: String, room_name: String) -> bool:
 
 	return false
 
-func get_spawn_position(item_name: String) -> Vector2:
+func get_spawn_transform(item_name: String) -> Transform2D:
+	return item_spawn_transforms.get(item_name, Transform2D())
 
-	return item_spawn_positions.get(item_name, Vector2.ZERO)
+
+func get_spawn_position(item_name: String) -> Vector2:
+	# Local-space origin; use only if parent transform is identity at spawn.
+	return get_spawn_transform(item_name).origin
 
 func get_item_room(item_name: String) -> String:
 

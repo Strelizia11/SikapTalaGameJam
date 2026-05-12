@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://dtdsxvy5x3mli"]
 
 [ext_resource type="Texture2D" uid="uid://bmomd1g3vlorl" path="res://assets/sprites/items/rusted_saw_blade.jpg" id="1_33sq4"]
+[ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
 
 [node name="Blade" type="Area2D" unique_id=309808356]
+script = ExtResource("2_item")
+item_name = "blade"
+room_name = "kitchen"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1098287157]
 position = Vector2(661, 340)

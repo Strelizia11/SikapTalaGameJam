@@ -4,11 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="4_6022o"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="5_cwfnw"]
 [ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="6_qnge3"]
-[ext_resource type="Script" uid="uid://cljv6tvkkqpki" path="res://scripts/door-to-corridor.gd" id="6_ud40p"]
+[ext_resource type="Script" path="res://scripts/door-to-corridor.gd" id="6_ud40p"]
 [ext_resource type="Script" uid="uid://7pvd05xycsnu" path="res://scripts/Kitchen-background.gd" id="7_dqq82"]
 [ext_resource type="Texture2D" uid="uid://c8rfqlo8a8k7e" path="res://assets/sprites/kitchen/BLUE.png" id="8_20l34"]
 [ext_resource type="Texture2D" uid="uid://mcb28kptf0rb" path="res://assets/sprites/kitchen/RED.png" id="9_4fgkg"]
 [ext_resource type="Texture2D" uid="uid://c4i2ttu2hoc5s" path="res://assets/sprites/kitchen/VIOLET.png" id="10_sgiek"]
+[ext_resource type="Script" uid="uid://bikqepauq3emu" path="res://scripts/drop_zone.gd" id="11_dropzone"]
+[ext_resource type="PackedScene" uid="uid://b2bhxymb212q1" path="res://scenes/Items-scene/knife.tscn" id="20_knife"]
+[ext_resource type="PackedScene" uid="uid://dtdsxvy5x3mli" path="res://scenes/Items-scene/blade.tscn" id="21_blade"]
+[ext_resource type="PackedScene" uid="uid://1abjllxf4tgr" path="res://scenes/Items-scene/clock.tscn" id="22_clock"]
+[ext_resource type="PackedScene" uid="uid://dwmbcovjcn7q0" path="res://scenes/Items-scene/dead-flower.tscn" id="23_dflower"]
+[ext_resource type="PackedScene" uid="uid://dj5snknjec2oq" path="res://scenes/Items-scene/dead-rat.tscn" id="24_drat"]
+[ext_resource type="PackedScene" uid="uid://c2ts602ygi6qo" path="res://scenes/Items-scene/mask.tscn" id="25_mask"]
+[ext_resource type="PackedScene" uid="uid://c35t4a6a2iojh" path="res://scenes/Items-scene/poison-ivy.tscn" id="26_pivy"]
+[ext_resource type="PackedScene" uid="uid://p1fs1efiuwjq" path="res://scenes/Items-scene/wine-bottle.tscn" id="27_wbottle"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dropzone"]
+size = Vector2(350, 70)
 
 [node name="Control" type="Control" unique_id=221371296]
 layout_mode = 3
@@ -17,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_e4uee")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1647532909]
@@ -36,3 +49,43 @@ polygon = PackedVector2Array(243, 85, 0, 85, 0, 930, 234, 892, 242, 896, 250, 89
 [node name="Transition" parent="." unique_id=1276352948 instance=ExtResource("5_cwfnw")]
 
 [node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("6_qnge3")]
+
+[node name="DropZone" type="Area2D" parent="." unique_id=385092721]
+position = Vector2(960, 1000)
+script = ExtResource("11_dropzone")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropZone" unique_id=989470553]
+shape = SubResource("RectangleShape2D_dropzone")
+debug_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Visual" type="ColorRect" parent="DropZone" unique_id=768167456]
+offset_right = 350.0
+offset_bottom = 70.0
+
+[node name="Knife" parent="." unique_id=447469215 instance=ExtResource("20_knife")]
+position = Vector2(658.99994, 434.99997)
+scale = Vector2(0.3466289, 0.3130441)
+
+[node name="Blade" parent="." unique_id=2134488629 instance=ExtResource("21_blade")]
+position = Vector2(116.99999, 307)
+scale = Vector2(0.54428035, 0.54389393)
+
+[node name="Clock" parent="." unique_id=1489381581 instance=ExtResource("22_clock")]
+position = Vector2(1033, -84)
+
+[node name="DeadFlower" parent="." unique_id=1505322334 instance=ExtResource("23_dflower")]
+position = Vector2(1588, 857.99994)
+scale = Vector2(0.24038926, 0.27368087)
+
+[node name="DeadRat" parent="." unique_id=1278275581 instance=ExtResource("24_drat")]
+position = Vector2(451, 424)
+
+[node name="Mask" parent="." unique_id=1597076750 instance=ExtResource("25_mask")]
+position = Vector2(47, 388)
+
+[node name="PoisonIvy" parent="." unique_id=432746217 instance=ExtResource("26_pivy")]
+position = Vector2(230.00003, 674)
+scale = Vector2(0.6802112, 0.7048098)
+
+[node name="WineBottle" parent="." unique_id=880976795 instance=ExtResource("27_wbottle")]
+position = Vector2(776, 231)
