@@ -127,39 +127,38 @@ func _stop_slot_drag():
 	dragging_item = ""
 	dragging_from_slot = -1
 
-	# Clean up ghost
 	if ghost:
 		ghost.queue_free()
 		ghost = null
 
-	# Check if mouse is over a submission_zone Area2D
-	var submitted = false
 	var space_state = get_viewport().world_2d.direct_space_state
-
 	var query = PhysicsPointQueryParameters2D.new()
 	query.position = get_viewport().get_mouse_position()
 	query.collide_with_areas = true
-
 	var results = space_state.intersect_point(query)
 
+	var submitted = false
 	for result in results:
 		if result.collider.is_in_group("submission_zone"):
 			submitted = true
 			break
 
 	if submitted:
-		# Tell the corridor to check it
 		var corridor = get_tree().current_scene
-
 		if corridor.has_method("check_submission"):
-			corridor.check_submission(item_to_submit)
-
-		# Remove from inventory
-		InventoryManager.remove_item(item_to_submit)
-
-		# Refresh inventory UI
+			var correct = corridor.check_submission(item_to_submit)
+			if correct:
+				# Mark permanently gone in data
+				InventoryManager.permanently_remove_item(item_to_submit)
+				# Find and destroy the actual node in the scene tree right now
+				for node in get_tree().get_nodes_in_group("items"):
+					if node.get("item_name") == item_to_submit:
+						node.queue_free()
+			else:
+				# Wrong — remove from inventory and put it back in the world
+				InventoryManager.remove_item(item_to_submit)
+				_restore_item_to_world(item_to_submit)
 		refresh()
-
 	elif item_to_submit != "" and drag_start.distance_to(query.position) <= CLICK_RETURN_MAX_DISTANCE_PX:
 		_restore_item_to_world(item_to_submit)
 

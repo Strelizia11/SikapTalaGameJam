@@ -39,6 +39,10 @@ func set_run_active(on: bool) -> void:
 func finish_kitchen_spawn_setup() -> void:
 	if not _run_active:
 		return
+	# If correctly submitted before, delete this node immediately
+	if InventoryManager.is_permanently_removed(item_name):
+		queue_free()
+		return
 	add_to_group("items")
 	InventoryManager.register_item(item_name, transform)
 	var sp0 := _get_sprite()

@@ -1,43 +1,36 @@
+# corridor.gd
 extends Control
 
 @onready var prompt_text = $Node2D/PromtWall
 @onready var transition_player = $Transition/Transitions/AnimationPlayer
-@onready var feedback_timer = Timer.new()
 
-# --- THE PROMPTS LIST HAS BEEN REMOVED (It's now in GlobalBackground) ---
+var feedback_timer: Timer
 
 func _ready():
 	transition_player.play("black_to_fade")
-	
-	# Fix the error from earlier by ensuring this exists in Inventory.gd
 	$Inventory.current_room = "corridor"
 
-	# One-shot timer setup
+	feedback_timer = Timer.new()
 	feedback_timer.one_shot = true
 	feedback_timer.wait_time = 1.5
 	feedback_timer.timeout.connect(_on_feedback_timeout)
 	add_child(feedback_timer)
 
-	# Initial prompt setup using GlobalBackground
+	# First time entering: reset and pick first prompt
 	if GlobalBackground.current_prompt_data.is_empty():
+		GlobalBackground.reset_prompts()
 		GlobalBackground.pick_new_prompt()
-	
+
 	display_current_riddle()
 
-# Helper function to just update the label text
 func display_current_riddle():
-	prompt_text.text = GlobalBackground.current_prompt_data["text"]
+	prompt_text.text = GlobalBackground.current_prompt_data.get("text", "???")
 
 func check_submission(item_name: String) -> bool:
-	# Check against the answer stored in the Global script
-	if item_name == GlobalBackground.current_prompt_data["answer"]:
-		InventoryManager.remove_item(item_name)
-		
-		var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
-		if inventory_ui:
-			inventory_ui.refresh()
-			
+	var expected = GlobalBackground.current_prompt_data.get("answer", "")
+	if item_name == expected:
 		prompt_text.text = "CORRECT..."
+		GlobalBackground.doors_locked = true
 		feedback_timer.start()
 		return true
 	else:
@@ -46,10 +39,26 @@ func check_submission(item_name: String) -> bool:
 		return false
 
 func _on_feedback_timeout():
-	# If they got it right, tell GlobalBackground to pick a new one
-	if prompt_text.text == "CORRECT...":
-		GlobalBackground.pick_new_prompt()
+	if GlobalBackground.current_prompt_data.get("text", "") != prompt_text.text:
+		# We showed CORRECT or WRONG — decide what's next
+		var was_correct = (prompt_text.text == "CORRECT...")
+		if was_correct:
+			# Try to pick the next prompt
+			var has_more = GlobalBackground.pick_new_prompt()
+			if not has_more:
+				# All prompts done — player wins!
+				_trigger_win()
+				return
+		# Either wrong (show same prompt again) or next prompt ready
 		display_current_riddle()
+		GlobalBackground.doors_locked = false
 	else:
-		# If they got it wrong, just show the current riddle again
 		display_current_riddle()
+
+func _trigger_win():
+	prompt_text.text = "YOU HAVE BROUGHT ALL THAT WAS ASKED..."
+	await get_tree().create_timer(2.5).timeout
+	# Clear state for a fresh new game
+	GlobalBackground.reset_prompts()
+	InventoryManager.clear_inventory()
+	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")

@@ -48,11 +48,15 @@ func _ready():
 		# Now, keep the chosen one and delete the rest
 		for variant in variants:
 			if variant == chosen_variant:
-				# We kept this one! Now check if the player already picked it up.
-				if InventoryManager.is_picked_up(i_name, "toilet"):
+				# Permanently submitted to a prompt — destroy it forever
+				if InventoryManager.is_permanently_removed(i_name):
 					variant.queue_free()
+				# Already in inventory (picked up but not submitted yet) — hide it
+				elif InventoryManager.is_picked_up(i_name, "toilet"):
+					variant.queue_free()
+				# Otherwise leave it visible
 			else:
-				# This variant wasn't chosen for this playthrough. Delete it.
+				# Not the chosen variant for this playthrough — remove it
 				variant.queue_free()
 			
 	transition_player.play("black_to_fade")
