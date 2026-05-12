@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bisiwh3jxspio" path="res://assets/sprites/corridor/bg.png" id="2_mus4g"]
 [ext_resource type="Texture2D" uid="uid://dxvhn7f40q84o" path="res://assets/sprites/corridor/door-close-kitchen.png" id="3_7w20u"]
 [ext_resource type="Texture2D" uid="uid://bb6tbirr85iud" path="res://assets/sprites/corridor/door-close-bathroom.png" id="4_n8bhm"]
+[ext_resource type="Script" uid="uid://dffiuvvm8tnok" path="res://scripts/door_click_area.gd" id="5_7w20u"]
 
 [node name="Corridor" type="Control" unique_id=678202067]
 layout_mode = 3
@@ -35,6 +36,15 @@ offset_top = 331.0
 offset_right = 1314.0
 offset_bottom = 1099.0
 texture_normal = ExtResource("4_n8bhm")
+
+[node name="DoorClickArea" type="Area2D" parent="." unique_id=1510947013]
+script = ExtResource("5_7w20u")
+
+[node name="KitchenDoorEntry" type="CollisionPolygon2D" parent="DoorClickArea" unique_id=471158176]
+
+[node name="Sprite2D" type="Sprite2D" parent="DoorClickArea" unique_id=372083727]
+position = Vector2(429, 534)
+texture = ExtResource("3_7w20u")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1429369495]
 
