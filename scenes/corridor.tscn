@@ -50,20 +50,5 @@ offset_bottom = 666.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/SubmissionBox" unique_id=1575530615]
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=250289925]
-
-[node name="Inventory" type="HBoxContainer" parent="UI" unique_id=547521836]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Slot1" type="Panel" parent="UI/Inventory" unique_id=955824635]
-layout_mode = 2
-
-[node name="Slot2" type="Panel" parent="UI/Inventory" unique_id=879487]
-layout_mode = 2
-
-[node name="Slot3" type="Panel" parent="UI/Inventory" unique_id=2061168416]
-layout_mode = 2
-
 [connection signal="pressed" from="KitchenDoor" to="." method="_on_kitchen_door_pressed"]
 [connection signal="pressed" from="ToiletDoor" to="." method="_on_toilet_door_pressed"]
