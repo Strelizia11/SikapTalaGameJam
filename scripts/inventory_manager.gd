@@ -13,8 +13,13 @@ var picked_up_items: Dictionary = {}
 # Node2D under Control can round-trip global_transform incorrectly; local keeps instance scale.
 var item_spawn_transforms: Dictionary = {}
 
-## Kitchen: which variant (0..n-1) is active per item prefix for this playthrough. Cleared on new game from main menu.
+## Kitchen: which variant (0..n-1) is active per item prefix for this playthrough.
+## Cleared on new game from main menu.
 var kitchen_layout_variant_by_prefix: Dictionary = {}
+
+## Toilet: which variant (0..n-1) is active per item prefix for this playthrough.
+## Cleared on new game from main menu.
+var toilet_layout_variant_by_prefix: Dictionary = {}
 
 
 func get_or_roll_kitchen_variant(prefix: String, variant_count: int) -> int:
@@ -30,8 +35,21 @@ func reset_kitchen_layout_for_new_game() -> void:
 	kitchen_layout_variant_by_prefix.clear()
 
 
+func get_or_roll_toilet_variant(prefix: String, variant_count: int) -> int:
+	if variant_count <= 0:
+		return 0
+	if not toilet_layout_variant_by_prefix.has(prefix):
+		toilet_layout_variant_by_prefix[prefix] = randi() % variant_count
+	var stored: int = int(toilet_layout_variant_by_prefix[prefix])
+	return stored % variant_count
+
+
+func reset_toilet_layout_for_new_game() -> void:
+	toilet_layout_variant_by_prefix.clear()
+
+
 func register_item(item_name: String, local_xf: Transform2D) -> void:
-	# Only the active kitchen copy registers; overwrite when re-entering the scene.
+	# Only the active copy registers; overwrite when re-entering the scene.
 	item_spawn_transforms[item_name] = local_xf
 
 

@@ -10,6 +10,7 @@ func _ready():
 func _on_start_pressed():
 	randomize()
 	InventoryManager.reset_kitchen_layout_for_new_game()
+	InventoryManager.reset_toilet_layout_for_new_game()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_quit_pressed():

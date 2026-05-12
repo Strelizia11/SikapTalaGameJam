@@ -1,41 +1,24 @@
 extends Area2D
 
-## Required setup in the Inspector
 @export var item_name: String = ""
 @export var room_name: String = ""
 
 var dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
-
-## Kitchen may place three copies (`Knife_0` … `Knife_2`); only one is active per run.
 var _run_active: bool = true
-
-## Sprite scale after layout (re-applied when restoring from inventory).
 var _home_sprite_scale: Vector2 = Vector2.ONE
 var _home_sprite_scale_known: bool = false
+var _original_transform: Transform2D
 
 func _ready():
-	# Align the Area2D with the sprite (all copies); kitchen then picks one active copy.
 	input_pickable = true
-	var sprite = _get_sprite()
-	if sprite:
-		global_position = sprite.global_position
-		sprite.position = Vector2.ZERO
-
-	for child in get_children():
-		if child is CollisionPolygon2D or child is CollisionShape2D:
-			child.position = Vector2.ZERO
-
-	# Kitchen calls finish_kitchen_spawn_setup() in the same frame after set_run_active.
-	# Other scenes (e.g. corridor) never call it — register on the next idle tick if still missing.
+	_original_transform = transform
 	call_deferred("_ensure_spawn_registered")
-
 
 func _ensure_spawn_registered() -> void:
 	if is_in_group("items"):
 		return
 	finish_kitchen_spawn_setup()
-
 
 func set_run_active(on: bool) -> void:
 	_run_active = on
@@ -52,7 +35,6 @@ func set_run_active(on: bool) -> void:
 		monitorable = false
 		process_mode = Node.PROCESS_MODE_DISABLED
 		dragging = false
-
 
 func finish_kitchen_spawn_setup() -> void:
 	if not _run_active:
@@ -82,12 +64,9 @@ func _start_drag():
 	if item_name == "" or room_name == "":
 		push_error("Set item_name and room_name in Inspector on: " + name)
 		return
-
 	dragging = true
 	drag_offset = get_global_mouse_position() - global_position
 	z_index = 100
-
-	# Show all drop zones
 	for zone in get_tree().get_nodes_in_group("drop_zone"):
 		if zone.has_method("show_zone"):
 			zone.show_zone()
@@ -104,31 +83,21 @@ func _input(event):
 func _stop_drag():
 	dragging = false
 	z_index = 0
-
-	# Hide drop zones
 	for zone in get_tree().get_nodes_in_group("drop_zone"):
 		if zone.has_method("hide_zone"):
 			zone.hide_zone()
-
 	await get_tree().physics_frame
-
 	var hit_zone = null
-
-	# Detect overlap with inventory drop zone
 	for zone in get_tree().get_nodes_in_group("drop_zone"):
 		if overlaps_area(zone):
 			hit_zone = zone
 			break
-
 	if hit_zone:
 		var success = InventoryManager.add_item(item_name, room_name)
-
 		if success:
 			var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
-
 			if inventory_ui:
 				inventory_ui.refresh()
-
 			visible = false
 			print("Placed ", item_name, " into inventory!")
 		else:
@@ -137,12 +106,11 @@ func _stop_drag():
 		_snap_back()
 
 func _apply_spawn_local() -> void:
-	transform = InventoryManager.get_spawn_transform(item_name)
+	transform = _original_transform
 	if _home_sprite_scale_known:
 		var sp := _get_sprite()
 		if sp:
 			sp.scale = _home_sprite_scale
-
 
 func restore_from_inventory_pickup() -> void:
 	if not _run_active:
@@ -150,11 +118,9 @@ func restore_from_inventory_pickup() -> void:
 	visible = true
 	_apply_spawn_local()
 
-
 func _snap_back():
 	_apply_spawn_local()
 	print("Missed or rejected, snapping back")
-
 
 func _return_to_start():
 	_apply_spawn_local()
