@@ -25,27 +25,27 @@ texture = ExtResource("2_7w20u")
 
 [node name="KitchenDoor" type="TextureButton" parent="." unique_id=540994406]
 layout_mode = 0
-offset_left = 452.0
-offset_top = 262.0
-offset_right = 690.0
-offset_bottom = 1030.0
+offset_left = 187.0
+offset_top = -31.0
+offset_right = 425.0
+offset_bottom = 737.0
 texture_normal = ExtResource("3_n8bhm")
 
 [node name="ToiletDoor" type="TextureButton" parent="." unique_id=1064743051]
 layout_mode = 0
-offset_left = 1276.0
-offset_top = 241.0
-offset_right = 1514.0
-offset_bottom = 1009.0
+offset_left = 909.0
+offset_top = -13.0
+offset_right = 1147.0
+offset_bottom = 755.0
 texture_normal = ExtResource("4_pblcb")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1429369495]
 
 [node name="PromtWall" type="RichTextLabel" parent="Node2D" unique_id=683854158]
-offset_left = 872.0
-offset_top = 354.0
-offset_right = 1050.0
-offset_bottom = 544.0
+offset_left = 520.0
+offset_top = 202.0
+offset_right = 757.0
+offset_bottom = 470.0
 
 [node name="SubmissionBox" type="Area2D" parent="Node2D" unique_id=433386369]
 
