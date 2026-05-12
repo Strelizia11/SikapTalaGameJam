@@ -47,8 +47,10 @@ polygon = PackedVector2Array(243, 85, 0, 85, 0, 930, 234, 892, 242, 896, 250, 89
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("4_6022o")]
 
 [node name="Transition" parent="." unique_id=1276352948 instance=ExtResource("5_cwfnw")]
+position = Vector2(234, -3)
 
 [node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("6_qnge3")]
+visible = false
 
 [node name="DropZone" type="Area2D" parent="." unique_id=385092721]
 position = Vector2(960, 1000)
@@ -62,32 +64,94 @@ debug_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 offset_right = 350.0
 offset_bottom = 70.0
 
-[node name="Knife" parent="." unique_id=447469215 instance=ExtResource("20_knife")]
+[node name="Knife_0" parent="." unique_id=688074840 instance=ExtResource("20_knife")]
 position = Vector2(658.99994, 434.99997)
 scale = Vector2(0.3466289, 0.3130441)
 
-[node name="Blade" parent="." unique_id=2134488629 instance=ExtResource("21_blade")]
-position = Vector2(116.99999, 307)
+[node name="Knife_1" parent="." unique_id=1483869943 instance=ExtResource("20_knife")]
+position = Vector2(784, 746)
+scale = Vector2(0.3466289, 0.3130441)
+
+[node name="Knife_2" parent="." unique_id=694276018 instance=ExtResource("20_knife")]
+position = Vector2(532.99994, 812)
+scale = Vector2(0.3466289, 0.3130441)
+
+[node name="Blade_0" parent="." unique_id=788725981 instance=ExtResource("21_blade")]
+position = Vector2(134, 366.99997)
 scale = Vector2(0.54428035, 0.54389393)
 
-[node name="Clock" parent="." unique_id=1489381581 instance=ExtResource("22_clock")]
-position = Vector2(1033, -84)
+[node name="Blade_1" parent="." unique_id=1888047381 instance=ExtResource("21_blade")]
+position = Vector2(363.00003, 261)
+scale = Vector2(0.54428035, 0.54389393)
 
-[node name="DeadFlower" parent="." unique_id=1505322334 instance=ExtResource("23_dflower")]
-position = Vector2(1588, 857.99994)
+[node name="Blade_2" parent="." unique_id=1526478258 instance=ExtResource("21_blade")]
+position = Vector2(-97.99997, 690)
+scale = Vector2(0.54428035, 0.54389393)
+
+[node name="Clock_0" parent="." unique_id=1461724119 instance=ExtResource("22_clock")]
+position = Vector2(1336.9999, 358)
+scale = Vector2(0.48016578, 0.4986145)
+
+[node name="Clock_1" parent="." unique_id=1194229271 instance=ExtResource("22_clock")]
+position = Vector2(1126.0001, -2)
+scale = Vector2(0.55124485, 0.57731634)
+
+[node name="Clock_2" parent="." unique_id=771148744 instance=ExtResource("22_clock")]
+position = Vector2(196, 177.00002)
+scale = Vector2(0.554742, 0.57135916)
+
+[node name="DeadFlower_0" parent="." unique_id=1074452135 instance=ExtResource("23_dflower")]
+position = Vector2(576, 460.00003)
+scale = Vector2(0.11443475, 0.23328944)
+
+[node name="DeadFlower_1" parent="." unique_id=566292559 instance=ExtResource("23_dflower")]
+position = Vector2(827.0001, 573.9999)
 scale = Vector2(0.24038926, 0.27368087)
 
-[node name="DeadRat" parent="." unique_id=1278275581 instance=ExtResource("24_drat")]
-position = Vector2(451, 424)
+[node name="DeadFlower_2" parent="." unique_id=644805724 instance=ExtResource("23_dflower")]
+position = Vector2(1272, 643.9999)
+scale = Vector2(0.24038926, 0.27368087)
 
-[node name="Mask" parent="." unique_id=1597076750 instance=ExtResource("25_mask")]
-position = Vector2(47, 388)
+[node name="DeadRat_0" parent="." unique_id=637937295 instance=ExtResource("24_drat")]
+position = Vector2(493, 419)
 
-[node name="PoisonIvy" parent="." unique_id=432746217 instance=ExtResource("26_pivy")]
+[node name="DeadRat_1" parent="." unique_id=1538684589 instance=ExtResource("24_drat")]
+position = Vector2(809, 467)
+
+[node name="DeadRat_2" parent="." unique_id=1038333387 instance=ExtResource("24_drat")]
+position = Vector2(652, 266)
+
+[node name="Mask_0" parent="." unique_id=966810048 instance=ExtResource("25_mask")]
+position = Vector2(597, 678)
+scale = Vector2(0.4322369, 0.46373007)
+
+[node name="Mask_1" parent="." unique_id=356935915 instance=ExtResource("25_mask")]
+position = Vector2(358, 89)
+
+[node name="Mask_2" parent="." unique_id=110062466 instance=ExtResource("25_mask")]
+position = Vector2(1142, 359)
+scale = Vector2(0.6568822, 0.6422902)
+
+[node name="PoisonIvy_0" parent="." unique_id=557033710 instance=ExtResource("26_pivy")]
 position = Vector2(230.00003, 674)
 scale = Vector2(0.6802112, 0.7048098)
 
-[node name="WineBottle" parent="." unique_id=880976795 instance=ExtResource("27_wbottle")]
-position = Vector2(776, 231)
-item_name = "wine-bottle"
-room_name = "kitchen"
+[node name="PoisonIvy_1" parent="." unique_id=1981747935 instance=ExtResource("26_pivy")]
+position = Vector2(743, 477)
+scale = Vector2(0.6802112, 0.7048098)
+
+[node name="PoisonIvy_2" parent="." unique_id=1140614053 instance=ExtResource("26_pivy")]
+position = Vector2(18.999985, 687)
+scale = Vector2(0.6802112, 0.7048098)
+
+[node name="WineBottle_0" parent="." unique_id=868990940 instance=ExtResource("27_wbottle")]
+position = Vector2(1157, 358)
+scale = Vector2(0.7178783, 0.7267864)
+
+[node name="WineBottle_1" parent="." unique_id=774638839 instance=ExtResource("27_wbottle")]
+position = Vector2(739.00006, 274)
+scale = Vector2(0.6397476, 0.6812048)
+
+[node name="WineBottle_2" parent="." unique_id=703056886 instance=ExtResource("27_wbottle")]
+position = Vector2(-279, 550)
+scale = Vector2(0.80895543, 0.717699)

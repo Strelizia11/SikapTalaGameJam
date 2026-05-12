@@ -7,27 +7,57 @@ extends Area2D
 var dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 
+## Kitchen may place three copies (`Knife_0` … `Knife_2`); only one is active per run.
+var _run_active: bool = true
+
 ## Sprite scale after layout (re-applied when restoring from inventory).
 var _home_sprite_scale: Vector2 = Vector2.ONE
 var _home_sprite_scale_known: bool = false
 
 func _ready():
+	# Align the Area2D with the sprite (all copies); kitchen then picks one active copy.
 	input_pickable = true
-	add_to_group("items")
-
-	# Align the Area2D with the sprite
 	var sprite = _get_sprite()
 	if sprite:
 		global_position = sprite.global_position
 		sprite.position = Vector2.ZERO
 
-	# Keep collision nodes aligned locally
 	for child in get_children():
 		if child is CollisionPolygon2D or child is CollisionShape2D:
 			child.position = Vector2.ZERO
 
-	# Wait until parent Control has finished layout; then store LOCAL transform + sprite scale.
-	await get_tree().process_frame
+	# Kitchen calls finish_kitchen_spawn_setup() in the same frame after set_run_active.
+	# Other scenes (e.g. corridor) never call it — register on the next idle tick if still missing.
+	call_deferred("_ensure_spawn_registered")
+
+
+func _ensure_spawn_registered() -> void:
+	if is_in_group("items"):
+		return
+	finish_kitchen_spawn_setup()
+
+
+func set_run_active(on: bool) -> void:
+	_run_active = on
+	if on:
+		visible = true
+		input_pickable = true
+		monitoring = true
+		monitorable = true
+		process_mode = Node.PROCESS_MODE_INHERIT
+	else:
+		visible = false
+		input_pickable = false
+		monitoring = false
+		monitorable = false
+		process_mode = Node.PROCESS_MODE_DISABLED
+		dragging = false
+
+
+func finish_kitchen_spawn_setup() -> void:
+	if not _run_active:
+		return
+	add_to_group("items")
 	InventoryManager.register_item(item_name, transform)
 	var sp0 := _get_sprite()
 	if sp0:
@@ -47,6 +77,8 @@ func _input_event(_viewport, event, _shape_idx):
 				_start_drag()
 
 func _start_drag():
+	if not _run_active:
+		return
 	if item_name == "" or room_name == "":
 		push_error("Set item_name and room_name in Inspector on: " + name)
 		return
@@ -113,6 +145,8 @@ func _apply_spawn_local() -> void:
 
 
 func restore_from_inventory_pickup() -> void:
+	if not _run_active:
+		return
 	visible = true
 	_apply_spawn_local()
 

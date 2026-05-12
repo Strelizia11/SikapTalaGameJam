@@ -14,8 +14,8 @@ var picked_up_items: Dictionary = {}
 var item_spawn_transforms: Dictionary = {}
 
 func register_item(item_name: String, local_xf: Transform2D) -> void:
-	if not item_spawn_transforms.has(item_name):
-		item_spawn_transforms[item_name] = local_xf
+	# Only the active kitchen copy registers; overwrite when re-entering the scene.
+	item_spawn_transforms[item_name] = local_xf
 
 func add_item(item_name: String, room_name: String) -> bool:
 
