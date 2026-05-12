@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dpqnapspthms2"]
+
+[ext_resource type="Script" uid="uid://c005iymmww1jb" path="res://scripts/timer.gd" id="1_l5usf"]
+
+[node name="GlobalTimer" type="Node2D" unique_id=324256725]
+script = ExtResource("1_l5usf")
