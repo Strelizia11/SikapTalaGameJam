@@ -89,3 +89,5 @@ scale = Vector2(0.6802112, 0.7048098)
 
 [node name="WineBottle" parent="." unique_id=880976795 instance=ExtResource("27_wbottle")]
 position = Vector2(776, 231)
+item_name = "wine-bottle"
+room_name = "kitchen"
