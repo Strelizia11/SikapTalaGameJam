@@ -17,13 +17,11 @@ var starting_position = Vector2.ZERO
 
 func _ready():
 	starting_position = global_position
-	# This line ensures the Area2D is ready to receive clicks
 	input_pickable = true
 
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			print(\"Item Clicked!\") # Check the Output tab for this!
 			start_drag()
 		else:
 			stop_drag()
@@ -40,9 +38,7 @@ func start_drag():
 func stop_drag():
 	dragging = false
 	z_index = 0
-	# Snap back home smoothly
-	var tween = create_tween()
-	tween.tween_property(self, \"global_position\", starting_position, 0.2)
+	global_position = starting_position
 "
 
 [node name="Toilet" type="Control" unique_id=2106734742]
