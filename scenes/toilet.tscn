@@ -14,7 +14,8 @@ script = ExtResource("1_yyxms")
 
 [node name="toilet" type="TextureRect" parent="." unique_id=212424301]
 layout_mode = 0
-offset_right = 1913.0
+offset_left = -55.0
+offset_right = 1858.0
 offset_bottom = 1080.0
 texture = ExtResource("2_5rkpo")
 
