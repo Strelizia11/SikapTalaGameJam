@@ -6,15 +6,11 @@ var slots: Array[Dictionary] = [
 	{"item": "", "room": ""}
 ]
 
-# Which items are currently picked up per room
 var picked_up_items: Dictionary = {}
 
-# Stores the original world position of each item so we can return it correctly
-# e.g. {"mirror": Vector2(144, 299), "medicine": Vector2(262, 760)}
 var item_spawn_positions: Dictionary = {}
 
 func register_item(item_name: String, position: Vector2):
-	# Called once when item first loads — saves its original position
 	if not item_spawn_positions.has(item_name):
 		item_spawn_positions[item_name] = position
 

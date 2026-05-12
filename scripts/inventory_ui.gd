@@ -42,7 +42,6 @@ func _on_slot_clicked(event: InputEvent, slot_index: int):
 		if current_room == item_room:
 			InventoryManager.remove_item(item_name)
 			refresh()
-			# Find the item node and restore it to its ORIGINAL spawn position
 			var item_node = get_tree().current_scene.find_child(item_name, true, false)
 			if item_node:
 				item_node.global_position = InventoryManager.get_spawn_position(item_name)

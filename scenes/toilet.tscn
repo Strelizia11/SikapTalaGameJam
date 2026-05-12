@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="3_5rr3v"]
 [ext_resource type="Texture2D" uid="uid://cfu14y2hh7fem" path="res://assets/sprites/items/hankerchief.jpg" id="3_vwyy6"]
 [ext_resource type="Texture2D" uid="uid://dxsass2g70oh" path="res://assets/sprites/items/medicine.jpg" id="4_5rr3v"]
-[ext_resource type="Script" uid="uid://cr0bgur0bsl3d" path="res://scripts/inventory_ui.gd" id="4_ca85b"]
 [ext_resource type="Texture2D" uid="uid://bn3d4yspeeha2" path="res://assets/sprites/items/mirror.jpg" id="5_ca85b"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_5rr3v"]
 [ext_resource type="PackedScene" path="res://scenes/settings.tscn" id="7_ca85b"]
@@ -38,7 +37,6 @@ offset_right = 1175.0
 offset_bottom = 790.0
 
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_5rr3v")]
-script = ExtResource("4_ca85b")
 
 [node name="Item" type="Node2D" parent="." unique_id=667645515]
 

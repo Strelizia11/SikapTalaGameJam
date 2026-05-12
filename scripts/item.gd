@@ -92,7 +92,7 @@ func _stop_drag():
 			var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
 			if inventory_ui:
 				inventory_ui.refresh()
-			visible = false  # hide instead of queue_free so it can be returned from inventory
+			visible = false  
 			print("Placed ", item_name, " into inventory!")
 		else:
 			_return_to_start()
