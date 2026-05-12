@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://ij5rvu7nnj0t"]
 
 [ext_resource type="Script" uid="uid://c8xoi7dwhuuwm" path="res://scripts/kitchen.gd" id="1_e4uee"]
-[ext_resource type="Texture2D" uid="uid://dhox5jgj1y6f3" path="res://assets/sprites/kitchen.jpeg" id="1_yk5no"]
-[ext_resource type="Texture2D" uid="uid://cjct2gfy1jigp" path="res://assets/sprites/Kitchen_Door-to-Corridor.jpg" id="2_e4uee"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="4_6022o"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="5_cwfnw"]
 [ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="6_qnge3"]
+[ext_resource type="Script" uid="uid://cljv6tvkkqpki" path="res://scripts/door-to-corridor.gd" id="6_ud40p"]
+[ext_resource type="Script" uid="uid://7pvd05xycsnu" path="res://scripts/Kitchen-background.gd" id="7_dqq82"]
+[ext_resource type="Texture2D" uid="uid://c8rfqlo8a8k7e" path="res://assets/sprites/kitchen/BLUE.png" id="8_20l34"]
+[ext_resource type="Texture2D" uid="uid://mcb28kptf0rb" path="res://assets/sprites/kitchen/RED.png" id="9_4fgkg"]
+[ext_resource type="Texture2D" uid="uid://c4i2ttu2hoc5s" path="res://assets/sprites/kitchen/VIOLET.png" id="10_sgiek"]
 
 [node name="Control" type="Control" unique_id=221371296]
 layout_mode = 3
@@ -16,25 +19,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e4uee")
 
-[node name="background" type="TextureRect" parent="." unique_id=1349508605]
-layout_mode = 0
-offset_left = -142.0
-offset_top = -5.0
-offset_right = 2022.0
-offset_bottom = 1097.0
-texture = ExtResource("1_yk5no")
+[node name="Background" type="Sprite2D" parent="." unique_id=1647532909]
+position = Vector2(951, 538)
+texture = ExtResource("8_20l34")
+script = ExtResource("7_dqq82")
+background_textures = Array[Texture2D]([ExtResource("8_20l34"), ExtResource("9_4fgkg"), ExtResource("10_sgiek")])
 
-[node name="DoortoCorridor" type="TextureButton" parent="." unique_id=1944171800]
-layout_mode = 0
-offset_left = 298.0
-offset_top = 421.0
-offset_right = 1034.0
-offset_bottom = 1688.0
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("2_e4uee")
+[node name="Door" type="Area2D" parent="." unique_id=1705363736]
+script = ExtResource("6_ud40p")
+
+[node name="DoorToCorridor" type="CollisionPolygon2D" parent="Door" unique_id=1416647397]
+polygon = PackedVector2Array(243, 85, 0, 85, 0, 930, 234, 892, 242, 896, 250, 895, 245, 90)
 
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("4_6022o")]
+script = null
 
 [node name="Transition" parent="." unique_id=1276352948 instance=ExtResource("5_cwfnw")]
 
 [node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("6_qnge3")]
+layer = 1
