@@ -43,6 +43,7 @@ offset_right = 1175.0
 offset_bottom = 790.0
 
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_5rr3v")]
+script = null
 
 [node name="Item" type="Node2D" parent="." unique_id=667645515]
 
