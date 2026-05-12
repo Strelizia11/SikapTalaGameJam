@@ -23,9 +23,7 @@ func add_item(item_name: String, room_name: String) -> bool:
 				picked_up_items[room_name] = []
 			if not item_name in picked_up_items[room_name]:
 				picked_up_items[room_name].append(item_name)
-			print("Added: ", item_name, " from: ", room_name)
 			return true
-	print("Inventory full!")
 	return false
 
 func remove_item(item_name: String):
@@ -36,7 +34,6 @@ func remove_item(item_name: String):
 			slots[i]["room"] = ""
 			if picked_up_items.has(room_name):
 				picked_up_items[room_name].erase(item_name)
-			print("Removed: ", item_name)
 			return
 
 func has_item(item_name: String) -> bool:

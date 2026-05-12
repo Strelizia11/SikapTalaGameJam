@@ -8,16 +8,17 @@ var is_transitioning = false
 
 func _ready():
 	$door.pressed.connect(_on_door_pressed)
-	$Inventory.current_room = "toilet"
-	transition_player.play("black_to_fade")
-	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
-	await transition_player.animation_finished
-	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 	for item in $Item.get_children():
 		item.add_to_group("items")
 		if InventoryManager.is_picked_up(item.item_name, "toilet"):
 			item.visible = false
+			
+	transition_player.play("black_to_fade")
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	await transition_player.animation_finished
+	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$Inventory.current_room = "toilet"
 
 func _on_door_pressed():
 	if is_transitioning:

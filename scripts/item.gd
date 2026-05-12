@@ -40,7 +40,6 @@ func _get_sprite() -> Node2D:
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and not dragging:
-			print("Mouse event detected on: ", name)
 			_start_drag()
 
 func _start_drag():
@@ -93,12 +92,10 @@ func _stop_drag():
 			if inventory_ui:
 				inventory_ui.refresh()
 			visible = false  
-			print("Placed ", item_name, " into inventory!")
 		else:
 			_return_to_start()
 	else:
 		_return_to_start()
 
 func _return_to_start():
-	print("Missed or full, snapping back")
 	global_position = InventoryManager.get_spawn_position(item_name)
