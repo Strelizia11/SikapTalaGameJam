@@ -10,7 +10,7 @@ height = 108.0
 
 [node name="Mask" type="Area2D" unique_id=1484588364]
 script = ExtResource("2_item")
-item_name = "mask"
+item_name = "surgical-mask"
 room_name = "kitchen"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=495247491]
