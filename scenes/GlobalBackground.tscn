@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bpylrwys7dxt2"]
+
+[ext_resource type="Script" uid="uid://ouhr8626v1gr" path="res://scripts/global_background.gd" id="1_lhvo3"]
+
+[node name="GlobalBackground" type="Node2D" unique_id=1321641025]
+script = ExtResource("1_lhvo3")

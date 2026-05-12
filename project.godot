@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://c6hqhr7oa0ike"
 
 InventoryManager="*uid://f0av8i2xufin"
 GlobalTimer="*uid://c005iymmww1jb"
+GlobalBackground="*uid://bpylrwys7dxt2"
 
 [display]
 

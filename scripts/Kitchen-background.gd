@@ -4,8 +4,5 @@ extends Sprite2D
 @export var background_textures: Array[Texture2D]
 
 func _ready():
-	if background_textures.size() > 0:
-		# Selects a random texture from the list
-		texture = background_textures.pick_random()
-	else:
-		push_warning("No textures added to the background list!")
+	var path = GlobalBackground.current_bg_path
+	texture = load(path)

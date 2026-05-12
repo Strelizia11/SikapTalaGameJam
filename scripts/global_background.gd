@@ -1,7 +1,6 @@
-extends Control
+extends Node2D
 
-@onready var prompt_text = $Node2D/PromtWall
-@onready var transition_player = $Transition/Transitions/AnimationPlayer
+var current_bg_path: String = "res://assets/sprites/kitchen/BLUE.png"
 
 const PROMPTS = [
 	{
@@ -41,19 +40,8 @@ const PROMPTS = [
 	}
 ]
 
-var current_prompt = {}
+var current_prompt_data = {}
 
-func _ready():
-	GlobalBackground.pick_new_prompt()
-	transition_player.play("black_to_fade")
-	show_prompt()
-
-func show_prompt():
-	current_prompt = PROMPTS[randi() % PROMPTS.size()]
-	prompt_text.text = current_prompt["text"]
-
-func check_submission(item_name: String) -> bool:
-	if item_name == current_prompt["answer"]:
-		show_prompt()
-		return true
-	return false
+func pick_new_prompt():
+	current_prompt_data = PROMPTS.pick_random()
+	current_bg_path = current_prompt_data["bg"]

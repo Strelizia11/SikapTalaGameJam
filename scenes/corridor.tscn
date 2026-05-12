@@ -30,10 +30,10 @@ texture = ExtResource("2_mus4g")
 [node name="Node2D" type="Node2D" parent="." unique_id=1429369495]
 
 [node name="PromtWall" type="RichTextLabel" parent="Node2D" unique_id=683854158]
-offset_left = 854.0
-offset_top = 431.0
-offset_right = 1091.0
-offset_bottom = 699.0
+offset_left = 838.0
+offset_top = 417.0
+offset_right = 1062.0
+offset_bottom = 685.0
 
 [node name="SubmissionBox" type="Area2D" parent="Node2D" unique_id=433386369]
 
