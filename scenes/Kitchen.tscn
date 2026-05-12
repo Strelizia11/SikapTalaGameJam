@@ -29,5 +29,3 @@ offset_right = 1034.0
 offset_bottom = 1688.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("2_e4uee")
-
-[node name="Node2D" type="Node2D" parent="." unique_id=1518261803]
