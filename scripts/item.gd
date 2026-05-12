@@ -86,10 +86,9 @@ func _input(event):
 
 func _stop_drag():
 	dragging = false
-	z_index = 0
+	z_index = 10
 	for zone in get_tree().get_nodes_in_group("drop_zone"):
-		if zone.has_method("hide_zone"):
-			zone.hide_zone()
+		zone.hide_zone()
 	await get_tree().physics_frame
 	var hit_zone = null
 	for zone in get_tree().get_nodes_in_group("drop_zone"):
@@ -97,7 +96,9 @@ func _stop_drag():
 			hit_zone = zone
 			break
 	if hit_zone:
-		var success = InventoryManager.add_item(item_name, room_name)
+		var sprite = _get_sprite()
+		var tex = sprite.texture if sprite else null
+		var success = InventoryManager.add_item(item_name, room_name, tex)
 		if success:
 			var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
 			if inventory_ui:
@@ -108,7 +109,6 @@ func _stop_drag():
 			_snap_back()
 	else:
 		_snap_back()
-
 func _apply_spawn_local() -> void:
 	transform = _original_transform
 	if _home_sprite_scale_known:

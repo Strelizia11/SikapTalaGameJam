@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cwfhyqlwom62x" path="res://scripts/toilet.gd" id="1_yyxms"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_trc3a"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="3_itemgd"]
-[ext_resource type="Texture2D" uid="uid://b5wb1asym3wbj" path="res://assets/sprites/toilet/red-toilet.png" id="3_vpw5y"]
+[ext_resource type="Texture2D" uid="uid://cvg0r0d48e3ho" path="res://assets/sprites/toilet/Bathroom_blue.png" id="3_s2vth"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_5rr3v"]
 [ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="7_ca85b"]
 [ext_resource type="Texture2D" uid="uid://b6xym82565b4w" path="res://assets/sprites/items/handkerchief__0.png" id="8_7omob"]
@@ -45,7 +45,7 @@ script = ExtResource("1_yyxms")
 layout_mode = 0
 offset_right = 1913.0
 offset_bottom = 1080.0
-texture = ExtResource("3_vpw5y")
+texture = ExtResource("3_s2vth")
 
 [node name="door" type="TextureButton" parent="." unique_id=1533863027]
 layout_mode = 0

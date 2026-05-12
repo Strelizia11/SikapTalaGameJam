@@ -1,9 +1,9 @@
 extends Node
 
 var slots: Array[Dictionary] = [
-	{"item": "", "room": ""},
-	{"item": "", "room": ""},
-	{"item": "", "room": ""}
+	{"item": "", "room": "", "texture": null},
+	{"item": "", "room": "", "texture": null},
+	{"item": "", "room": "", "texture": null},
 ]
 
 var picked_up_items: Dictionary = {}
@@ -13,7 +13,6 @@ var toilet_layout_variant_by_prefix: Dictionary = {}
 
 # Items correctly submitted to the prompt — never respawn
 var permanently_removed: Array = []
-
 
 func get_or_roll_kitchen_variant(prefix: String, variant_count: int) -> int:
 	if variant_count <= 0:
@@ -40,7 +39,7 @@ func reset_toilet_layout_for_new_game() -> void:
 func register_item(item_name: String, local_xf: Transform2D) -> void:
 	item_spawn_transforms[item_name] = local_xf
 
-func add_item(item_name: String, room_name: String) -> bool:
+func add_item(item_name: String, room_name: String, texture: Texture2D = null) -> bool:
 	if has_item(item_name):
 		return false
 	# Block permanently removed items from re-entering inventory
@@ -50,6 +49,7 @@ func add_item(item_name: String, room_name: String) -> bool:
 		if slots[i]["item"] == "":
 			slots[i]["item"] = item_name
 			slots[i]["room"] = room_name
+			slots[i]["texture"] = texture
 			if not picked_up_items.has(room_name):
 				picked_up_items[room_name] = []
 			if item_name not in picked_up_items[room_name]:
@@ -65,6 +65,7 @@ func remove_item(item_name: String):
 			var room_name = slots[i]["room"]
 			slots[i]["item"] = ""
 			slots[i]["room"] = ""
+			slots[i]["texture"] = null
 			if picked_up_items.has(room_name):
 				picked_up_items[room_name].erase(item_name)
 				if picked_up_items[room_name].is_empty():
@@ -108,6 +109,7 @@ func clear_inventory():
 	for i in range(slots.size()):
 		slots[i]["item"] = ""
 		slots[i]["room"] = ""
+		slots[i]["texture"] = null
 	picked_up_items.clear()
 	permanently_removed.clear()
 	print("Inventory cleared")
