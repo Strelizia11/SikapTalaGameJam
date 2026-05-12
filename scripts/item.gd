@@ -81,21 +81,38 @@ func _stop_drag():
 	z_index = 0
 
 	for zone in get_tree().get_nodes_in_group("drop_zone"):
-		if zone.has_method("hide_zone"):
-			zone.hide_zone()
+		zone.hide_zone()
 
-	var dropped_zone = _get_hovered_drop_zone()
-	if dropped_zone:
+	await get_tree().physics_frame
+
+	var hit_zone = null
+	for zone in get_tree().get_nodes_in_group("drop_zone"):
+		if overlaps_area(zone):
+			hit_zone = zone
+			break
+
+	if hit_zone:
+		# We are in a drop zone (Inventory Bar)
+		# We tell the InventoryManager to add it. 
+		# Crucial: The InventoryManager should allow adding even if room_name doesn't match.
 		var success = InventoryManager.add_item(item_name, room_name)
+		
 		if success:
 			var inventory_ui = get_tree().get_first_node_in_group("inventory_ui")
 			if inventory_ui:
 				inventory_ui.refresh()
-			visible = false  
+			visible = false # Successfully put away
+			print("Placed ", item_name, " into inventory!")
 		else:
-			_return_to_start()
+			# If the inventory is full or if InventoryManager REJECTS it for logic reasons
+			_snap_back()
 	else:
-		_return_to_start()
+		# If the player just dropped it in the middle of the room (not in the bar)
+		_snap_back()
+
+func _snap_back():
+	global_position = InventoryManager.get_spawn_position(item_name)
+	print("Missed or rejected, snapping back")
 
 func _return_to_start():
 	global_position = InventoryManager.get_spawn_position(item_name)
