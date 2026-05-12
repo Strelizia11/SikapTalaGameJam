@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://drd3psy5pqfpp"]
 
 [ext_resource type="Script" uid="uid://cwfhyqlwom62x" path="res://scripts/toilet.gd" id="1_yyxms"]
-[ext_resource type="Texture2D" uid="uid://ctq0xt0w7lnr2" path="res://assets/sprites/toilet.png" id="2_5rkpo"]
+[ext_resource type="Texture2D" uid="uid://sa85r4bkrlem" path="res://assets/sprites/toilet.png" id="2_5rkpo"]
+[ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_trc3a"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="3_5rr3v"]
 [ext_resource type="Texture2D" uid="uid://cfu14y2hh7fem" path="res://assets/sprites/items/hankerchief.jpg" id="3_vwyy6"]
 [ext_resource type="Texture2D" uid="uid://dxsass2g70oh" path="res://assets/sprites/items/medicine.jpg" id="4_5rr3v"]
 [ext_resource type="Texture2D" uid="uid://bn3d4yspeeha2" path="res://assets/sprites/items/mirror.jpg" id="5_ca85b"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_5rr3v"]
-[ext_resource type="PackedScene" path="res://scenes/settings.tscn" id="7_ca85b"]
-[ext_resource type="Script" uid="uid://bikqepauq3emu" path="res://scripts/drop_zone.gd" id="10_trc3a"]
+[ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="7_ca85b"]
+[ext_resource type="Script" path="res://scripts/drop_zone.gd" id="10_trc3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b3qh"]
 size = Vector2(350, 70)
@@ -22,6 +23,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_yyxms")
+
+[node name="Transition" parent="." unique_id=1276352948 instance=ExtResource("2_trc3a")]
 
 [node name="toilet" type="TextureRect" parent="." unique_id=212424301]
 layout_mode = 0
