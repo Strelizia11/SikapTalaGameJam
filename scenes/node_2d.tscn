@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccq1snvx463tn"]
 
 [ext_resource type="Script" path="res://scenes/camera_2d.gd" id="1_4dvvg"]
-[ext_resource type="Texture2D" uid="uid://cwngghk1qoaaf" path="res://assets/bg.jpg" id="1_6e84v"]
+[ext_resource type="Texture2D" uid="uid://cwngghk1qoaaf" path="res://assets/sprites/bg.jpg" id="1_6e84v"]
 
 [node name="Node2D" type="Node2D" unique_id=281668364]
 position = Vector2(-3, -8)
