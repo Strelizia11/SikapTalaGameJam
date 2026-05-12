@@ -7,9 +7,20 @@ extends CanvasLayer
 ]
 
 var item_textures = {
+	"dead-flower": preload("res://assets/sprites/items/dead_flower.jpg"),
+	"poison-ivy":    preload("res://assets/sprites/items/poison_ivy.jpg"),
+	"surgical-mask":      preload("res://assets/sprites/items/mask.jpg"),
+	"dead-rat": preload("res://assets/sprites/items/dead_rat.jpg"),
+	"clock": preload("res://assets/sprites/items/clock.jpg"),
+	"blade": preload("res://assets/sprites/items/rusted_saw_blade.jpg"),
+	"knife": preload("res://assets/sprites/items/knife.jpg"),
+	"wine-bottle": preload("res://assets/sprites/items/broken_wine_bottle.jpg"),
 	"hankerchief": preload("res://assets/sprites/items/hankerchief.jpg"),
-	"medicine":    preload("res://assets/sprites/items/medicine.jpg"),
-	"mirror":      preload("res://assets/sprites/items/mirror.jpg"),
+	"envelope": preload("res://assets/sprites/items/burnt_envelope.jpg"),
+	"medicine": preload("res://assets/sprites/items/medicine.jpg"),
+	"poison-vial": preload("res://assets/sprites/items/poison_vial.jpg"),
+	"mirror": preload("res://assets/sprites/items/mirror.jpg"),
+	"scream-painting": preload("res://assets/sprites/items/scream_painting.jpg"),
 }
 
 var slot_empty_texture = preload("res://assets/sprites/inventory-slot.png")
