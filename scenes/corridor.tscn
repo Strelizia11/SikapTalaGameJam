@@ -23,14 +23,6 @@ offset_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource("2_mus4g")
 
-[node name="ToiletDoor" type="TextureButton" parent="." unique_id=1064743051]
-layout_mode = 0
-offset_left = 1076.0
-offset_top = 331.0
-offset_right = 1314.0
-offset_bottom = 1099.0
-texture_normal = ExtResource("4_n8bhm")
-
 [node name="Node2D" type="Node2D" parent="." unique_id=1429369495]
 
 [node name="PromtWall" type="RichTextLabel" parent="Node2D" unique_id=683854158]
@@ -56,6 +48,11 @@ polygon = PackedVector2Array(295, -1, 400, -1, 629, 248, 604, 907, 556, 914, 357
 position = Vector2(428.7, 542.30005)
 texture = ExtResource("3_7w20u")
 
-[node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_n8bhm")]
+[node name="ToiletDoorEntry" type="CollisionPolygon2D" parent="DoorClickArea" unique_id=149562672]
+polygon = PackedVector2Array(1136, 407, 1211, 339, 1223, 339, 1234, 578, 1234, 666, 1235, 768, 1230, 828, 1222, 847, 1208, 842, 1211, 825, 1160, 783, 1146, 787, 1147, 732, 1136, 725, 1140, 603, 1137, 566)
 
-[connection signal="pressed" from="ToiletDoor" to="." method="_on_toilet_door_pressed"]
+[node name="Sprite2D2" type="Sprite2D" parent="DoorClickArea" unique_id=299410265]
+position = Vector2(1173, 596)
+texture = ExtResource("4_n8bhm")
+
+[node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_n8bhm")]
