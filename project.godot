@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SikapTala-BitByBit"
-run/main_scene="uid://c54bxdcyhqkk1"
+run/main_scene="uid://d3st5qwmrqc6t"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
