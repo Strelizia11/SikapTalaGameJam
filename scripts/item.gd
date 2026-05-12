@@ -92,9 +92,6 @@ func _stop_drag():
 			break
 
 	if hit_zone:
-		# We are in a drop zone (Inventory Bar)
-		# We tell the InventoryManager to add it. 
-		# Crucial: The InventoryManager should allow adding even if room_name doesn't match.
 		var success = InventoryManager.add_item(item_name, room_name)
 		
 		if success:
@@ -104,10 +101,8 @@ func _stop_drag():
 			visible = false # Successfully put away
 			print("Placed ", item_name, " into inventory!")
 		else:
-			# If the inventory is full or if InventoryManager REJECTS it for logic reasons
 			_snap_back()
 	else:
-		# If the player just dropped it in the middle of the room (not in the bar)
 		_snap_back()
 
 func _snap_back():
