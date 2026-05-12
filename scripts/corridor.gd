@@ -3,57 +3,23 @@ extends Control
 @onready var prompt_text = $Node2D/PromtWall
 @onready var transition_player = $Transition/Transitions/AnimationPlayer
 
-const PROMPTS = [
-	{
-		"text": "BRING ME WHAT NO LONGER LIVES",
-		"answer": "dead-flower",
-		"bg": "res://assets/sprites/kitchen/BLUE.png"
-	},
-	{
-		"text": "BRING ME THE FACE YOU HIDE BEHIND",
-		"answer": "surgical-mask",
-		"bg": "res://assets/sprites/kitchen/BLUE.png"
-	},
-	{
-		"text": "BRING ME WHAT KEEPS WATCHING",
-		"answer": "clock",
-		"bg": "res://assets/sprites/kitchen/BLUE.png"
-	},
-	{
-		"text": "BRING ME WHAT ENDS THINGS",
-		"answer": "knife",
-		"bg": "res://assets/sprites/kitchen/BLUE.png"
-	},
-	{
-		"text": "BRING ME THE STAIN THAT REFUSES TO HIDE",
-		"answer":"bloody-handkerchief",
-		"bg": "res://assets/sprites/kitchen/BLUE.png"
-	},
-	{
-		"text": "BRING ME WHAT LETS YOU FORGET THE PAIN",
-		"answer":"medicine",
-		"bg": "res://assets/sprites/kitchen/BLUE.png"
-	},
-	{
-		"text": "BRING ME THE ONE THAT LIES TO YOU",
-		"answer":"mirror",
-		"bg": "res://assets/sprites/kitchen/BLUE.png"
-	}
-]
-
-var current_prompt = {}
+# No more PROMPTS list here! It's all in GlobalBackground now.
 
 func _ready():
+	# Tell the global script to pick a new riddle
 	GlobalBackground.pick_new_prompt()
+	
 	transition_player.play("black_to_fade")
-	show_prompt()
+	update_ui()
 
-func show_prompt():
-	current_prompt = PROMPTS[randi() % PROMPTS.size()]
-	prompt_text.text = current_prompt["text"]
+func update_ui():
+	# Get the text directly from the global script
+	prompt_text.text = GlobalBackground.current_prompt_data["text"]
 
 func check_submission(item_name: String) -> bool:
-	if item_name == current_prompt["answer"]:
-		show_prompt()
+	# Check against the answer stored in the global script
+	if item_name == GlobalBackground.current_prompt_data["answer"]:
+		GlobalBackground.pick_new_prompt() # Pick a new one globally
+		update_ui() # Refresh this screen
 		return true
 	return false
