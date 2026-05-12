@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c2ts602ygi6qo"]
 
 [ext_resource type="Texture2D" uid="uid://cmq3fliumndce" path="res://assets/sprites/items/mask.jpg" id="1_gwi4a"]
+[ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="1_osmkn"]
 
 [node name="Mask" type="Area2D" unique_id=1484588364]
+script = ExtResource("1_osmkn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=495247491]
 position = Vector2(755.25, 413.25)

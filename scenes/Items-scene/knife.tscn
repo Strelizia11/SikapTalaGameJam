@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://b2bhxymb212q1"]
 
 [ext_resource type="Texture2D" uid="uid://dckj7sqv1pwoh" path="res://assets/sprites/items/knife.jpg" id="1_7u8el"]
+[ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="1_wcdq6"]
 
 [node name="Knife" type="Area2D" unique_id=1788846417]
 position = Vector2(168, 90)
+script = ExtResource("1_wcdq6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1527069146]
 position = Vector2(758.25, 338.5)

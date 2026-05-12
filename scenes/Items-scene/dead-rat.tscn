@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dj5snknjec2oq"]
 
 [ext_resource type="Texture2D" uid="uid://dhqcyipo3vh8w" path="res://assets/sprites/items/dead_rat.jpg" id="1_828gt"]
+[ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="1_dt16u"]
 
 [node name="DeadRat" type="Area2D" unique_id=1664426244]
+script = ExtResource("1_dt16u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1132232959]
 position = Vector2(944, 511)

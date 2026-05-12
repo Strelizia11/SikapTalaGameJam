@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://c35t4a6a2iojh"]
 
+[ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="1_crvn5"]
 [ext_resource type="Texture2D" uid="uid://cyu8d3qalqsr6" path="res://assets/sprites/items/poison_ivy.jpg" id="1_n5ati"]
 
 [node name="PoisonIvy" type="Area2D" unique_id=1888342992]
 position = Vector2(-360.99997, -381.99997)
 scale = Vector2(1.6243632, 1.5525599)
+script = ExtResource("1_crvn5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=149458305]
 position = Vector2(625.41626, 466.93158)
