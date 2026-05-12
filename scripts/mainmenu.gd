@@ -8,7 +8,8 @@ func _ready():
 	$Menu/Button3.pressed.connect(_on_credits_pressed)
 
 func _on_start_pressed():
-	# Change this path to your actual game scene
+	randomize()
+	InventoryManager.reset_kitchen_layout_for_new_game()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_quit_pressed():

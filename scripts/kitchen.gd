@@ -21,7 +21,7 @@ func _activate_one_random_variant_per_item() -> void:
 				variants.append(n)
 		if variants.is_empty():
 			continue
-		var keep_i := randi() % variants.size()
+		var keep_i := InventoryManager.get_or_roll_kitchen_variant(prefix, variants.size())
 		for j in range(variants.size()):
 			var node: Node = variants[j]
 			var on := j == keep_i
@@ -36,7 +36,6 @@ func _register_all_item_spawn_data() -> void:
 
 
 func _ready():
-	randomize()
 	_activate_one_random_variant_per_item()
 	_register_all_item_spawn_data()
 
