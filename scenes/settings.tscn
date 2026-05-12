@@ -1,12 +1,15 @@
-[gd_scene format=3 uid="uid://dl4k70o7fma6j"]
+[gd_scene format=3 uid="uid://bqunuv18og30h"]
 
 [ext_resource type="Script" uid="uid://cj61smrr0gahs" path="res://scripts/settings.gd" id="1_r6d6q"]
 [ext_resource type="Texture2D" uid="uid://dl0b5tyxmk7i7" path="res://assets/sprites/settings/settings4 (2).png" id="2_6wm04"]
 [ext_resource type="Texture2D" uid="uid://d0qebk5rskwud" path="res://assets/sprites/settings/settings-hover.png" id="3_6wm04"]
+[ext_resource type="Texture2D" uid="uid://d22n4r0ebnm1i" path="res://assets/sprites/settings/music.png" id="4_es4n0"]
+[ext_resource type="Texture2D" uid="uid://civ44bd66nr87" path="res://assets/sprites/settings/sfx.png" id="5_gis3k"]
 
 [node name="Settings" type="CanvasLayer" unique_id=2065002682]
 layer = 10
 script = ExtResource("1_r6d6q")
+metadata/_edit_vertical_guides_ = [962.0]
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=952203983]
 custom_minimum_size = Vector2(10, 10)
@@ -38,59 +41,87 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = 150.0
+offset_left = -281.0
+offset_top = -208.0
+offset_right = 265.62183
+offset_bottom = 240.14258
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.050086, 1.093402)
 
-[node name="SettingsContainer" type="VBoxContainer" parent="SettingsButton" unique_id=1117290072]
+[node name="Settings" type="Label" parent="SettingsButton" unique_id=1864695109]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Settings" type="Label" parent="SettingsButton/SettingsContainer" unique_id=1864695109]
-layout_mode = 2
+offset_left = 50.47203
+offset_top = 32.010216
+offset_right = 507.81097
+offset_bottom = 72.010216
+theme_override_font_sizes/font_size = 29
 text = "SETTINGS"
 horizontal_alignment = 1
 
-[node name="MusicContainer" type="HBoxContainer" parent="SettingsButton/SettingsContainer" unique_id=2003028938]
-layout_mode = 2
-theme_override_constants/separation = 27
+[node name="MusicIcon" type="TextureRect" parent="SettingsButton" unique_id=764282215]
+layout_mode = 0
+offset_left = 42.853516
+offset_top = 76.82031
+offset_right = 2560.414
+offset_bottom = 2382.5752
+scale = Vector2(0.046904765, 0.03609512)
+texture = ExtResource("4_es4n0")
 
-[node name="MusicLabel" type="Label" parent="SettingsButton/SettingsContainer/MusicContainer" unique_id=1014276554]
-layout_mode = 2
-text = "MUSIC"
+[node name="MusicSlider" type="HSlider" parent="SettingsButton" unique_id=1024539837]
+layout_mode = 0
+offset_left = 172.36685
+offset_top = 107.00546
+offset_right = 472.60916
+offset_bottom = 123.00546
+scale = Vector2(1.0086265, 2.0106046)
 
-[node name="MusicSlider" type="HSlider" parent="SettingsButton/SettingsContainer/MusicContainer" unique_id=1024539837]
-layout_mode = 2
+[node name="SFXIcon" type="TextureRect" parent="SettingsButton" unique_id=349520514]
+layout_mode = 0
+offset_left = 30.473633
+offset_top = 144.50293
+offset_right = 2823.6582
+offset_bottom = 2677.6865
+scale = Vector2(0.055572905, 0.04115838)
+texture = ExtResource("5_gis3k")
 
-[node name="SFXContainer" type="HBoxContainer" parent="SettingsButton/SettingsContainer" unique_id=400021887]
-layout_mode = 2
-theme_override_constants/separation = 50
+[node name="SFXSlider2" type="HSlider" parent="SettingsButton" unique_id=1162204457]
+layout_mode = 0
+offset_left = 169.50995
+offset_top = 169.19666
+offset_right = 475.44897
+offset_bottom = 195.20395
+scale = Vector2(1.0086265, 2.0106046)
 
-[node name="SFXLabel" type="Label" parent="SettingsButton/SettingsContainer/SFXContainer" unique_id=1102886464]
-layout_mode = 2
-text = "SFX"
-
-[node name="SFXHSlider" type="HSlider" parent="SettingsButton/SettingsContainer/SFXContainer" unique_id=932488010]
-layout_mode = 2
-
-[node name="RestartButton" type="Button" parent="SettingsButton/SettingsContainer" unique_id=149506463]
-layout_mode = 2
-text = "RESTART"
-
-[node name="MainMenuButton" type="Button" parent="SettingsButton/SettingsContainer" unique_id=1192044822]
-layout_mode = 2
+[node name="MainMenuButton" type="Button" parent="SettingsButton" unique_id=1192044822]
+layout_mode = 0
+offset_left = 52.376648
+offset_top = 310.04144
+offset_right = 340.37665
+offset_bottom = 341.04144
+scale = Vector2(1.51, 1.324)
 text = "MAIN MENU"
 
-[node name="CloseButton" type="Button" parent="SettingsButton/SettingsContainer" unique_id=420420247]
-layout_mode = 2
+[node name="RestartButton" type="Button" parent="SettingsButton" unique_id=149506463]
+layout_mode = 0
+offset_left = 51.424347
+offset_top = 255.16693
+offset_right = 339.42435
+offset_bottom = 286.16693
+scale = Vector2(1.51, 1.324)
+text = "RESTART"
+
+[node name="CloseButton" type="Button" parent="SettingsButton" unique_id=420420247]
+layout_mode = 0
+offset_left = 51.424347
+offset_top = 363.0869
+offset_right = 339.42435
+offset_bottom = 394.0869
+scale = Vector2(1.5100071, 1.4699814)
 text = "CLOSE"
 
-[connection signal="value_changed" from="SettingsButton/SettingsContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="SettingsButton/SettingsContainer/SFXContainer/SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]
-[connection signal="pressed" from="SettingsButton/SettingsContainer/RestartButton" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="SettingsButton/SettingsContainer/MainMenuButton" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="SettingsButton/SettingsContainer/CloseButton" to="." method="_on_close_pressed"]
+[connection signal="value_changed" from="SettingsButton/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SettingsButton/SFXSlider2" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="SettingsButton/MainMenuButton" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="SettingsButton/RestartButton" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="SettingsButton/CloseButton" to="." method="_on_close_pressed"]

@@ -12,12 +12,6 @@ func _ready():
 	overlay.hide()
 	texture_button.pressed.connect(_on_settings_button_pressed)
 	overlay.gui_input.connect(_on_overlay_input)
-	music_slider.min_value = 0.0
-	music_slider.max_value = 1.0
-	music_slider.value = 1.0
-	sfx_slider.min_value = 0.0
-	sfx_slider.max_value = 1.0
-	sfx_slider.value = 1.0
 	texture_button.mouse_entered.connect(_on_hover_enter)
 	texture_button.mouse_exited.connect(_on_hover_exit)
 
