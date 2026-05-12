@@ -8,9 +8,11 @@ var is_transitioning = false
 
 func _ready():
 	# When entering the kitchen, immediately fade in from black
-	transition_player.play("black_to_fade")
-	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$DoortoCorridor.pressed.connect(_on_corridor_door_pressed)
+	transition_player.play("black_to_fade")
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	await transition_player.animation_finished
+	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _on_corridor_door_pressed():
 	# If we are already mid-fade, don't do anything
