@@ -5,13 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://evq6h6olljf2" path="res://assets/sprites/Mainmenu/title with shadow.png" id="3_s5g8n"]
 [ext_resource type="FontFile" uid="uid://o41nvun1hoi6" path="res://assets/fonts/Capture it.ttf" id="4_7yvfd"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dfy5j"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3vvtq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dvvg"]
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5g8n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7yvfd"]
 
 [node name="MainMenu" type="Node2D" unique_id=2122324883]
 script = ExtResource("1_3vvtq")
@@ -37,32 +35,36 @@ texture = ExtResource("3_s5g8n")
 [node name="Menu" type="Node2D" parent="." unique_id=479611230]
 
 [node name="Button2" type="Button" parent="Menu" unique_id=1752917164]
-offset_left = 754.0
-offset_top = 611.0
-offset_right = 1123.0
-offset_bottom = 699.0
+offset_left = 658.0
+offset_top = 562.0
+offset_right = 1263.0
+offset_bottom = 613.0
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("4_7yvfd")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_dfy5j")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3vvtq")
 text = "START"
 
 [node name="Button3" type="Button" parent="Menu" unique_id=942328263]
-offset_left = 200.0
-offset_top = 715.0
-offset_right = 581.0
-offset_bottom = 770.0
+offset_left = 661.0
+offset_top = 625.0
+offset_right = 1266.0
+offset_bottom = 676.0
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
+theme_override_fonts/font = ExtResource("4_7yvfd")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s5g8n")
 text = "Credits"
 
 [node name="Button" type="Button" parent="Menu" unique_id=809085529]
-offset_left = 66.0
-offset_top = 800.0
-offset_right = 447.0
-offset_bottom = 855.0
+offset_left = 768.0
+offset_top = 686.0
+offset_right = 1149.0
+offset_bottom = 737.0
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_4dvvg")
+theme_override_fonts/font = ExtResource("4_7yvfd")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7yvfd")
 text = "Quit"
 
 [node name="PlayerNode" type="Node" parent="." unique_id=104507715]
