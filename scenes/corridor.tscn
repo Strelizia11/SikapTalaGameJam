@@ -19,15 +19,8 @@ script = ExtResource("1_mus4g")
 layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 texture = ExtResource("2_mus4g")
-
-[node name="KitchenDoor" type="TextureButton" parent="." unique_id=540994406]
-layout_mode = 0
-offset_left = 215.0
-offset_top = -3.0
-offset_right = 649.0
-offset_bottom = 1077.0
-texture_normal = ExtResource("3_7w20u")
 
 [node name="ToiletDoor" type="TextureButton" parent="." unique_id=1064743051]
 layout_mode = 0
@@ -36,15 +29,6 @@ offset_top = 331.0
 offset_right = 1314.0
 offset_bottom = 1099.0
 texture_normal = ExtResource("4_n8bhm")
-
-[node name="DoorClickArea" type="Area2D" parent="." unique_id=1510947013]
-script = ExtResource("5_7w20u")
-
-[node name="KitchenDoorEntry" type="CollisionPolygon2D" parent="DoorClickArea" unique_id=471158176]
-
-[node name="Sprite2D" type="Sprite2D" parent="DoorClickArea" unique_id=372083727]
-position = Vector2(429, 534)
-texture = ExtResource("3_7w20u")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1429369495]
 
@@ -60,5 +44,14 @@ offset_bottom = 666.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/SubmissionBox" unique_id=1575530615]
 
-[connection signal="pressed" from="KitchenDoor" to="." method="_on_kitchen_door_pressed"]
+[node name="DoorClickArea" type="Area2D" parent="." unique_id=1510947013]
+script = ExtResource("5_7w20u")
+
+[node name="KitchenDoorEntry" type="CollisionPolygon2D" parent="DoorClickArea" unique_id=471158176]
+polygon = PackedVector2Array(295, -1, 400, -1, 629, 248, 604, 907, 556, 914, 357, 1080, 220, 1078)
+
+[node name="Sprite2D" type="Sprite2D" parent="DoorClickArea" unique_id=372083727]
+position = Vector2(429, 534)
+texture = ExtResource("3_7w20u")
+
 [connection signal="pressed" from="ToiletDoor" to="." method="_on_toilet_door_pressed"]
