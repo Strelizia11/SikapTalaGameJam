@@ -9,6 +9,43 @@
 [ext_resource type="Script" uid="uid://dffiuvvm8tnok" path="res://scripts/door_click_area.gd" id="5_7w20u"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_n8bhm"]
 [ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="7_pblcb"]
+[ext_resource type="Texture2D" uid="uid://bpcto4vjqq0n5" path="res://assets/sprites/corridor/Candle-sprite.png" id="10_w32gw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f323m"]
+atlas = ExtResource("10_w32gw")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so7gr"]
+atlas = ExtResource("10_w32gw")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucmnp"]
+atlas = ExtResource("10_w32gw")
+region = Rect2(0, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbkn3"]
+atlas = ExtResource("10_w32gw")
+region = Rect2(2048, 2048, 2048, 2048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35wme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f323m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so7gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucmnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbkn3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Corridor" type="Control" unique_id=678202067]
 layout_mode = 3
@@ -65,3 +102,10 @@ texture = ExtResource("4_n8bhm")
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_n8bhm")]
 
 [node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("7_pblcb")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=624790421]
+position = Vector2(935.9999, 798)
+scale = Vector2(0.08332913, 0.12453866)
+sprite_frames = SubResource("SpriteFrames_35wme")
+autoplay = "default"
+frame_progress = 0.45842373

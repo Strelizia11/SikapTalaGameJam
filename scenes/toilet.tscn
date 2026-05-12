@@ -1,18 +1,30 @@
 [gd_scene format=3 uid="uid://dx5r2bycjsljf"]
 
 [ext_resource type="Script" uid="uid://cwfhyqlwom62x" path="res://scripts/toilet.gd" id="1_yyxms"]
-[ext_resource type="Texture2D" uid="uid://sa85r4bkrlem" path="res://assets/sprites/toilet.png" id="2_5rkpo"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_trc3a"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="3_itemgd"]
-[ext_resource type="Texture2D" uid="uid://cfu14y2hh7fem" path="res://assets/sprites/items/hankerchief.jpg" id="3_vwyy6"]
-[ext_resource type="Texture2D" uid="uid://dxsass2g70oh" path="res://assets/sprites/items/medicine.jpg" id="4_5rr3v"]
-[ext_resource type="Texture2D" uid="uid://bn3d4yspeeha2" path="res://assets/sprites/items/mirror.jpg" id="5_ca85b"]
+[ext_resource type="Texture2D" uid="uid://b5wb1asym3wbj" path="res://assets/sprites/toilet/red-toilet.png" id="3_vpw5y"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_5rr3v"]
 [ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="7_ca85b"]
-[ext_resource type="Texture2D" uid="uid://ciap6ae0dk74r" path="res://assets/sprites/items/burnt_envelope.jpg" id="9_vpw5y"]
-[ext_resource type="Texture2D" uid="uid://pbvq302jh7sn" path="res://assets/sprites/items/poison_vial.jpg" id="10_ngyxh"]
+[ext_resource type="Texture2D" uid="uid://b6xym82565b4w" path="res://assets/sprites/items/handkerchief__0.png" id="8_7omob"]
+[ext_resource type="Texture2D" uid="uid://fg44rmy64t7j" path="res://assets/sprites/items/handkerchief_2.png" id="9_avvqk"]
+[ext_resource type="Texture2D" uid="uid://bt8qfym2jaldm" path="res://assets/sprites/items/medicine_2.png" id="10_lakhi"]
+[ext_resource type="Texture2D" uid="uid://donps7tqxjrg3" path="res://assets/sprites/items/handkerchief_1.png" id="10_s2vth"]
 [ext_resource type="Script" uid="uid://bikqepauq3emu" path="res://scripts/drop_zone.gd" id="10_trc3a"]
-[ext_resource type="Texture2D" uid="uid://c5eh7k4ihnxxl" path="res://assets/sprites/items/scream_painting.jpg" id="11_vb6ry"]
+[ext_resource type="Texture2D" uid="uid://b7p0vbg25dgar" path="res://assets/sprites/items/medicine_0.png" id="11_2smms"]
+[ext_resource type="Texture2D" uid="uid://dewos8cma1avr" path="res://assets/sprites/items/mirror_0.png" id="11_yrvql"]
+[ext_resource type="Texture2D" uid="uid://c5mohf27otig6" path="res://assets/sprites/items/mirror_1.png" id="12_mtxkc"]
+[ext_resource type="Texture2D" uid="uid://bei5h6pln8tb4" path="res://assets/sprites/items/medicine_1.png" id="12_wovh3"]
+[ext_resource type="Texture2D" uid="uid://d3f63isq7anvp" path="res://assets/sprites/items/mirror_2.png" id="13_7omob"]
+[ext_resource type="Texture2D" uid="uid://dfb5ta53s3ijh" path="res://assets/sprites/items/poison_0.png" id="15_avvqk"]
+[ext_resource type="Texture2D" uid="uid://d0ochyheg5nd7" path="res://assets/sprites/items/poison_1.png" id="16_s2vth"]
+[ext_resource type="Texture2D" uid="uid://b5wagg40qbqru" path="res://assets/sprites/items/poison_2.png" id="17_2smms"]
+[ext_resource type="Texture2D" uid="uid://37gq6sqvk1ji" path="res://assets/sprites/items/painting_0.png" id="18_wovh3"]
+[ext_resource type="Texture2D" uid="uid://boygtjpn1p2kh" path="res://assets/sprites/items/painting_1.png" id="19_0m2nw"]
+[ext_resource type="Texture2D" uid="uid://b8pkahpkv45by" path="res://assets/sprites/items/envelop_0.png" id="19_s2vth"]
+[ext_resource type="Texture2D" uid="uid://c7a45hseks2vq" path="res://assets/sprites/items/envelop_1.png" id="20_2smms"]
+[ext_resource type="Texture2D" uid="uid://8v0ukj0ysjhp" path="res://assets/sprites/items/painting_2.png" id="20_j0w2j"]
+[ext_resource type="Texture2D" uid="uid://bm4v6dnfok81q" path="res://assets/sprites/items/envelop_2.png" id="21_wovh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b3qh"]
 size = Vector2(350, 70)
@@ -33,14 +45,14 @@ script = ExtResource("1_yyxms")
 layout_mode = 0
 offset_right = 1913.0
 offset_bottom = 1080.0
-texture = ExtResource("2_5rkpo")
+texture = ExtResource("3_vpw5y")
 
 [node name="door" type="TextureButton" parent="." unique_id=1533863027]
 layout_mode = 0
-offset_left = 720.0
-offset_top = 51.0
-offset_right = 1175.0
-offset_bottom = 790.0
+offset_left = -3.0
+offset_top = 157.0
+offset_right = 243.0
+offset_bottom = 926.0
 
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_5rr3v")]
 
@@ -61,82 +73,121 @@ offset_right = 188.0
 offset_bottom = 37.0
 
 [node name="Hankerchief_0" type="Area2D" parent="." unique_id=82761294]
+position = Vector2(-319, 87)
 script = ExtResource("3_itemgd")
 item_name = "bloody-handkerchief"
 room_name = "toilet"
 
 [node name="hankerchief_img" type="Sprite2D" parent="Hankerchief_0" unique_id=84258554]
-position = Vector2(1463.0001, 806)
-scale = Vector2(0.14517125, 0.16162121)
-texture = ExtResource("3_vwyy6")
+position = Vector2(1430.5, 776)
+scale = Vector2(0.7215192, 1.1100003)
+texture = ExtResource("8_7omob")
 
 [node name="hankerchief_poly" type="CollisionPolygon2D" parent="Hankerchief_0" unique_id=1826596355]
-polygon = PackedVector2Array(1404, 724, 1522, 723, 1523, 888, 1403, 889)
+polygon = PackedVector2Array(1370, 744, 1436, 681, 1507, 806, 1403, 889)
+
+[node name="ScreamPainting_0" type="Area2D" parent="." unique_id=1152608392]
+position = Vector2(341, 433)
+script = ExtResource("3_itemgd")
+item_name = "scream-painting"
+room_name = "toilet"
+
+[node name="Sprite2D" type="Sprite2D" parent="ScreamPainting_0" unique_id=975913219]
+position = Vector2(552.5, 428.49997)
+scale = Vector2(1.3990824, 0.8254544)
+texture = ExtResource("18_wovh3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScreamPainting_0" unique_id=1615410489]
+polygon = PackedVector2Array(535, 349, 655, 395, 632, 439, 595, 476, 544, 519, 421, 465)
 
 [node name="Hankerchief_1" type="Area2D" parent="." unique_id=82761295]
+position = Vector2(100, 513)
 script = ExtResource("3_itemgd")
 item_name = "bloody-handkerchief"
 room_name = "toilet"
 
 [node name="hankerchief_img" type="Sprite2D" parent="Hankerchief_1" unique_id=84258555]
-position = Vector2(300, 500)
-scale = Vector2(0.14517125, 0.16162121)
-texture = ExtResource("3_vwyy6")
+position = Vector2(338.5, 463.5)
+scale = Vector2(1.0669644, 1.2176471)
+texture = ExtResource("9_avvqk")
 
 [node name="hankerchief_poly" type="CollisionPolygon2D" parent="Hankerchief_1" unique_id=1826596356]
-polygon = PackedVector2Array(241, 418, 359, 417, 360, 582, 240, 583)
+polygon = PackedVector2Array(336, 405, 442, 421, 376, 544, 236, 532)
 
 [node name="Hankerchief_2" type="Area2D" parent="." unique_id=82761296]
+position = Vector2(13, 580)
 script = ExtResource("3_itemgd")
 item_name = "bloody-handkerchief"
 room_name = "toilet"
 
 [node name="hankerchief_img" type="Sprite2D" parent="Hankerchief_2" unique_id=84258556]
-position = Vector2(900, 250)
-scale = Vector2(0.14517125, 0.16162121)
-texture = ExtResource("3_vwyy6")
+position = Vector2(901.5, 298.50003)
+scale = Vector2(0.7249997, 0.9085713)
+texture = ExtResource("10_s2vth")
 
 [node name="hankerchief_poly" type="CollisionPolygon2D" parent="Hankerchief_2" unique_id=1826596357]
-polygon = PackedVector2Array(841, 168, 959, 167, 960, 332, 840, 333)
+polygon = PackedVector2Array(913, 243, 979, 274, 919, 346, 826, 309, 872, 273)
 
 [node name="Medicine_0" type="Area2D" parent="." unique_id=853549931]
+position = Vector2(465, -348)
 script = ExtResource("3_itemgd")
 item_name = "medicine"
 room_name = "toilet"
 
 [node name="medicine_img" type="Sprite2D" parent="Medicine_0" unique_id=1839273015]
 position = Vector2(262, 760)
-scale = Vector2(0.23410767, 0.3115235)
-texture = ExtResource("4_5rr3v")
+scale = Vector2(1.3766234, 1.688312)
+texture = ExtResource("11_2smms")
 
 [node name="medicine_poly" type="CollisionPolygon2D" parent="Medicine_0" unique_id=1969957746]
-polygon = PackedVector2Array(202, 680, 323, 681, 322, 841, 202, 840)
+polygon = PackedVector2Array(258, 713, 281, 712, 285, 809, 246, 806)
 
 [node name="Medicine_1" type="Area2D" parent="." unique_id=853549932]
+position = Vector2(-403, -165)
 script = ExtResource("3_itemgd")
 item_name = "medicine"
 room_name = "toilet"
 
 [node name="medicine_img" type="Sprite2D" parent="Medicine_1" unique_id=1839273016]
-position = Vector2(1600, 700)
-scale = Vector2(0.23410767, 0.3115235)
-texture = ExtResource("4_5rr3v")
+position = Vector2(1599.5, 710.5)
+scale = Vector2(1.1511631, 1.6860468)
+texture = ExtResource("12_wovh3")
 
 [node name="medicine_poly" type="CollisionPolygon2D" parent="Medicine_1" unique_id=1969957747]
-polygon = PackedVector2Array(1540, 620, 1661, 621, 1660, 781, 1540, 780)
+polygon = PackedVector2Array(1593, 658, 1616, 660, 1615, 689, 1618, 754, 1587, 758, 1588, 689)
+
+[node name="ScreamPainting_1" type="Area2D" parent="." unique_id=1152608393]
+position = Vector2(-41, -33)
+scale = Vector2(0.7566165, 0.84221065)
+script = ExtResource("3_itemgd")
+item_name = "scream-painting"
+room_name = "toilet"
+
+[node name="Sprite2D" type="Sprite2D" parent="ScreamPainting_1" unique_id=975913220]
+position = Vector2(1321, 503)
+scale = Vector2(1.9634144, 1.7804877)
+texture = ExtResource("19_0m2nw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScreamPainting_1" unique_id=1615410490]
+position = Vector2(21, 0)
+polygon = PackedVector2Array(1210, 387, 1391, 378, 1393, 622, 1212, 623)
 
 [node name="Medicine_2" type="Area2D" parent="." unique_id=853549933]
+position = Vector2(594.00006, -479)
+scale = Vector2(0.97584337, 1.0144886)
 script = ExtResource("3_itemgd")
 item_name = "medicine"
 room_name = "toilet"
 
 [node name="medicine_img" type="Sprite2D" parent="Medicine_2" unique_id=1839273017]
-position = Vector2(750, 900)
-scale = Vector2(0.23410767, 0.3115235)
-texture = ExtResource("4_5rr3v")
+position = Vector2(758.2381, 907.50006)
+scale = Vector2(0.9878739, 0.89721173)
+texture = ExtResource("10_lakhi")
 
 [node name="medicine_poly" type="CollisionPolygon2D" parent="Medicine_2" unique_id=1969957748]
-polygon = PackedVector2Array(690, 820, 811, 821, 810, 981, 690, 980)
+position = Vector2(2.0495093, 0.98571837)
+scale = Vector2(1.002198, 1.0225614)
+polygon = PackedVector2Array(744.3852, 862.753, 763.8128, 861.78906, 766.8803, 882.0324, 764.83527, 909.98755, 741.3177, 913.8434, 740.2951, 886.8523)
 
 [node name="Mirror_0" type="Area2D" parent="." unique_id=1165236434]
 script = ExtResource("3_itemgd")
@@ -144,157 +195,145 @@ item_name = "mirror"
 room_name = "toilet"
 
 [node name="mirror_img" type="Sprite2D" parent="Mirror_0" unique_id=83884144]
-position = Vector2(143.99997, 299)
-scale = Vector2(0.4746549, 0.47381258)
-texture = ExtResource("5_ca85b")
+position = Vector2(829, 396)
+scale = Vector2(0.85607374, 1.0195323)
+texture = ExtResource("11_yrvql")
 
 [node name="mirror_poly" type="CollisionPolygon2D" parent="Mirror_0" unique_id=1856716032]
-polygon = PackedVector2Array(23, 137, 264, 136, 266, 460, 23, 461)
+position = Vector2(-31.046324, 21.804323)
+scale = Vector2(0.37782922, 0.43365383)
+polygon = PackedVector2Array(2227.6997, 644.31714, 2308.0437, 775.26276, 2305.397, 1008.1674, 2231.2893, 1045.0631)
 
 [node name="Mirror_1" type="Area2D" parent="." unique_id=1165236435]
+position = Vector2(19, -21)
 script = ExtResource("3_itemgd")
 item_name = "mirror"
 room_name = "toilet"
 
 [node name="mirror_img" type="Sprite2D" parent="Mirror_1" unique_id=83884145]
-position = Vector2(1700, 300)
-scale = Vector2(0.4746549, 0.47381258)
-texture = ExtResource("5_ca85b")
+position = Vector2(937.9781, 424.76117)
+scale = Vector2(1.0697486, 1.0395297)
+texture = ExtResource("12_mtxkc")
 
 [node name="mirror_poly" type="CollisionPolygon2D" parent="Mirror_1" unique_id=1856716033]
-polygon = PackedVector2Array(1580, 138, 1821, 137, 1821, 461, 1580, 462)
+position = Vector2(-668, 246)
+polygon = PackedVector2Array(1580, 141, 1637, 122, 1637, 230, 1583, 233)
 
 [node name="Mirror_2" type="Area2D" parent="." unique_id=1165236436]
+position = Vector2(3, -5)
 script = ExtResource("3_itemgd")
 item_name = "mirror"
 room_name = "toilet"
 
 [node name="mirror_img" type="Sprite2D" parent="Mirror_2" unique_id=83884146]
-position = Vector2(557.9999, 584.00006)
-scale = Vector2(0.4746549, 0.47381258)
-texture = ExtResource("5_ca85b")
+position = Vector2(1100, 393)
+scale = Vector2(0.87729263, 0.7910226)
+texture = ExtResource("13_7omob")
 
 [node name="mirror_poly" type="CollisionPolygon2D" parent="Mirror_2" unique_id=1856716034]
-position = Vector2(-345, -28)
-polygon = PackedVector2Array(779, 438, 1020, 437, 1020, 761, 779, 762)
+position = Vector2(305, -326)
+polygon = PackedVector2Array(780, 695, 802, 665, 807, 789, 776, 783)
 
 [node name="Envelope_0" type="Area2D" parent="." unique_id=663310417]
+position = Vector2(-901, 530)
 script = ExtResource("3_itemgd")
 item_name = "envelope"
 room_name = "toilet"
 
 [node name="Sprite2D" type="Sprite2D" parent="Envelope_0" unique_id=1068043411]
-position = Vector2(1488.75, 350.25)
-scale = Vector2(1.0152543, 1.0087719)
-texture = ExtResource("9_vpw5y")
+position = Vector2(1518.8585, 380.93423)
+scale = Vector2(1.3148415, 1.3140875)
+texture = ExtResource("19_s2vth")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envelope_0" unique_id=2010554255]
-polygon = PackedVector2Array(1390, 270, 1590, 270, 1590, 430, 1390, 430)
+polygon = PackedVector2Array(1441, 267, 1545, 284, 1579, 437, 1443, 419)
 
 [node name="Envelope_1" type="Area2D" parent="." unique_id=663310418]
+position = Vector2(1096, 525)
 script = ExtResource("3_itemgd")
 item_name = "envelope"
 room_name = "toilet"
 
 [node name="Sprite2D" type="Sprite2D" parent="Envelope_1" unique_id=1068043412]
-position = Vector2(400, 200)
+position = Vector2(452.00003, 473.00003)
 scale = Vector2(1.0152543, 1.0087719)
-texture = ExtResource("9_vpw5y")
+texture = ExtResource("20_2smms")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envelope_1" unique_id=2010554256]
-polygon = PackedVector2Array(302, 120, 502, 120, 502, 280, 302, 280)
+position = Vector2(71, 290)
+polygon = PackedVector2Array(335, 121, 463, 135, 411, 242, 249, 238, 277, 200)
 
 [node name="Envelope_2" type="Area2D" parent="." unique_id=663310419]
+position = Vector2(-106, -70)
 script = ExtResource("3_itemgd")
 item_name = "envelope"
 room_name = "toilet"
 
 [node name="Sprite2D" type="Sprite2D" parent="Envelope_2" unique_id=1068043413]
-position = Vector2(1100, 800)
-scale = Vector2(1.0152543, 1.0087719)
-texture = ExtResource("9_vpw5y")
+position = Vector2(1095.3234, 852.1688)
+scale = Vector2(0.976763, 0.4625012)
+texture = ExtResource("21_wovh3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envelope_2" unique_id=2010554257]
-polygon = PackedVector2Array(1002, 720, 1202, 720, 1202, 880, 1002, 880)
+polygon = PackedVector2Array(1089, 822, 1200, 861, 1089, 884, 1007, 838)
 
 [node name="PoisonVial_0" type="Area2D" parent="." unique_id=1068169136]
+position = Vector2(135, -439)
 script = ExtResource("3_itemgd")
 item_name = "poison-vial"
 room_name = "toilet"
 
 [node name="Sprite2D" type="Sprite2D" parent="PoisonVial_0" unique_id=2012898270]
-position = Vector2(554, 855)
-texture = ExtResource("10_ngyxh")
+position = Vector2(548, 850)
+scale = Vector2(1.1494254, 1.6781609)
+texture = ExtResource("15_avvqk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PoisonVial_0" unique_id=421345326]
-polygon = PackedVector2Array(514, 770, 594, 770, 594, 940, 514, 940)
+polygon = PackedVector2Array(535, 796, 565, 797, 557, 819, 561.96375, 835.2329, 568, 902, 530, 906, 533, 854, 541, 825)
 
 [node name="PoisonVial_1" type="Area2D" parent="." unique_id=1068169137]
-position = Vector2(741, 299.00003)
+position = Vector2(417.99994, -310.99997)
 scale = Vector2(0.55459696, 0.74879575)
 script = ExtResource("3_itemgd")
 item_name = "poison-vial"
 room_name = "toilet"
 
 [node name="Sprite2D" type="Sprite2D" parent="PoisonVial_1" unique_id=2012898271]
-position = Vector2(1696, 905)
-texture = ExtResource("10_ngyxh")
+position = Vector2(1685.9092, 906.7893)
+scale = Vector2(2.1078577, 1.2775844)
+texture = ExtResource("16_s2vth")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PoisonVial_1" unique_id=421345327]
 position = Vector2(-50.487118, 315.17273)
-polygon = PackedVector2Array(1710, 515, 1790, 515, 1790, 685, 1710, 685)
+polygon = PackedVector2Array(1725.5775, 556.89417, 1752.6241, 560.9006, 1759.8365, 583.6037, 1763.4427, 629.00995, 1711.1527, 629.00995, 1709.3495, 580.93274)
 
 [node name="PoisonVial_2" type="Area2D" parent="." unique_id=1068169138]
-position = Vector2(-7.0000005, 346)
+position = Vector2(1071, -332)
 scale = Vector2(0.62565345, 0.6877872)
 script = ExtResource("3_itemgd")
 item_name = "poison-vial"
 room_name = "toilet"
 
 [node name="Sprite2D" type="Sprite2D" parent="PoisonVial_2" unique_id=2012898272]
-position = Vector2(210, 895)
-texture = ExtResource("10_ngyxh")
+position = Vector2(219.77022, 910.1653)
+scale = Vector2(1.4841627, 1.0541043)
+texture = ExtResource("17_2smms")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PoisonVial_2" unique_id=421345328]
-polygon = PackedVector2Array(160, 815, 240, 815, 240, 985, 160, 985)
-
-[node name="ScreamPainting_0" type="Area2D" parent="." unique_id=1152608392]
-position = Vector2(-394, 314)
-script = ExtResource("3_itemgd")
-item_name = "scream-painting"
-room_name = "toilet"
-
-[node name="Sprite2D" type="Sprite2D" parent="ScreamPainting_0" unique_id=975913219]
-position = Vector2(551, 364)
-scale = Vector2(0.24487706, 0.24916667)
-texture = ExtResource("11_vb6ry")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScreamPainting_0" unique_id=1615410489]
-polygon = PackedVector2Array(420, 180, 680, 180, 680, 550, 420, 550)
-
-[node name="ScreamPainting_1" type="Area2D" parent="." unique_id=1152608393]
-script = ExtResource("3_itemgd")
-item_name = "scream-painting"
-room_name = "toilet"
-
-[node name="Sprite2D" type="Sprite2D" parent="ScreamPainting_1" unique_id=975913220]
-position = Vector2(1300, 500)
-scale = Vector2(0.24487706, 0.24916667)
-texture = ExtResource("11_vb6ry")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScreamPainting_1" unique_id=1615410490]
-polygon = PackedVector2Array(1169, 316, 1429, 316, 1429, 686, 1169, 686)
+polygon = PackedVector2Array(209.3811, 876.72473, 236.55273, 879.63257, 236.55273, 888.3562, 241.34766, 901.44165, 238.151, 942.1519, 196.59448, 940.698, 198.19275, 901.44165, 207.78271, 889.8101)
 
 [node name="ScreamPainting_2" type="Area2D" parent="." unique_id=1152608394]
+position = Vector2(-1016, -228)
+scale = Vector2(0.88433653, 0.8012133)
 script = ExtResource("3_itemgd")
 item_name = "scream-painting"
 room_name = "toilet"
 
 [node name="Sprite2D" type="Sprite2D" parent="ScreamPainting_2" unique_id=975913221]
-position = Vector2(1797, 658)
-scale = Vector2(0.24487706, 0.24916667)
-texture = ExtResource("11_vb6ry")
+position = Vector2(1737, 724)
+scale = Vector2(1.205714, 1.3092549)
+texture = ExtResource("20_j0w2j")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScreamPainting_2" unique_id=1615410491]
 position = Vector2(1670, 48)
-polygon = PackedVector2Array(-31, 416, 229, 416, 229, 786, -31, 786)
+polygon = PackedVector2Array(-88, 447, 153, 442, 160, 856, -96, 852)

@@ -20,7 +20,9 @@ var item_textures = {
 	"envelope": preload("res://assets/sprites/items/burnt_envelope.jpg"),
 	"medicine": preload("res://assets/sprites/items/medicine.jpg"),
 	"poison-vial": preload("res://assets/sprites/items/poison_vial.jpg"),
-	"mirror": preload("res://assets/sprites/items/mirror.jpg"),
+	"mirror0": preload("res://assets/sprites/items/mirror_0.png"),
+	"mirror1": preload("res://assets/sprites/items/mirror_1.png"),
+	"mirror2": preload("res://assets/sprites/items/mirror_2.png"),
 	"scream-painting": preload("res://assets/sprites/items/scream_painting.jpg"),
 }
 
