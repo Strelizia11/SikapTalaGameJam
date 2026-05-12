@@ -48,10 +48,11 @@ offset_bottom = 666.0
 script = ExtResource("5_7w20u")
 
 [node name="KitchenDoorEntry" type="CollisionPolygon2D" parent="DoorClickArea" unique_id=471158176]
+position = Vector2(-0.29999542, 8.300018)
 polygon = PackedVector2Array(295, -1, 400, -1, 629, 248, 604, 907, 556, 914, 357, 1080, 220, 1078)
 
 [node name="Sprite2D" type="Sprite2D" parent="DoorClickArea" unique_id=372083727]
-position = Vector2(429, 534)
+position = Vector2(428.7, 542.30005)
 texture = ExtResource("3_7w20u")
 
 [connection signal="pressed" from="ToiletDoor" to="." method="_on_toilet_door_pressed"]

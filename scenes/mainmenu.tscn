@@ -19,12 +19,9 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_3vvtq")
 
-[node name="KitchenDoor" type="TextureButton" parent="." unique_id=1504121003]
-offset_left = 215.0
-offset_top = -3.0
-offset_right = 649.0
-offset_bottom = 1077.0
-texture_normal = ExtResource("3_s5g8n")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1770784387]
+position = Vector2(428.7, 542.30005)
+texture = ExtResource("3_s5g8n")
 
 [node name="ToiletDoor" type="TextureButton" parent="." unique_id=1109381016]
 offset_left = 1076.0
