@@ -1,11 +1,12 @@
-[gd_scene format=3 uid="uid://drd3psy5pqfpp"]
+[gd_scene format=3 uid="uid://dx5r2bycjsljf"]
 
 [ext_resource type="Script" uid="uid://cwfhyqlwom62x" path="res://scripts/toilet.gd" id="1_yyxms"]
-[ext_resource type="Texture2D" uid="uid://ctq0xt0w7lnr2" path="res://assets/sprites/toilet.png" id="2_5rkpo"]
+[ext_resource type="Texture2D" uid="uid://sa85r4bkrlem" path="res://assets/sprites/toilet.png" id="2_5rkpo"]
 [ext_resource type="Texture2D" uid="uid://cfu14y2hh7fem" path="res://assets/sprites/items/hankerchief.jpg" id="3_vwyy6"]
 [ext_resource type="Texture2D" uid="uid://dxsass2g70oh" path="res://assets/sprites/items/medicine.jpg" id="4_5rr3v"]
 [ext_resource type="Texture2D" uid="uid://bn3d4yspeeha2" path="res://assets/sprites/items/mirror.jpg" id="5_ca85b"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_5rr3v"]
+[ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="7_ca85b"]
 
 [sub_resource type="GDScript" id="GDScript_5rr3v"]
 resource_name = "res://scripts/item.gd"
@@ -100,3 +101,5 @@ texture = ExtResource("5_ca85b")
 
 [node name="mirror_poly" type="CollisionPolygon2D" parent="Item/mirror" unique_id=1856716032]
 polygon = PackedVector2Array(23, 137, 264, 136, 266, 460, 23, 461)
+
+[node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("7_ca85b")]

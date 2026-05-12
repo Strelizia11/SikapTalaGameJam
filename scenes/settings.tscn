@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dl4k70o7fma6j"]
+
+[ext_resource type="Script" uid="uid://cj61smrr0gahs" path="res://scripts/settings.gd" id="1_r6d6q"]
+[ext_resource type="Texture2D" uid="uid://copdkkesmgfj0" path="res://assets/sprites/settings/settings.png" id="2_6wm04"]
+
+[node name="Settings" type="CanvasLayer" unique_id=2065002682]
+script = ExtResource("1_r6d6q")
+
+[node name="SettingsButton" type="Panel" parent="." unique_id=2124644341]
+custom_minimum_size = Vector2(400, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsContainer" type="VBoxContainer" parent="SettingsButton" unique_id=1117290072]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Settings" type="Label" parent="SettingsButton/SettingsContainer" unique_id=1864695109]
+layout_mode = 2
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="MusicContainer" type="HBoxContainer" parent="SettingsButton/SettingsContainer" unique_id=2003028938]
+layout_mode = 2
+theme_override_constants/separation = 27
+
+[node name="MusicLabel" type="Label" parent="SettingsButton/SettingsContainer/MusicContainer" unique_id=1014276554]
+layout_mode = 2
+text = "MUSIC"
+
+[node name="MusicSlider" type="HSlider" parent="SettingsButton/SettingsContainer/MusicContainer" unique_id=1024539837]
+layout_mode = 2
+
+[node name="SFXContainer" type="HBoxContainer" parent="SettingsButton/SettingsContainer" unique_id=400021887]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="SFXLabel" type="Label" parent="SettingsButton/SettingsContainer/SFXContainer" unique_id=1102886464]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFXHSlider" type="HSlider" parent="SettingsButton/SettingsContainer/SFXContainer" unique_id=932488010]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="SettingsButton/SettingsContainer" unique_id=149506463]
+layout_mode = 2
+text = "RESTART"
+
+[node name="MainMenuButton" type="Button" parent="SettingsButton/SettingsContainer" unique_id=1192044822]
+layout_mode = 2
+text = "MAIN MENU"
+
+[node name="CloseButton" type="Button" parent="SettingsButton/SettingsContainer" unique_id=420420247]
+layout_mode = 2
+text = "CLOSE"
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=952203983]
+offset_left = 1776.0
+offset_top = 44.000004
+offset_right = 2553.0
+offset_bottom = 844.0
+scale = Vector2(0.1325021, 0.11865279)
+texture_normal = ExtResource("2_6wm04")
+
+[connection signal="value_changed" from="SettingsButton/SettingsContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SettingsButton/SettingsContainer/SFXContainer/SFXHSlider" to="." method="_on_sfxh_slider_value_changed"]
+[connection signal="pressed" from="SettingsButton/SettingsContainer/RestartButton" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="SettingsButton/SettingsContainer/MainMenuButton" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="SettingsButton/SettingsContainer/CloseButton" to="." method="_on_close_pressed"]

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bb6tbirr85iud" path="res://assets/sprites/corridor/door-close-bathroom.png" id="4_n8bhm"]
 [ext_resource type="Script" uid="uid://dffiuvvm8tnok" path="res://scripts/door_click_area.gd" id="5_7w20u"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_n8bhm"]
+[ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="7_pblcb"]
 
 [node name="Corridor" type="Control" unique_id=678202067]
 layout_mode = 3
@@ -59,3 +60,5 @@ position = Vector2(1173, 596)
 texture = ExtResource("4_n8bhm")
 
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_n8bhm")]
+
+[node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("7_pblcb")]
