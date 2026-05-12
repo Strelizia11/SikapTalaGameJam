@@ -10,14 +10,14 @@ anchor_left = -0.30600002
 anchor_top = 1.174
 anchor_right = -0.30600002
 anchor_bottom = 1.174
-offset_left = 1338.52
-offset_top = -222.91992
-offset_right = 5866.52
-offset_bottom = 1329.08
+offset_left = 1370.52
+offset_top = -223.91992
+offset_right = 6394.52
+offset_bottom = 1328.08
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.07804137, -0.06704653)
-theme_override_constants/separation = 8
+theme_override_constants/separation = 256
 
 [node name="Slot1" type="TextureRect" parent="InventoryBar" unique_id=1227483685]
 custom_minimum_size = Vector2(80, 80)
