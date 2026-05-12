@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_pblcb"]
 [ext_resource type="Texture2D" uid="uid://dxvhn7f40q84o" path="res://assets/sprites/corridor/door-close-kitchen.png" id="3_7w20u"]
 [ext_resource type="Texture2D" uid="uid://bb6tbirr85iud" path="res://assets/sprites/corridor/door-close-bathroom.png" id="4_n8bhm"]
+[ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="4_uiklb"]
 [ext_resource type="Script" uid="uid://dffiuvvm8tnok" path="res://scripts/door_click_area.gd" id="5_7w20u"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_n8bhm"]
 [ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="7_pblcb"]
@@ -31,15 +32,17 @@ texture = ExtResource("2_mus4g")
 
 [node name="PromtWall" type="RichTextLabel" parent="Node2D" unique_id=683854158]
 offset_left = 838.0
-offset_top = 417.0
+offset_top = 402.0
 offset_right = 1062.0
-offset_bottom = 685.0
+offset_bottom = 695.0
 
-[node name="SubmissionBox" type="Area2D" parent="Node2D" unique_id=433386369]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/SubmissionBox" unique_id=1166887402]
+[node name="SubmissionBox" type="Area2D" parent="Node2D" unique_id=433386369 groups=["submission_zone"]]
+script = ExtResource("4_uiklb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/SubmissionBox" unique_id=1575530615]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/SubmissionBox" unique_id=163855683]
+polygon = PackedVector2Array(839, 407, 836, 694, 1057, 698, 1062, 426, 1047, 404)
 
 [node name="DoorClickArea" type="Area2D" parent="." unique_id=1510947013]
 script = ExtResource("5_7w20u")
