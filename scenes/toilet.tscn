@@ -4,7 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_trc3a"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="3_itemgd"]
 [ext_resource type="Texture2D" uid="uid://cvg0r0d48e3ho" path="res://assets/sprites/toilet/Bathroom_blue.png" id="3_s2vth"]
+[ext_resource type="Script" uid="uid://7pvd05xycsnu" path="res://scripts/Kitchen-background.gd" id="4_e4gda"]
+[ext_resource type="Texture2D" uid="uid://dgfbtqiu6xy78" path="res://assets/sprites/toilet/Bathroom_red.png" id="5_1bevo"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_5rr3v"]
+[ext_resource type="Texture2D" uid="uid://ccuqxfwub016f" path="res://assets/sprites/toilet/Bathroom_violet.png" id="6_pxlr2"]
 [ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="7_ca85b"]
 [ext_resource type="Texture2D" uid="uid://b6xym82565b4w" path="res://assets/sprites/items/handkerchief__0.png" id="8_7omob"]
 [ext_resource type="Texture2D" uid="uid://dlewh6njxc6mj" path="res://assets/sprites/items/silhouette/s-handkerchief_0.png" id="8_tx3g6"]
@@ -57,6 +60,13 @@ mouse_filter = 2
 script = ExtResource("1_yyxms")
 
 [node name="Transition" parent="." unique_id=1276352948 instance=ExtResource("2_trc3a")]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=502061868]
+position = Vector2(967.5, 538)
+scale = Vector2(1.0171875, 1)
+texture = ExtResource("3_s2vth")
+script = ExtResource("4_e4gda")
+background_textures = Array[Texture2D]([ExtResource("3_s2vth"), ExtResource("5_1bevo"), ExtResource("6_pxlr2")])
 
 [node name="toilet" type="TextureRect" parent="." unique_id=212424301]
 layout_mode = 0

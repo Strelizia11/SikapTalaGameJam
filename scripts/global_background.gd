@@ -12,43 +12,43 @@ const PROMPTS = [
 		"text": "BRING ME WHAT NO LONGER LIVES",
 		"answer": "dead-flower",
 		"bg1": "res://assets/sprites/kitchen/BLUE.png",
-		"bg2": "res://assets/sprites/kitchen/BLUE.png"
+		"bg2": "res://assets/sprites/toilet/bathroom_blue.png"
 	},
 	{
 		"text": "BRING ME THE FACE YOU HIDE BEHIND",
 		"answer": "surgical-mask",
 		"bg1": "res://assets/sprites/kitchen/VIOLET.png",
-		"bg2": "res://assets/sprites/kitchen/VIOLET.png"
+		"bg2": "res://assets/sprites/toilet/bathroom_violet.png"
 	},
 	{
 		"text": "BRING ME WHAT KEEPS WATCHING",
 		"answer": "clock",
 		"bg1": "res://assets/sprites/kitchen/RED.png",
-		"bg2": "res://assets/sprites/kitchen/RED.png"
+		"bg2": "res://assets/sprites/toilet/bathroom_red.png"
 	},
 	{
 		"text": "BRING ME WHAT ENDS THINGS",
 		"answer": "knife",
 		"bg1": "res://assets/sprites/kitchen/RED.png",
-		"bg2": "res://assets/sprites/kitchen/RED.png"
+		"bg2": "res://assets/sprites/toilet/bathroom_red.png"
 	},
 	{
 		"text": "BRING ME THE STAIN THAT REFUSES TO HIDE GUILT",
 		"answer": "bloody-handkerchief",
 		"bg1": "res://assets/sprites/kitchen/RED.png",
-		"bg2": "res://assets/sprites/kitchen/RED.png"
+		"bg2": "res://assets/sprites/toilet/bathroom_red.png"
 	},
 	{
 		"text": "BRING ME WHAT LETS YOU FORGET THE PAIN",
 		"answer": "medicine",
 		"bg1": "res://assets/sprites/kitchen/BLUE.png",
-		"bg2": "res://assets/sprites/kitchen/BLUE.png"
+		"bg2": "res://assets/sprites/toilet/bathroom_blue.png"
 	},
 	{
 		"text": "BRING ME THE ONE THAT LIES TO YOU",
 		"answer": "mirror",
 		"bg1": "res://assets/sprites/kitchen/VIOLET.png",
-		"bg2": "res://assets/sprites/kitchen/VIOLET.png"
+		"bg2": "res://assets/sprites/toilet/bathroom_violet.png"
 	}
 ]
 

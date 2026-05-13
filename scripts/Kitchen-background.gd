@@ -4,5 +4,5 @@ extends Sprite2D
 @export var background_textures: Array[Texture2D]
 
 func _ready():
-	var path = GlobalBackground.current_bg_path1
+	var path = GlobalBackground.current_bg_path2
 	texture = load(path)
