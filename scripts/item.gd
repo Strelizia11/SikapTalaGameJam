@@ -2,7 +2,6 @@ extends Area2D
 
 @export var item_name: String = ""
 @export var room_name: String = ""
-
 var dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 var _run_active: bool = true
@@ -14,6 +13,8 @@ func _ready():
 	input_pickable = true
 	_original_transform = transform
 	call_deferred("_ensure_spawn_registered")
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 
 func _ensure_spawn_registered() -> void:
 	if is_in_group("items"):
@@ -35,11 +36,11 @@ func set_run_active(on: bool) -> void:
 		monitorable = false
 		process_mode = Node.PROCESS_MODE_DISABLED
 		dragging = false
+		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)
 
 func finish_kitchen_spawn_setup() -> void:
 	if not _run_active:
 		return
-	# If correctly submitted before, delete this node immediately
 	if InventoryManager.is_permanently_removed(item_name):
 		queue_free()
 		return
@@ -71,6 +72,7 @@ func _start_drag():
 	dragging = true
 	drag_offset = get_global_mouse_position() - global_position
 	z_index = 100
+	DisplayServer.cursor_set_shape(DisplayServer.CURSOR_DRAG)
 	for zone in get_tree().get_nodes_in_group("drop_zone"):
 		if zone.has_method("show_zone"):
 			zone.show_zone()
@@ -87,6 +89,7 @@ func _input(event):
 func _stop_drag():
 	dragging = false
 	z_index = 10
+	DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)
 	for zone in get_tree().get_nodes_in_group("drop_zone"):
 		zone.hide_zone()
 	await get_tree().physics_frame
@@ -109,6 +112,7 @@ func _stop_drag():
 			_snap_back()
 	else:
 		_snap_back()
+
 func _apply_spawn_local() -> void:
 	transform = _original_transform
 	if _home_sprite_scale_known:
@@ -126,5 +130,9 @@ func _snap_back():
 	_apply_spawn_local()
 	print("Missed or rejected, snapping back")
 
-func _return_to_start():
-	_apply_spawn_local()
+func _on_mouse_entered():
+	DisplayServer.cursor_set_shape(DisplayServer.CURSOR_DRAG)
+
+func _on_mouse_exited():
+	if not dragging:
+		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)

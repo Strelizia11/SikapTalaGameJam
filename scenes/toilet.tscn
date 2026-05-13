@@ -165,7 +165,7 @@ polygon = PackedVector2Array(913, 243, 979, 274, 919, 346, 826, 309, 872, 273)
 [node name="Sprite2D" type="Sprite2D" parent="Hankerchief_2" unique_id=1676375166]
 position = Vector2(900.45825, 292.07553)
 rotation = 0.1432235
-scale = Vector2(0.8722602, 0.9177111)
+scale = Vector2(0.8722602, 0.91771114)
 texture = ExtResource("11_eu7jt")
 
 [node name="Medicine_0" type="Area2D" parent="." unique_id=853549931]
