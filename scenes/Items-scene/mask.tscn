@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
 [ext_resource type="Texture2D" uid="uid://cll8n6e32vr6x" path="res://assets/sprites/items/FaceMask.png" id="2_osmkn"]
+[ext_resource type="Texture2D" uid="uid://cdb8ce5g2t2fp" path="res://assets/sprites/items/silhouette/S-Mask.png" id="3_28y53"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28y53"]
 radius = 21.0
@@ -12,7 +13,7 @@ script = ExtResource("2_item")
 item_name = "surgical-mask"
 room_name = "kitchen"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=495247491]
+[node name="MainImage" type="Sprite2D" parent="." unique_id=495247491]
 position = Vector2(760, 411.00003)
 scale = Vector2(1.126777, 1.0193586)
 texture = ExtResource("2_osmkn")
@@ -21,3 +22,8 @@ texture = ExtResource("2_osmkn")
 position = Vector2(764, 410)
 rotation = -1.5463617
 shape = SubResource("CapsuleShape2D_28y53")
+
+[node name="Silhouette" type="Sprite2D" parent="." unique_id=235933473]
+position = Vector2(762, 404)
+scale = Vector2(1.1428568, 1)
+texture = ExtResource("3_28y53")

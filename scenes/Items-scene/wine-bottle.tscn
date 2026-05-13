@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="1_p448l"]
 [ext_resource type="Texture2D" uid="uid://bm35jj8p0sltn" path="res://assets/sprites/items/broken_wine_bottle.png" id="2_p448l"]
+[ext_resource type="Texture2D" uid="uid://dv7bn8m0kmpr3" path="res://assets/sprites/items/silhouette/S-broken winds bottle.png" id="3_dw7ni"]
 
 [node name="WineBottle" type="Area2D" unique_id=755064597]
 position = Vector2(-10, 4)
@@ -9,9 +10,14 @@ script = ExtResource("1_p448l")
 item_name = "wine-bottle"
 room_name = "kitchen"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=897540650]
+[node name="MainImage" type="Sprite2D" parent="." unique_id=897540650]
 position = Vector2(916, 366)
 texture = ExtResource("2_p448l")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1712014297]
 polygon = PackedVector2Array(900, 309, 897, 305, 899, 302, 904, 301, 906, 296, 909, 295, 912, 296, 915, 297, 916, 300, 922, 303, 924, 305, 923, 308, 920, 310, 919, 308, 917, 309, 917, 321, 919, 326, 921, 327, 921, 335, 931, 347, 931, 352, 929, 354, 931, 357, 931, 365, 928, 370, 918, 373, 916, 380, 918, 386, 916, 391, 911, 396, 914, 417, 916, 420, 914, 425, 913, 432, 914, 436, 913, 439, 911, 438, 907, 433, 901, 426, 898, 405, 899, 375, 897, 353, 905, 340, 902, 336, 901, 331, 905, 328, 905, 306)
+
+[node name="Silhouette" type="Sprite2D" parent="." unique_id=2093948216]
+position = Vector2(914, 364.25)
+scale = Vector2(1.0833342, 1.0294118)
+texture = ExtResource("3_dw7ni")
