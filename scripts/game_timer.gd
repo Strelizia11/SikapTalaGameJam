@@ -80,7 +80,7 @@ func _ready() -> void:
 	_label.grow_vertical   = Control.GROW_DIRECTION_END
 	_label.offset_left   = 16
 	_label.offset_top    = 16
-	_label.offset_right  = 220
+	_label.offset_right  = 230
 	_label.offset_bottom = 80
 
 	_canvas.add_child(_label)
