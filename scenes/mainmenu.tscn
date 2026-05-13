@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3st5qwmrqc6t"]
 
 [ext_resource type="Script" uid="uid://uge474spuj3" path="res://scripts/mainmenu.gd" id="1_3vvtq"]
-[ext_resource type="Texture2D" uid="uid://bg0dfm8tqupol" path="res://assets/sprites/corridor/Updated Corridor (1).png" id="2_3vvtq"]
+[ext_resource type="Texture2D" uid="uid://bpooaxvso688b" path="res://assets/sprites/corridor/Updated Corridor (1).png" id="2_3vvtq"]
 [ext_resource type="Texture2D" uid="uid://evq6h6olljf2" path="res://assets/sprites/Mainmenu/title with shadow.png" id="3_s5g8n"]
 [ext_resource type="FontFile" uid="uid://o41nvun1hoi6" path="res://assets/fonts/Capture it.ttf" id="4_7yvfd"]
 [ext_resource type="AudioStream" uid="uid://btj6qypwybmrq" path="res://assets/music/Corridor.wav" id="5_s5g8n"]
