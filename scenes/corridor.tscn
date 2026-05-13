@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://dqnjiv3shkbv"]
 
 [ext_resource type="Script" uid="uid://7uusf4ginnru" path="res://scripts/corridor.gd" id="1_mus4g"]
-[ext_resource type="PackedScene" path="res://scenes/transition.tscn" id="2_pblcb"]
+[ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_pblcb"]
 [ext_resource type="Texture2D" uid="uid://c1r5x5ygvftow" path="res://assets/sprites/corridor/NEW CORRIDOR2_20260513091404.png" id="3_uiklb"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="4_uiklb"]
 [ext_resource type="FontFile" uid="uid://knqd4358nyay" path="res://assets/fonts/Witchwoode-Regular.ttf" id="4_w32gw"]
 [ext_resource type="Script" uid="uid://dffiuvvm8tnok" path="res://scripts/door_click_area.gd" id="5_7w20u"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_n8bhm"]
 [ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="7_pblcb"]
+[ext_resource type="AudioStream" uid="uid://bcjgbygwi5sne" path="res://assets/sound/Door_sfx.wav" id="7_w32gw"]
 [ext_resource type="Texture2D" uid="uid://bpcto4vjqq0n5" path="res://assets/sprites/corridor/Candle-sprite.png" id="10_w32gw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f323m"]
@@ -93,6 +94,11 @@ polygon = PackedVector2Array(116, -2, 203, -2, 367, 174, 368, 905, 356, 924, 330
 
 [node name="ToiletDoorEntry" type="CollisionPolygon2D" parent="DoorClickArea" unique_id=1187493840]
 polygon = PackedVector2Array(1549, 174, 1720, 1, 1805, 1, 1806, 480, 1807, 1081, 1711, 1081, 1584, 927, 1563, 926, 1548, 912, 1549, 587)
+
+[node name="DoorSFX" type="AudioStreamPlayer" parent="DoorClickArea" unique_id=1417995818]
+stream = ExtResource("7_w32gw")
+volume_db = 24.0
+playback_type = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=624790421]
 position = Vector2(956.3355, 793.2638)

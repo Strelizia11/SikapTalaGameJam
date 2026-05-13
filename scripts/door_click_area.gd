@@ -20,10 +20,11 @@ func _input(event):
 			enter_room("res://scenes/kitchen.tscn")
 		elif Geometry2D.is_point_in_polygon(get_local_mouse_position(), poly2.polygon):
 			enter_room("res://scenes/toilet.tscn")
-
+			
 func enter_room(scene_path):
 	is_transitioning = true
 	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	AudioManager.play_sfx(preload("res://assets/sound/Door_sfx.wav"))
 	transition_player.play("fade_to_black")
 	await transition_player.animation_finished
 	get_tree().change_scene_to_file(scene_path)

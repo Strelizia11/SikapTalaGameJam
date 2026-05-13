@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dououhaa11u7k"]
 
-[ext_resource type="PackedScene" uid="uid://bt0olvr55dvt1" path="res://scenes/corridor.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dqnjiv3shkbv" path="res://scenes/corridor.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bgfk1t40ccqjd" path="res://scripts/StartGame.gd" id="1_yqjtg"]
 
 [node name="game" type="Node2D" unique_id=1666702378]
