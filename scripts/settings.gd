@@ -63,7 +63,7 @@ func _on_hover_enter():
 		return
 	var tween = create_tween()
 	tween.tween_property(texture_button, "scale", Vector2(0.15, 0.135), 0.15)
-	tween.parallel().tween_property(texture_button, "rotation_degrees", 20.0, 0.15)
+	tween.parallel().tween_property(texture_button, "rotation_degrees", 1.0, 0.15)
 
 func _on_hover_exit():
 	if not texture_button:

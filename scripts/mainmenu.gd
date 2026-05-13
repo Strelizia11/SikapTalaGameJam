@@ -1,11 +1,22 @@
 extends Node2D
 
+@onready var transition_player = $Transition/Transitions/AnimationPlayer
+@onready var overlay1 = $Transition/Transitions/ColorRect
+@onready var overlay2 = $Transition/Transitions/TextureRect
+
 func _ready():
-	# Connect the buttons to their functions
+	
 	$Menu/Button2.pressed.connect(_on_start_pressed)
 	$Menu/Button.pressed.connect(_on_quit_pressed)
-	# Optional: connect Credits button too
 	$Menu/Button3.pressed.connect(_on_credits_pressed)
+	
+	transition_player.play("Trigger")
+	overlay1.mouse_filter = Control.MOUSE_FILTER_STOP
+	overlay2.mouse_filter = Control.MOUSE_FILTER_STOP
+	await transition_player.animation_finished
+	
+	overlay1.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	overlay2.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _on_start_pressed():
 	randomize()
