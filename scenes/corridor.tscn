@@ -110,4 +110,3 @@ frame_progress = 0.45842373
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_n8bhm")]
 
 [node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("7_pblcb")]
-visible = false
