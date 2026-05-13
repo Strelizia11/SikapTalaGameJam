@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c8xoi7dwhuuwm" path="res://scripts/kitchen.gd" id="1_e4uee"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="4_6022o"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="5_cwfnw"]
-[ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="6_qnge3"]
-[ext_resource type="Script" path="res://scripts/door-to-corridor.gd" id="6_ud40p"]
+[ext_resource type="PackedScene" uid="uid://bqunuv18og30h" path="res://scenes/settings.tscn" id="6_qnge3"]
+[ext_resource type="Script" uid="uid://cljv6tvkkqpki" path="res://scripts/door-to-corridor.gd" id="6_ud40p"]
 [ext_resource type="Script" uid="uid://7pvd05xycsnu" path="res://scripts/Kitchen-background.gd" id="7_dqq82"]
 [ext_resource type="Texture2D" uid="uid://c8rfqlo8a8k7e" path="res://assets/sprites/kitchen/BLUE.png" id="8_20l34"]
 [ext_resource type="Texture2D" uid="uid://mcb28kptf0rb" path="res://assets/sprites/kitchen/RED.png" id="9_4fgkg"]
@@ -85,7 +85,7 @@ position = Vector2(363.00003, 261)
 scale = Vector2(0.54428035, 0.54389393)
 
 [node name="Blade_2" parent="." unique_id=1526478258 instance=ExtResource("21_blade")]
-position = Vector2(-97.99997, 690)
+position = Vector2(170.99997, 676)
 scale = Vector2(0.54428035, 0.54389393)
 
 [node name="Clock_0" parent="." unique_id=1461724119 instance=ExtResource("22_clock")]
@@ -101,15 +101,15 @@ position = Vector2(196, 177.00002)
 scale = Vector2(0.554742, 0.57135916)
 
 [node name="DeadFlower_0" parent="." unique_id=1074452135 instance=ExtResource("23_dflower")]
-position = Vector2(576, 460.00003)
+position = Vector2(1331.0001, 3.0000076)
 scale = Vector2(0.11443475, 0.23328944)
 
 [node name="DeadFlower_1" parent="." unique_id=566292559 instance=ExtResource("23_dflower")]
-position = Vector2(827.0001, 573.9999)
+position = Vector2(436, 294.99997)
 scale = Vector2(0.24038926, 0.27368087)
 
 [node name="DeadFlower_2" parent="." unique_id=644805724 instance=ExtResource("23_dflower")]
-position = Vector2(1272, 643.9999)
+position = Vector2(761, 298.99997)
 scale = Vector2(0.24038926, 0.27368087)
 
 [node name="DeadRat_0" parent="." unique_id=637937295 instance=ExtResource("24_drat")]
@@ -145,13 +145,15 @@ position = Vector2(18.999985, 687)
 scale = Vector2(0.6802112, 0.7048098)
 
 [node name="WineBottle_0" parent="." unique_id=868990940 instance=ExtResource("27_wbottle")]
-position = Vector2(1157, 358)
+position = Vector2(1191, 39)
+rotation = 0.15009831
 scale = Vector2(0.7178783, 0.7267864)
 
 [node name="WineBottle_1" parent="." unique_id=774638839 instance=ExtResource("27_wbottle")]
-position = Vector2(739.00006, 274)
+position = Vector2(552, -33)
+rotation = 1.446878
 scale = Vector2(0.6397476, 0.6812048)
 
 [node name="WineBottle_2" parent="." unique_id=703056886 instance=ExtResource("27_wbottle")]
-position = Vector2(-279, 550)
+position = Vector2(-443, 600)
 scale = Vector2(0.80895543, 0.717699)
