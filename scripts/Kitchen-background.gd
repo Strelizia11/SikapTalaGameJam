@@ -5,5 +5,9 @@ extends Sprite2D
  
 func _ready():
 	var path = GlobalBackground.current_bg_path1
+	var music = GlobalBackground.bgm_path
 	texture = load(path)
+	AudioManager.play_bgm(load(music))
+	
+	
  
