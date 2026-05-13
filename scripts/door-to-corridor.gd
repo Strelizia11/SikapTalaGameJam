@@ -17,8 +17,6 @@ func _input(event):
 func enter_room(scene_path):
 	is_transitioning = true
 	overlay1.mouse_filter = Control.MOUSE_FILTER_STOP
-	if has_node("/root/AudioManager"):  # ✅ safe check
-		AudioManager.play_sfx()  # replace some_sound with your actual sound
 	transition_player.play("fade_to_black")
 	await transition_player.animation_finished
 	get_tree().change_scene_to_file(scene_path)
