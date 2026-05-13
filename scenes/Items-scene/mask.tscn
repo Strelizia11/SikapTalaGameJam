@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2ts602ygi6qo"]
 
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
-[ext_resource type="Texture2D" uid="uid://cll8n6e32vr6x" path="res://assets/sprites/items/Face Mask.png" id="2_osmkn"]
+[ext_resource type="Texture2D" uid="uid://cll8n6e32vr6x" path="res://assets/sprites/items/FaceMask.png" id="2_osmkn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28y53"]
 radius = 21.0

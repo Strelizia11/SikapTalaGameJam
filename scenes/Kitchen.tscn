@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="4_6022o"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="5_cwfnw"]
 [ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="6_qnge3"]
-[ext_resource type="Script" path="res://scripts/door-to-corridor.gd" id="6_ud40p"]
+[ext_resource type="Script" uid="uid://cljv6tvkkqpki" path="res://scripts/door-to-corridor.gd" id="6_ud40p"]
 [ext_resource type="Script" uid="uid://7pvd05xycsnu" path="res://scripts/Kitchen-background.gd" id="7_dqq82"]
 [ext_resource type="Texture2D" uid="uid://c8rfqlo8a8k7e" path="res://assets/sprites/kitchen/BLUE.png" id="8_20l34"]
 [ext_resource type="Texture2D" uid="uid://mcb28kptf0rb" path="res://assets/sprites/kitchen/RED.png" id="9_4fgkg"]

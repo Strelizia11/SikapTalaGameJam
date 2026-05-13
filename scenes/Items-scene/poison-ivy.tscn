@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c35t4a6a2iojh"]
 
-[ext_resource type="Texture2D" uid="uid://7uxqhyc7rbjv" path="res://assets/sprites/items/poison ivy.png" id="2_crvn5"]
+[ext_resource type="Texture2D" uid="uid://7uxqhyc7rbjv" path="res://assets/sprites/items/poisonivy.png" id="2_crvn5"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
 
 [node name="PoisonIvy" type="Area2D" unique_id=1888342992]

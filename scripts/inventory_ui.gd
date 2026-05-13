@@ -8,14 +8,14 @@ extends CanvasLayer
 ]
 
 var item_textures = {
-	"dead-flower": preload("res://assets/sprites/items/dead_flower.jpg"),
-	"poison-ivy": preload("res://assets/sprites/items/poison_ivy.jpg"),
-	"surgical-mask": preload("res://assets/sprites/items/mask.jpg"),
-	"dead-rat": preload("res://assets/sprites/items/dead_rat.jpg"),
-	"clock": preload("res://assets/sprites/items/clock.jpg"),
-	"blade": preload("res://assets/sprites/items/rusted_saw_blade.jpg"),
-	"knife": preload("res://assets/sprites/items/knife.jpg"),
-	"wine-bottle": preload("res://assets/sprites/items/broken_wine_bottle.jpg"),
+	"dead-flower": preload("res://assets/sprites/items/Dead_Flowers.png"),
+	"poison-ivy": preload("res://assets/sprites/items/poisonivy.png"),
+	"surgical-mask": preload("res://assets/sprites/items/FaceMask.png"),
+	"dead-rat": preload("res://assets/sprites/items/dead_Rat.png"),
+	"clock": preload("res://assets/sprites/items/clock.png"),
+	"blade": preload("res://assets/sprites/items/saw_Wheel.png"),
+	"knife": preload("res://assets/sprites/items/Knife.png"),
+	"wine-bottle": preload("res://assets/sprites/items/broken_wine_bottle.png"),
 	"bloody-handkerchief": preload("res://assets/sprites/items/silhouette/s-handkerchief_0.png"),
 	"envelope": preload("res://assets/sprites/items/silhouette/s-envelop_0.png"),
 	"medicine": preload("res://assets/sprites/items/silhouette/s-medicine_0.png"),
