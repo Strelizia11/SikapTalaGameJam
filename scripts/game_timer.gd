@@ -36,15 +36,14 @@ func resume_timer() -> void:
 		_running = true
 
 func reset_timer() -> void:
-	# Call this before ANY scene change to main menu or restart.
-	# Fully wipes all state so the next game starts clean.
+	# Full reset of all state
 	_running       = false
 	_dead          = false
 	_death_started = false
 	_time_left     = GAMEPLAY_DURATION
+	_refresh_label()
 	if _label:
 		_label.visible = false
-	_refresh_label()
 
 func reduce_time(seconds: float) -> void:
 	if not _running or _dead:
@@ -86,6 +85,8 @@ func _ready() -> void:
 
 	_canvas.add_child(_label)
 
+	# Don't auto-start timer - wait for scene to call start_timer()
+
 func _process(delta: float) -> void:
 	if not _running or _dead:
 		return
@@ -99,7 +100,7 @@ func _process(delta: float) -> void:
 # ── internal ──────────────────────────────────────────────────────────────────
 
 func _refresh_label() -> void:
-	if _label:
+	if _label and is_instance_valid(_label):
 		_label.text = get_time_left_formatted()
 
 func _on_time_up() -> void:
@@ -112,25 +113,28 @@ func _on_time_up() -> void:
 	_do_death()
 
 func _do_death() -> void:
-	# Prevent stacked awaits from multiple death triggers making the game unclickable
 	if _death_started:
 		return
 	_death_started = true
 
 	# ── JUMPSCARE PLACEHOLDER ─────────────────────────────────────────────────
-	# Replace the await below with your jumpscare scene once it's ready.
-	# Example:
-	#   var js = preload("res://scenes/jumpscare.tscn").instantiate()
-	#   get_tree().current_scene.add_child(js)
-	#   js.play()
-	#   await js.finished
 	await get_tree().create_timer(1.0).timeout
 	# ── END JUMPSCARE PLACEHOLDER ─────────────────────────────────────────────
 
 	if not is_instance_valid(self):
 		return
 
-	GlobalBackground.reset_prompts()
-	InventoryManager.clear_inventory()
-	reset_timer()  # hides label + wipes state before scene change
+	# Use call_deferred to avoid issues during scene cleanup
+	call_deferred("_change_to_main_menu")
+
+func _change_to_main_menu() -> void:
+	# Reset everything before changing scene
+	reset_timer()
+	
+	# Clear any pending signals
+	_running = false
+	_dead = false
+	_death_started = false
+	
+	# Change scene
 	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
