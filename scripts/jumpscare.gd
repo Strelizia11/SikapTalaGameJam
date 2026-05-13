@@ -5,9 +5,10 @@ signal finished
 @onready var video: VideoStreamPlayer = $VideoStreamPlayer
 
 func play() -> void:
-
+		
+	AudioManager.stop_bgm()
 	video.play()
-
+	
 	await _wait_for_video_end()
 
 	emit_signal("finished")
