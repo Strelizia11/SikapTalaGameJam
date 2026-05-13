@@ -6,9 +6,9 @@ extends Node2D
 
 func _ready():
 	
-	$Menu/Button2.pressed.connect(_on_start_pressed)
-	$Menu/Button.pressed.connect(_on_quit_pressed)
-	$Menu/Button3.pressed.connect(_on_credits_pressed)
+	$Menu/START.pressed.connect(_on_start_pressed)
+	$Menu/QUIT.pressed.connect(_on_quit_pressed)
+	$Menu/CREDITS.pressed.connect(_on_credits_pressed)
 	
 	transition_player.play("Trigger")
 	overlay1.mouse_filter = Control.MOUSE_FILTER_STOP

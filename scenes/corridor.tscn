@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqnjiv3shkbv"]
 
 [ext_resource type="Script" uid="uid://7uusf4ginnru" path="res://scripts/corridor.gd" id="1_mus4g"]
-[ext_resource type="PackedScene" path="res://scenes/transition.tscn" id="2_pblcb"]
+[ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_pblcb"]
 [ext_resource type="Texture2D" uid="uid://c1r5x5ygvftow" path="res://assets/sprites/corridor/NEW CORRIDOR2_20260513091404.png" id="3_uiklb"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="4_uiklb"]
 [ext_resource type="FontFile" uid="uid://knqd4358nyay" path="res://assets/fonts/Witchwoode-Regular.ttf" id="4_w32gw"]
@@ -104,4 +104,3 @@ frame_progress = 0.45842373
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_n8bhm")]
 
 [node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("7_pblcb")]
-visible = false

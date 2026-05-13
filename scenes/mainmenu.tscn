@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://d3st5qwmrqc6t"]
 
 [ext_resource type="Script" uid="uid://uge474spuj3" path="res://scripts/mainmenu.gd" id="1_3vvtq"]
-[ext_resource type="Texture2D" uid="uid://bg0dfm8tqupol" path="res://assets/sprites/corridor/Updated Corridor (1).png" id="2_3vvtq"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_7yvfd"]
+[ext_resource type="Texture2D" uid="uid://c1r5x5ygvftow" path="res://assets/sprites/corridor/NEW CORRIDOR2_20260513091404.png" id="2_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://evq6h6olljf2" path="res://assets/sprites/Mainmenu/title with shadow.png" id="3_s5g8n"]
-[ext_resource type="FontFile" uid="uid://o41nvun1hoi6" path="res://assets/fonts/Capture it.ttf" id="4_7yvfd"]
+[ext_resource type="FontFile" uid="uid://c7qw3t3t6hxb1" path="res://assets/fonts/BebasNeue-Regular.ttf" id="4_7yvfd"]
 [ext_resource type="AudioStream" uid="uid://btj6qypwybmrq" path="res://assets/music/Corridor.wav" id="5_s5g8n"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3vvtq"]
@@ -19,7 +19,7 @@ script = ExtResource("1_3vvtq")
 [node name="Background" type="TextureRect" parent="." unique_id=1028230537]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_3vvtq")
+texture = ExtResource("2_s5g8n")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=58938616]
 color = Color(0.5370987, 0.5370987, 0.5370987, 1)
@@ -36,36 +36,37 @@ texture = ExtResource("3_s5g8n")
 
 [node name="Menu" type="Node2D" parent="." unique_id=479611230]
 
-[node name="Button2" type="Button" parent="Menu" unique_id=1752917164]
-offset_left = 658.0
-offset_top = 562.0
-offset_right = 1263.0
-offset_bottom = 613.0
+[node name="START" type="Button" parent="Menu" unique_id=1752917164]
+offset_left = 653.0
+offset_top = 574.0
+offset_right = 1258.0
+offset_bottom = 701.0
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("4_7yvfd")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 95
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3vvtq")
 text = "START"
 
-[node name="Button3" type="Button" parent="Menu" unique_id=942328263]
-offset_left = 661.0
-offset_top = 625.0
-offset_right = 1266.0
-offset_bottom = 676.0
+[node name="CREDITS" type="Button" parent="Menu" unique_id=942328263]
+offset_left = 654.0
+offset_top = 707.0
+offset_right = 1259.0
+offset_bottom = 834.0
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("4_7yvfd")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 95
 theme_override_styles/normal = SubResource("StyleBoxEmpty_s5g8n")
 text = "Credits"
 
-[node name="Button" type="Button" parent="Menu" unique_id=809085529]
-offset_left = 768.0
-offset_top = 686.0
-offset_right = 1149.0
-offset_bottom = 737.0
+[node name="QUIT" type="Button" parent="Menu" unique_id=809085529]
+offset_left = 654.00006
+offset_top = 834.0
+offset_right = 1108.0
+offset_bottom = 961.0
+scale = Vector2(1.338041, 1.0290921)
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("4_7yvfd")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 95
 theme_override_styles/normal = SubResource("StyleBoxEmpty_7yvfd")
 text = "Quit"
 
@@ -78,3 +79,4 @@ stream = ExtResource("5_s5g8n")
 autoplay = true
 
 [node name="Transition" parent="." unique_id=1276352948 instance=ExtResource("2_7yvfd")]
+position = Vector2(-64, 22)
