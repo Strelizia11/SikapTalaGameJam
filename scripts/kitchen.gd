@@ -1,7 +1,8 @@
 extends Control
 
 @onready var transition_player = $Transition/Transitions/AnimationPlayer
-@onready var overlay = $Transition/Transitions/ColorRect
+@onready var overlay1 = $Transition/Transitions/ColorRect
+@onready var overlay2 = $Transition/Transitions/TextureRect
 
 # The lock to prevent clicking while transitioning
 var is_transitioning = false
@@ -46,7 +47,9 @@ func _ready():
 				item_node.visible = false
 
 	transition_player.play("black_to_fade")
-	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	overlay1.mouse_filter = Control.MOUSE_FILTER_STOP
+	overlay2.mouse_filter = Control.MOUSE_FILTER_STOP
 	await transition_player.animation_finished
-	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	overlay1.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	overlay2.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$Inventory.current_room = "kitchen"
