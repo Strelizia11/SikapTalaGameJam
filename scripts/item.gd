@@ -8,6 +8,7 @@ var _run_active: bool = true
 var _home_sprite_scale: Vector2 = Vector2.ONE
 var _home_sprite_scale_known: bool = false
 var _original_transform: Transform2D
+var _input_blocked: bool = false
 
 func _ready():
 	input_pickable = true
@@ -58,6 +59,9 @@ func _get_sprite() -> Node2D:
 	return null
 
 func _input_event(_viewport, event, _shape_idx):
+	if _input_blocked:
+		return
+	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and not dragging:
@@ -92,12 +96,15 @@ func _stop_drag():
 	DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)
 	for zone in get_tree().get_nodes_in_group("drop_zone"):
 		zone.hide_zone()
+	
 	await get_tree().physics_frame
+	
 	var hit_zone = null
 	for zone in get_tree().get_nodes_in_group("drop_zone"):
 		if overlaps_area(zone):
 			hit_zone = zone
 			break
+	
 	if hit_zone:
 		var sprite = _get_sprite()
 		var tex = sprite.texture if sprite else null
@@ -122,17 +129,34 @@ func _apply_spawn_local() -> void:
 
 func restore_from_inventory_pickup() -> void:
 	if not _run_active:
-		return
+		# Re-activate the item if it was inactive
+		set_run_active(true)
+	
 	visible = true
 	_apply_spawn_local()
+	
+	# Ensure the item is properly registered again
+	if not is_in_group("items"):
+		add_to_group("items")
+	
+	print("Restored from inventory pickup: ", item_name)
 
 func _snap_back():
 	_apply_spawn_local()
-	print("Missed or rejected, snapping back")
+	print("Missed or rejected, snapping back: ", item_name)
 
 func _on_mouse_entered():
 	DisplayServer.cursor_set_shape(DisplayServer.CURSOR_DRAG)
 
 func _on_mouse_exited():
 	if not dragging:
-		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)	
+		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)
+
+func set_input_blocked(blocked: bool) -> void:
+	_input_blocked = blocked
+	if blocked:
+		if dragging:
+			_stop_drag()
+		input_pickable = false
+	else:
+		input_pickable = true

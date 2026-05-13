@@ -113,3 +113,6 @@ func clear_inventory():
 	picked_up_items.clear()
 	permanently_removed.clear()
 	print("Inventory cleared")
+
+func restore_spawn_transform(item_name: String, new_transform: Transform2D) -> void:
+	item_spawn_transforms[item_name] = new_transform
