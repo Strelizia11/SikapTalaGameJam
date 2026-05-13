@@ -8,10 +8,19 @@ var _run_active: bool = true
 var _home_sprite_scale: Vector2 = Vector2.ONE
 var _home_sprite_scale_known: bool = false
 var _original_transform: Transform2D
+var _revealed: bool = false
+var silhouette: Node2D = null
+var main_image: Node2D = null
 
 func _ready():
 	input_pickable = true
 	_original_transform = transform
+	silhouette = get_node_or_null("Silhouette")
+	main_image = get_node_or_null("MainImage")
+	if silhouette:
+		silhouette.visible = true
+	if main_image:
+		main_image.visible = false
 	call_deferred("_ensure_spawn_registered")
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
@@ -62,6 +71,24 @@ func _input_event(_viewport, event, _shape_idx):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and not dragging:
 				_start_drag()
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			if event.pressed:
+				_try_reveal()
+
+func _try_reveal():
+	if _revealed:
+		print("Already revealed!")
+		return
+	if not RoundManager.can_use_reveal():
+		print("No reveals left this round!")
+		return
+	RoundManager.use_reveal()
+	_revealed = true
+	if silhouette:
+		silhouette.visible = false
+	if main_image:
+		main_image.visible = true
+	print("Revealed: ", item_name)
 
 func _start_drag():
 	if not _run_active:
@@ -135,4 +162,4 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	if not dragging:
-		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)	
+		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)

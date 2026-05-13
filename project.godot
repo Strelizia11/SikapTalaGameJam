@@ -25,6 +25,7 @@ InventoryManager="*uid://f0av8i2xufin"
 GlobalTimer="*uid://c005iymmww1jb"
 GlobalBackground="*uid://bpylrwys7dxt2"
 GameTimer="*uid://baf50rlpts0oq"
+RoundManager="*uid://cr5xupv1jid6i"
 
 [display]
 

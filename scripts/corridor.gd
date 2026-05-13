@@ -49,6 +49,7 @@ func _on_feedback_timeout() -> void:
 	if GlobalBackground.current_prompt_data.get("text", "") != prompt_text.text:
 		var was_correct: bool = (prompt_text.text == "CORRECT...")
 		if was_correct:
+			RoundManager.reset_round()
 			var has_more: bool = GlobalBackground.pick_new_prompt()
 			if not has_more:
 				_trigger_win()
@@ -67,6 +68,7 @@ func _trigger_win() -> void:
 
 	GlobalBackground.reset_prompts()
 	InventoryManager.clear_inventory()
+	RoundManager.reset_game()
 
 	# Reset timer (hides label) before going to main menu
 	if has_node("/root/GameTimer"):
