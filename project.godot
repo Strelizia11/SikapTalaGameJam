@@ -26,6 +26,7 @@ GlobalTimer="*uid://c005iymmww1jb"
 GlobalBackground="*uid://bpylrwys7dxt2"
 GameTimer="*uid://baf50rlpts0oq"
 AudioManager="*uid://lcmsla4la8d4"
+RoundManager="*uid://cr5xupv1jid6i"
 
 [display]
 
