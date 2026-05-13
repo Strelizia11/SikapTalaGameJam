@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bqunuv18og30h"]
+[gd_scene format=3 uid="uid://dl4k70o7fma6j"]
 
 [ext_resource type="Script" uid="uid://cj61smrr0gahs" path="res://scripts/settings.gd" id="1_r6d6q"]
 [ext_resource type="Texture2D" uid="uid://dl0b5tyxmk7i7" path="res://assets/sprites/settings/settings4 (2).png" id="2_6wm04"]
@@ -75,6 +75,7 @@ offset_top = 107.00546
 offset_right = 472.60916
 offset_bottom = 123.00546
 scale = Vector2(1.0086265, 2.0106046)
+value = 50.0
 
 [node name="SFXIcon" type="TextureRect" parent="SettingsButton" unique_id=349520514]
 layout_mode = 0
@@ -92,6 +93,7 @@ offset_top = 169.19666
 offset_right = 475.44897
 offset_bottom = 195.20395
 scale = Vector2(1.0086265, 2.0106046)
+value = 50.0
 
 [node name="MainMenuButton" type="Button" parent="SettingsButton" unique_id=1192044822]
 layout_mode = 0
