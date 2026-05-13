@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://edwgxnw8otrc"]
+
+[ext_resource type="Script" uid="uid://deibur166d5hd" path="res://scripts/win_cutscene.gd" id="1_nbolr"]
+
+[node name="WinCutscene" type="CanvasLayer" unique_id=852110862]
+script = ExtResource("1_nbolr")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1540927884]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1843088498]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)

@@ -51,7 +51,6 @@ polygon = PackedVector2Array(243, 85, 0, 85, 0, 930, 234, 892, 242, 896, 250, 89
 position = Vector2(285, -169)
 
 [node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("6_qnge3")]
-visible = false
 
 [node name="DropZone" type="Area2D" parent="." unique_id=385092721]
 position = Vector2(960, 1000)

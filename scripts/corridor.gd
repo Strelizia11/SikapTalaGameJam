@@ -123,18 +123,25 @@ func _on_feedback_timeout() -> void:
 
 func _trigger_win() -> void:
 	set_input_blocked(true)
-	
+
 	if has_node("/root/GameTimer"):
 		GameTimer.stop_timer()
 
 	prompt_text.text = "YOU HAVE BROUGHT ALL THAT WAS ASKED..."
 	await get_tree().create_timer(2.5).timeout
 
+	var win_scene = load("res://scenes/WinCutscene.tscn")
+	if win_scene:
+		var win = win_scene.instantiate()
+		get_tree().root.add_child(win)
+		win.play()
+		await win.finished
+		win.queue_free()
+
 	GlobalBackground.reset_prompts()
 	InventoryManager.clear_inventory()
-	if has_node("/root/RoundManager"):  # ✅ safety check
+	if has_node("/root/RoundManager"):
 		RoundManager.reset_game()
-
 	if has_node("/root/GameTimer"):
 		GameTimer.reset_timer()
 

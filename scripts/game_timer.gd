@@ -177,13 +177,22 @@ func _do_death() -> void:
 	call_deferred("_change_to_main_menu")
 
 func _change_to_main_menu() -> void:
-	# Reset everything before changing scene
 	reset_timer()
-	
-	# Clear any pending signals
 	_running = false
 	_dead = false
 	_death_started = false
-	
-	# Change scene
+
+	# Clear inventory so items don't carry over after death or restart
+	if has_node("/root/InventoryManager"):
+		InventoryManager.clear_inventory()
+
+	# Reset prompts so next game starts fresh
+	if has_node("/root/GlobalBackground"):
+		if GlobalBackground.has_method("reset_prompts"):
+			GlobalBackground.reset_prompts()
+
+	# Reset round state
+	if has_node("/root/RoundManager"):
+		RoundManager.reset_game()
+
 	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
