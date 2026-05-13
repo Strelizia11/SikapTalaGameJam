@@ -16,12 +16,12 @@ var item_textures = {
 	"blade": preload("res://assets/sprites/items/rusted_saw_blade.jpg"),
 	"knife": preload("res://assets/sprites/items/knife.jpg"),
 	"wine-bottle": preload("res://assets/sprites/items/broken_wine_bottle.jpg"),
-	"bloody-handkerchief": preload("res://assets/sprites/items/handkerchief__0.png"),
-	"envelope": preload("res://assets/sprites/items/envelop_2.png"),
-	"medicine": preload("res://assets/sprites/items/medicine_0.png"),
-	"poison-vial": preload("res://assets/sprites/items/poison_0.png"),
-	"mirror": preload("res://assets/sprites/items/mirror_1.png"),
-	"scream-painting": preload("res://assets/sprites/items/painting_1.png"),
+	"bloody-handkerchief": preload("res://assets/sprites/items/silhouette/s-handkerchief_0.png"),
+	"envelope": preload("res://assets/sprites/items/silhouette/s-envelop_0.png"),
+	"medicine": preload("res://assets/sprites/items/silhouette/s-medicine_0.png"),
+	"poison-vial": preload("res://assets/sprites/items/silhouette/s-poison_0.png"),
+	"mirror": preload("res://assets/sprites/items/silhouette/s-mirror_1.png"),
+	"scream-painting": preload("res://assets/sprites/items/silhouette/s-painting_1.png"),
 }
 
 var slot_empty_texture = preload("res://assets/sprites/inventory-slot.png")
