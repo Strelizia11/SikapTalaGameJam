@@ -159,14 +159,21 @@ func _do_death() -> void:
 		return
 	_death_started = true
 
-	# ── JUMPSCARE PLACEHOLDER ─────────────────────────────────────────────────
-	await get_tree().create_timer(1.0).timeout
-	# ── END JUMPSCARE PLACEHOLDER ─────────────────────────────────────────────
+	# ── JUMPSCARE ─────────────────────────────────────────────────────────────
+	var js_scene = load("res://scenes/Jumpscare.tscn")  # capital J to match your file
+	if js_scene:
+		var js = js_scene.instantiate()
+		get_tree().root.add_child(js)
+		js.play()
+		await js.finished
+		js.queue_free()
+	else:
+		await get_tree().create_timer(1.0).timeout
+	# ── END JUMPSCARE ─────────────────────────────────────────────────────────
 
 	if not is_instance_valid(self):
 		return
 
-	# Use call_deferred to avoid issues during scene cleanup
 	call_deferred("_change_to_main_menu")
 
 func _change_to_main_menu() -> void:

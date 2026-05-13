@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ro2mso5hga0u"]
+
+[ext_resource type="Script" uid="uid://cl78mimaqtsmr" path="res://scripts/jumpscare.gd" id="1_7avnv"]
+[ext_resource type="VideoStream" uid="uid://drs2ofwqvlmxf" path="res://assets/jumpscare.ogv" id="2_5ecbj"]
+
+[node name="Jumpscare" type="CanvasLayer" unique_id=1168414524]
+script = ExtResource("1_7avnv")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=430324613]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_5ecbj")
+expand = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1048555532]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
