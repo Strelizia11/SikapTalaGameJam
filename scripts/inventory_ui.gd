@@ -185,22 +185,27 @@ func _restore_item_to_world(item_name: String) -> void:
 	InventoryManager.remove_item(item_name)
 	refresh()
 	
-	# Get the current scene name
 	var current_scene = get_tree().current_scene
 	var current_scene_name = current_scene.name.to_lower()
 	
-	print("Restoring item: ", item_name, " to room: ", room_name, " from current scene: ", current_scene_name)
+	print("=== RESTORING ITEM TO WORLD ===")
+	print("Item: ", item_name, " belongs to room: ", room_name)
+	print("Current scene: ", current_scene_name)
 	
 	# Try to find the item in the current scene
 	var item_found = false
 	for node in get_tree().get_nodes_in_group("items"):
+		print("Checking node: ", node.name, " item_name: ", node.get("item_name"), " room: ", node.get("room_name"))
+		
 		if not (node is Area2D):
 			continue
 		if node.get("item_name") != item_name:
 			continue
 		
-		# If the item belongs to the current room
-		if node.get("room_name") == room_name:
+		print("Found matching item node: ", node.name)
+		
+		# If the item belongs to the current room OR the current scene matches
+		if node.get("room_name") == room_name or room_name == current_scene_name:
 			item_found = true
 			# Make the item visible and restore it
 			node.visible = true
@@ -220,6 +225,6 @@ func _restore_item_to_world(item_name: String) -> void:
 	
 	# If item not found in current scene, mark it for restoration
 	if not item_found:
-		print("Item ", item_name, " not in current scene, marking for restoration")
+		print("Item ", item_name, " NOT found in current scene, marking for restoration")
 		if GlobalBackground.has_method("mark_item_for_restoration"):
 			GlobalBackground.mark_item_for_restoration(item_name)

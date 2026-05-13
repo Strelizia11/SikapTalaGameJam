@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtdsxvy5x3mli"]
 
-[ext_resource type="Texture2D" uid="uid://c6v0nyj33yjla" path="res://assets/sprites/items/saw_Wheel.png" id="2_f3udk"]
+[ext_resource type="Texture2D" uid="uid://cq843u06gg2k4" path="res://assets/sprites/items/saw_Wheel.png" id="2_f3udk"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
 [ext_resource type="Texture2D" uid="uid://dkhavexi4jrlm" path="res://assets/sprites/items/silhouette/S-Saw Wheel.png" id="3_icn7l"]
 

@@ -116,8 +116,9 @@ func _get_item_room(item_name: String) -> String:
 		if prompt["answer"] == item_name:
 			return "corridor"
 	
-	# Toilet items (add your toilet-specific items here)
-	var toilet_items = ["toilet-paper", "plunger", "air-freshener", "towel"]  # ADD YOUR TOILET ITEMS HERE
+	# ADD YOUR ACTUAL TOILET ITEM NAMES HERE
+	var toilet_items = ["bloody-handkerchief", "envelope", "medicine", "poison-vial", 
+						"mirror", "scream-painting"]  
 	
 	if item_name in toilet_items:
 		return "toilet"

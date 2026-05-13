@@ -11,6 +11,7 @@ func _ready():
 		
 	if has_node("Inventory"):
 		$Inventory.current_room = "toilet"
+	
 	# 1. Group item variants by their item_name
 	var item_groups = {}
 
@@ -43,25 +44,31 @@ func _ready():
 					chosen_variant = variant
 					break
 		
-		# If we haven't chosen one yet (first time entering the room!), pick one and SAVE its name
+		# If we haven't chosen one yet, pick one and SAVE its name
 		if chosen_variant == null:
 			chosen_variant = variants.pick_random()
 			saved_variants[i_name] = chosen_variant.name
 		
-		# Now, keep the chosen one and delete the rest
+		# Now, handle each variant
 		for variant in variants:
 			if variant == chosen_variant:
 				# Permanently submitted to a prompt — destroy it forever
 				if InventoryManager.is_permanently_removed(i_name):
 					variant.queue_free()
-				# Already in inventory (picked up but not submitted yet) — hide it
+				# Already in inventory (picked up but not submitted yet) — HIDE IT (not destroy!)
 				elif InventoryManager.is_picked_up(i_name, "toilet"):
-					variant.queue_free()
+					variant.visible = false  # CHANGE: Hide instead of queue_free
+					if variant.has_method("set_run_active"):
+						variant.set_run_active(false)
 				# Otherwise leave it visible
+				else:
+					variant.visible = true
+					if variant.has_method("set_run_active"):
+						variant.set_run_active(true)
 			else:
-				# Not the chosen variant for this playthrough — remove it
+				# Not the chosen variant for this playthrough — remove it permanently
 				variant.queue_free()
-			
+	
 	transition_player.play("black_to_fade")
 	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	await transition_player.animation_finished
