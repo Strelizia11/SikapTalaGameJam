@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bkhrk0m1gta8f"]
+
+[ext_resource type="Texture2D" uid="uid://dvh3al0vg55ah" path="res://assets/sprites/TRIGGER WARNING.png" id="1_puf4h"]
+
+[node name="TriggerWarning" type="Node2D" unique_id=1555838025]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1499915639]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.99524283, 1.0129756)
+color = Color(0.04, 0.04, 0.04, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1485401057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_puf4h")
