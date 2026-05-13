@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c8xoi7dwhuuwm" path="res://scripts/kitchen.gd" id="1_e4uee"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="4_6022o"]
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="5_cwfnw"]
-[ext_resource type="PackedScene" uid="uid://bqunuv18og30h" path="res://scenes/settings.tscn" id="6_qnge3"]
+[ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="6_qnge3"]
 [ext_resource type="Script" uid="uid://cljv6tvkkqpki" path="res://scripts/door-to-corridor.gd" id="6_ud40p"]
 [ext_resource type="Script" uid="uid://7pvd05xycsnu" path="res://scripts/Kitchen-background.gd" id="7_dqq82"]
 [ext_resource type="Texture2D" uid="uid://c8rfqlo8a8k7e" path="res://assets/sprites/kitchen/BLUE.png" id="8_20l34"]
@@ -33,7 +33,8 @@ mouse_filter = 2
 script = ExtResource("1_e4uee")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1647532909]
-position = Vector2(951, 538)
+position = Vector2(967.5, 538)
+scale = Vector2(1.0171875, 1)
 texture = ExtResource("8_20l34")
 script = ExtResource("7_dqq82")
 background_textures = Array[Texture2D]([ExtResource("8_20l34"), ExtResource("9_4fgkg"), ExtResource("10_sgiek")])
@@ -47,7 +48,7 @@ polygon = PackedVector2Array(243, 85, 0, 85, 0, 930, 234, 892, 242, 896, 250, 89
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("4_6022o")]
 
 [node name="Transition" parent="." unique_id=1276352948 instance=ExtResource("5_cwfnw")]
-position = Vector2(234, -3)
+position = Vector2(285, -169)
 
 [node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("6_qnge3")]
 visible = false
@@ -65,39 +66,42 @@ offset_right = 350.0
 offset_bottom = 70.0
 
 [node name="Knife_0" parent="." unique_id=688074840 instance=ExtResource("20_knife")]
-position = Vector2(658.99994, 434.99997)
+position = Vector2(1407.0001, 684.00006)
+rotation = -1.6458455
 scale = Vector2(0.3466289, 0.3130441)
 
 [node name="Knife_1" parent="." unique_id=1483869943 instance=ExtResource("20_knife")]
-position = Vector2(784, 746)
+position = Vector2(1246.0001, 336)
+rotation = 0.54803336
 scale = Vector2(0.3466289, 0.3130441)
 
 [node name="Knife_2" parent="." unique_id=694276018 instance=ExtResource("20_knife")]
-position = Vector2(532.99994, 812)
+position = Vector2(894.99994, 74)
+rotation = 0.34906584
 scale = Vector2(0.3466289, 0.3130441)
 
 [node name="Blade_0" parent="." unique_id=788725981 instance=ExtResource("21_blade")]
-position = Vector2(134, 366.99997)
+position = Vector2(111.000015, 362)
 scale = Vector2(0.54428035, 0.54389393)
 
 [node name="Blade_1" parent="." unique_id=1888047381 instance=ExtResource("21_blade")]
-position = Vector2(363.00003, 261)
-scale = Vector2(0.54428035, 0.54389393)
+position = Vector2(787, 153)
+scale = Vector2(0.3, 0.3)
 
 [node name="Blade_2" parent="." unique_id=1526478258 instance=ExtResource("21_blade")]
-position = Vector2(170.99997, 676)
+position = Vector2(726, 598)
 scale = Vector2(0.54428035, 0.54389393)
 
 [node name="Clock_0" parent="." unique_id=1461724119 instance=ExtResource("22_clock")]
-position = Vector2(1336.9999, 358)
+position = Vector2(1369, 814)
 scale = Vector2(0.48016578, 0.4986145)
 
 [node name="Clock_1" parent="." unique_id=1194229271 instance=ExtResource("22_clock")]
-position = Vector2(1126.0001, -2)
+position = Vector2(38, 794)
 scale = Vector2(0.55124485, 0.57731634)
 
 [node name="Clock_2" parent="." unique_id=771148744 instance=ExtResource("22_clock")]
-position = Vector2(196, 177.00002)
+position = Vector2(965, 666)
 scale = Vector2(0.554742, 0.57135916)
 
 [node name="DeadFlower_0" parent="." unique_id=1074452135 instance=ExtResource("23_dflower")]
@@ -113,39 +117,41 @@ position = Vector2(761, 298.99997)
 scale = Vector2(0.24038926, 0.27368087)
 
 [node name="DeadRat_0" parent="." unique_id=637937295 instance=ExtResource("24_drat")]
-position = Vector2(493, 419)
+position = Vector2(1067, 648)
+scale = Vector2(0.5, 0.5)
 
 [node name="DeadRat_1" parent="." unique_id=1538684589 instance=ExtResource("24_drat")]
-position = Vector2(809, 467)
+position = Vector2(222, 396)
 
 [node name="DeadRat_2" parent="." unique_id=1038333387 instance=ExtResource("24_drat")]
-position = Vector2(652, 266)
+position = Vector2(-90, 443)
 
 [node name="Mask_0" parent="." unique_id=966810048 instance=ExtResource("25_mask")]
-position = Vector2(597, 678)
+position = Vector2(710, 90)
 scale = Vector2(0.4322369, 0.46373007)
 
 [node name="Mask_1" parent="." unique_id=356935915 instance=ExtResource("25_mask")]
-position = Vector2(358, 89)
+position = Vector2(571.99994, 93.999985)
+rotation = 0.050614547
 
 [node name="Mask_2" parent="." unique_id=110062466 instance=ExtResource("25_mask")]
-position = Vector2(1142, 359)
+position = Vector2(1231, 176.00003)
 scale = Vector2(0.6568822, 0.6422902)
 
 [node name="PoisonIvy_0" parent="." unique_id=557033710 instance=ExtResource("26_pivy")]
-position = Vector2(230.00003, 674)
+position = Vector2(-2, 49)
 scale = Vector2(0.6802112, 0.7048098)
 
 [node name="PoisonIvy_1" parent="." unique_id=1981747935 instance=ExtResource("26_pivy")]
-position = Vector2(743, 477)
+position = Vector2(1081, -262)
 scale = Vector2(0.6802112, 0.7048098)
 
 [node name="PoisonIvy_2" parent="." unique_id=1140614053 instance=ExtResource("26_pivy")]
-position = Vector2(18.999985, 687)
+position = Vector2(613, 81)
 scale = Vector2(0.6802112, 0.7048098)
 
 [node name="WineBottle_0" parent="." unique_id=868990940 instance=ExtResource("27_wbottle")]
-position = Vector2(1191, 39)
+position = Vector2(1226.0001, 36)
 rotation = 0.15009831
 scale = Vector2(0.7178783, 0.7267864)
 
@@ -155,5 +161,6 @@ rotation = 1.446878
 scale = Vector2(0.6397476, 0.6812048)
 
 [node name="WineBottle_2" parent="." unique_id=703056886 instance=ExtResource("27_wbottle")]
-position = Vector2(-443, 600)
+position = Vector2(-332, 439)
+rotation = 0.24958208
 scale = Vector2(0.80895543, 0.717699)

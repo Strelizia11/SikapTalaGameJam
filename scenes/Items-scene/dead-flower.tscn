@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwmbcovjcn7q0"]
 
-[ext_resource type="Texture2D" uid="uid://be2j3vcaqhph1" path="res://assets/sprites/items/Dead Flowers.png" id="2_frwfb"]
+[ext_resource type="Texture2D" uid="uid://be2j3vcaqhph1" path="res://assets/sprites/items/Dead_Flowers.png" id="2_frwfb"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
 
 [node name="DeadFlower" type="Area2D" unique_id=1851932954]

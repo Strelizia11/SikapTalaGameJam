@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dj5snknjec2oq"]
 
-[ext_resource type="Texture2D" uid="uid://dhqcyipo3vh8w" path="res://assets/sprites/items/dead_rat.jpg" id="1_828gt"]
+[ext_resource type="Texture2D" uid="uid://c4pt65tmnhgy0" path="res://assets/sprites/items/dead_Rat.png" id="2_dt16u"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
 
 [node name="DeadRat" type="Area2D" unique_id=1664426244]
@@ -9,11 +9,11 @@ item_name = "dead-rat"
 room_name = "kitchen"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1132232959]
-position = Vector2(944, 511)
-scale = Vector2(0.27734375, 0.25953078)
-texture = ExtResource("1_828gt")
+position = Vector2(636.75, 552.60803)
+scale = Vector2(1.5, 1.476)
+texture = ExtResource("2_dt16u")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=422090289]
-position = Vector2(940, 508.5)
-scale = Vector2(15.800001, 9.649999)
-polygon = PackedVector2Array(0, -4.6114006, 1.898735, -6.4766846, 5.569622, -4.9222794, 8.2911415, -2.849743, 8.227848, -0.9844551, 6.012661, 0.3626938, 3.0379753, 1.3989639, 0.18987274, 1.7098427, -0.25316238, 3.3678741, -1.0126572, 0.67357635, -1.772152, -1.1917114, -7.1518974, -0.88082886, -7.8480988, 1.2953377, -8.607594, 2.5388603, -8.86076, 0.05181122, -7.658226, -2.5388603, -5.8227844, -3.5751305, -2.215187, -3.4715042)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=527721279]
+position = Vector2(-96.11916, 146.68817)
+scale = Vector2(0.81194156, 0.8216292)
+polygon = PackedVector2Array(797, 460, 858, 409, 938, 397, 949, 399, 953, 404, 948, 407, 935, 406, 896, 411, 935, 418, 944, 426, 959, 427, 986, 445, 994, 447, 994, 454, 988, 459, 972, 463, 951, 461, 941, 462, 918, 459, 907, 464, 905, 475, 918, 478, 921, 486, 927, 498, 924, 509, 902, 523, 914, 529, 913, 534, 878, 536, 860, 536, 859, 543, 884, 558, 905, 555, 914, 556, 949, 549, 973, 522, 973, 506, 968, 498, 975, 489, 981, 482, 1005, 479, 1016, 469, 1018, 474, 1011, 481, 1004, 483, 992, 488, 985, 490, 982, 500, 988, 510, 989, 522, 975, 547, 953, 559, 924, 572, 883, 575, 844, 568, 812, 548, 794, 504)

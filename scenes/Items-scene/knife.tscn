@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2bhxymb212q1"]
 
-[ext_resource type="Texture2D" uid="uid://dckj7sqv1pwoh" path="res://assets/sprites/items/knife.jpg" id="1_7u8el"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
+[ext_resource type="Texture2D" uid="uid://bf7trcykdbi0c" path="res://assets/sprites/items/Knife.png" id="2_wcdq6"]
 
 [node name="Knife" type="Area2D" unique_id=1788846417]
 position = Vector2(168, 90)
@@ -11,10 +11,10 @@ room_name = "kitchen"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1527069146]
 position = Vector2(758.25, 338.5)
-scale = Vector2(0.5691824, 0.622)
-texture = ExtResource("1_7u8el")
+rotation = 2.3596852
+scale = Vector2(1.5, 1.639)
+texture = ExtResource("2_wcdq6")
+flip_v = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=471214109]
-position = Vector2(792, 347)
-scale = Vector2(-18.28821, -17.12681)
-polygon = PackedVector2Array(2.0231628, 1.3429241, 0.765522, 3.0945644, -0.9842415, 5.254919, -4.265045, 8.991751, -5.194603, 8.641422, -5.085243, 7.7072144, -4.1556854, 7.1817226, -2.843361, 5.3716965, -1.5310402, 3.5616684, -0.5468025, 2.9193993, -0.27339935, 1.8100281, -1.1482811, 0.64226913, 4.2103615, -5.4300823, 8.9675255, -8.115929, 7.163086, -4.846203)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1677438388]
+polygon = PackedVector2Array(855, 245, 859, 231, 860, 226, 852, 218, 834, 221, 826, 226, 786, 278, 778, 290, 766, 306, 730, 353, 691, 404, 669, 438, 659, 459, 711, 435, 732, 418, 797, 349, 795, 339, 785, 321, 786, 310, 796, 304, 808, 295, 830, 267, 839, 253, 846, 248, 856, 249)

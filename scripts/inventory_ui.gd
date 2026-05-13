@@ -8,7 +8,7 @@ extends CanvasLayer
 ]
 
 var item_textures = {
-	"dead-flower": preload("res://assets/sprites/items/dead_flower.jpg"),
+	"dead-flower": preload("res://assets/sprites/items/Dead_Flower.jpg"),
 	"poison-ivy": preload("res://assets/sprites/items/poison_ivy.jpg"),
 	"surgical-mask": preload("res://assets/sprites/items/mask.jpg"),
 	"dead-rat": preload("res://assets/sprites/items/dead_rat.jpg"),
