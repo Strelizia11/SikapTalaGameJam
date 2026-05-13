@@ -22,10 +22,11 @@ buses/default_bus_layout="uid://c6hqhr7oa0ike"
 [autoload]
 
 InventoryManager="*uid://f0av8i2xufin"
+GlobalTimer="*uid://c005iymmww1jb"
 GlobalBackground="*uid://bpylrwys7dxt2"
 GameTimer="*uid://baf50rlpts0oq"
-RoundManager="*uid://cr5xupv1jid6i"
 AudioManager="*uid://lcmsla4la8d4"
+RoundManager="*uid://cr5xupv1jid6i"
 
 [display]
 

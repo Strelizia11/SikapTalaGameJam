@@ -1,8 +1,8 @@
 # settings.gd
 extends CanvasLayer
 
-@onready var music_slider = $SettingsButton/SettingsContainer/MusicContainer/MusicSlider
-@onready var sfx_slider = $SettingsButton/SettingsContainer/SFXContainer/SFXHSlider
+@onready var music_slider = $SettingsButton/MusicSlider
+@onready var sfx_slider = $SettingsButton/SFXSlider2
 @onready var settings_panel = $SettingsButton
 @onready var texture_button = $TextureButton
 @onready var overlay = $Overlay
