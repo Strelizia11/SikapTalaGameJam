@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
 [ext_resource type="Texture2D" uid="uid://cxk2ssku3at4u" path="res://assets/sprites/items/clock.png" id="2_wsr1i"]
+[ext_resource type="Texture2D" uid="uid://brlum3qp8beny" path="res://assets/sprites/items/silhouette/S-Clock.png" id="3_ntnlx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wsr1i"]
 custom_solver_bias = 0.035
@@ -13,7 +14,7 @@ script = ExtResource("2_item")
 item_name = "clock"
 room_name = "kitchen"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1283721246]
+[node name="Clock" type="Sprite2D" parent="." unique_id=1283721246]
 position = Vector2(296.62375, 371.25177)
 scale = Vector2(2.7828496, 1.523357)
 texture = ExtResource("2_wsr1i")
@@ -22,3 +23,8 @@ texture = ExtResource("2_wsr1i")
 position = Vector2(301.00003, 372.99997)
 rotation = 4.7368236
 shape = SubResource("CapsuleShape2D_wsr1i")
+
+[node name="Silhouette" type="Sprite2D" parent="." unique_id=193483350]
+position = Vector2(286.5, 379.5)
+scale = Vector2(2.8218622, 1.5517243)
+texture = ExtResource("3_ntnlx")

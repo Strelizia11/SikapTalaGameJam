@@ -5,7 +5,12 @@ extends Control
 
 func _ready():
 	$door.pressed.connect(_on_door_pressed)
-
+	
+	if GlobalBackground.has_method("restore_items_for_room"):
+		GlobalBackground.restore_items_for_room("toilet")
+		
+	if has_node("Inventory"):
+		$Inventory.current_room = "toilet"
 	# 1. Group item variants by their item_name
 	var item_groups = {}
 
@@ -19,8 +24,6 @@ func _ready():
 				item_groups[i_name] = []
 			item_groups[i_name].append(node)
 
-	# 2. Retrieve our saved variants from the InventoryManager 
-	# (or create a new empty dictionary if it's the player's first time entering)
 	var saved_variants = {}
 	if InventoryManager.has_meta("toilet_item_variants"):
 		saved_variants = InventoryManager.get_meta("toilet_item_variants")

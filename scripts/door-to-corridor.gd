@@ -1,8 +1,8 @@
 extends Area2D
 
 @onready var transition_player = get_node("../Transition/Transitions/AnimationPlayer")
-@onready var overlay = get_node("../Transition/Transitions/ColorRect")
-
+@onready var overlay1 = get_node("../Transition/Transitions/ColorRect")
+@onready var overlay2 = get_node("../Transition/Transitions/TextureRect")
 # This variable prevents clicking while an animation is running
 var is_transitioning = false
 
@@ -22,7 +22,8 @@ func enter_room(scene_path):
 	is_transitioning = true
 	
 	# 2. Block mouse clicks via the overlay
-	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	overlay1.mouse_filter = Control.MOUSE_FILTER_STOP
+	overlay2.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 	# 3. Play the fade out
 	transition_player.play("fade_to_black")

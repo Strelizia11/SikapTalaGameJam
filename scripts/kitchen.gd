@@ -1,7 +1,8 @@
 extends Control
 
 @onready var transition_player = $Transition/Transitions/AnimationPlayer
-@onready var overlay = $Transition/Transitions/ColorRect
+@onready var overlay1 = $Transition/Transitions/ColorRect
+@onready var overlay2 = $Transition/Transitions/TextureRect
 
 # The lock to prevent clicking while transitioning
 var is_transitioning = false
@@ -38,6 +39,9 @@ func _register_all_item_spawn_data() -> void:
 func _ready():
 	_activate_one_random_variant_per_item()
 	_register_all_item_spawn_data()
+	
+	if GlobalBackground.has_method("restore_items_for_room"):
+		GlobalBackground.restore_items_for_room("kitchen")
 
 	var kitchen_items = ["knife", "blade", "clock", "dead-flower", "dead-rat", "mask", "poison-ivy", "wine-bottle"]
 	for item_node in get_children():
@@ -46,7 +50,9 @@ func _ready():
 				item_node.visible = false
 
 	transition_player.play("black_to_fade")
-	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	overlay1.mouse_filter = Control.MOUSE_FILTER_STOP
+	overlay2.mouse_filter = Control.MOUSE_FILTER_STOP
 	await transition_player.animation_finished
-	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	overlay1.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	overlay2.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$Inventory.current_room = "kitchen"
