@@ -1,12 +1,13 @@
-[gd_scene format=3 uid="uid://bt0olvr55dvt1"]
+[gd_scene format=3 uid="uid://dqnjiv3shkbv"]
 
 [ext_resource type="Script" uid="uid://7uusf4ginnru" path="res://scripts/corridor.gd" id="1_mus4g"]
-[ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_pblcb"]
-[ext_resource type="Texture2D" uid="uid://bg0dfm8tqupol" path="res://assets/sprites/corridor/Updated Corridor (1).png" id="3_uiklb"]
+[ext_resource type="PackedScene" path="res://scenes/transition.tscn" id="2_pblcb"]
+[ext_resource type="Texture2D" uid="uid://bpooaxvso688b" path="res://assets/sprites/corridor/Updated Corridor (1).png" id="3_uiklb"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="4_uiklb"]
+[ext_resource type="FontFile" uid="uid://bwo74cmi1ocsx" path="res://assets/fonts/who asks satan.ttf" id="4_w32gw"]
 [ext_resource type="Script" uid="uid://dffiuvvm8tnok" path="res://scripts/door_click_area.gd" id="5_7w20u"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_n8bhm"]
-[ext_resource type="PackedScene" uid="uid://dl4k70o7fma6j" path="res://scenes/settings.tscn" id="7_pblcb"]
+[ext_resource type="PackedScene" uid="uid://bqunuv18og30h" path="res://scenes/settings.tscn" id="7_pblcb"]
 [ext_resource type="Texture2D" uid="uid://bpcto4vjqq0n5" path="res://assets/sprites/corridor/Candle-sprite.png" id="10_w32gw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f323m"]
@@ -66,10 +67,15 @@ texture = ExtResource("3_uiklb")
 [node name="Node2D" type="Node2D" parent="." unique_id=1429369495]
 
 [node name="PromtWall" type="RichTextLabel" parent="Node2D" unique_id=683854158]
-offset_left = 838.0
-offset_top = 402.0
-offset_right = 1062.0
-offset_bottom = 695.0
+offset_left = 740.00006
+offset_top = 287.00003
+offset_right = 964.00006
+offset_bottom = 580.0
+scale = Vector2(1.9962373, 0.8616079)
+theme_override_fonts/normal_font = ExtResource("4_w32gw")
+theme_override_font_sizes/normal_font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SubmissionBox" type="Area2D" parent="Node2D" unique_id=433386369 groups=["submission_zone"]]
 script = ExtResource("4_uiklb")
@@ -91,6 +97,7 @@ polygon = PackedVector2Array(1549, 174, 1720, 1, 1805, 1, 1806, 480, 1807, 1081,
 [node name="Inventory" parent="." unique_id=891317015 instance=ExtResource("6_n8bhm")]
 
 [node name="Settings" parent="." unique_id=2065002682 instance=ExtResource("7_pblcb")]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=624790421]
 position = Vector2(961.99994, 751)
