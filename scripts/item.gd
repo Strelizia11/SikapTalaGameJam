@@ -135,4 +135,4 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	if not dragging:
-		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)
+		DisplayServer.cursor_set_shape(DisplayServer.CURSOR_ARROW)	
