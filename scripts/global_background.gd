@@ -2,7 +2,7 @@
 extends Node2D
 
 var current_bg_path1: String = "res://assets/sprites/kitchen/BLUE.png"
-var current_bg_path2: String = "res://assets/sprites/kitchen/BLUE.png"
+var current_bg_path2: String = "res://assets/sprites/toilet/Bathroom_blue.png"
 var bgm_path: String = "res://assets/music/BLUE.wav"
 var doors_locked: bool = false
 
@@ -13,49 +13,49 @@ const PROMPTS = [
 		"text": "BRING ME WHAT NO LONGER LIVES",
 		"answer": "dead-flower",
 		"bg1": "res://assets/sprites/kitchen/BLUE.png",
-		"bg2": "res://assets/sprites/toilet/bathroom_blue.png",
+		"bg2": "res://assets/sprites/toilet/Bathroom_blue.png",
 		"bgm": "res://assets/music/Blue.wav"
 	},
 	{
 		"text": "BRING ME THE FACE YOU HIDE BEHIND",
 		"answer": "surgical-mask",
 		"bg1": "res://assets/sprites/kitchen/VIOLET.png",
-		"bg2": "res://assets/sprites/toilet/bathroom_violet.png",
+		"bg2": "res://assets/sprites/toilet/Bathroom_violet.png",
 		"bgm": "res://assets/music/Violet.wav"
 	},
 	{
 		"text": "BRING ME WHAT KEEPS WATCHING",
 		"answer": "clock",
 		"bg1": "res://assets/sprites/kitchen/RED.png",
-		"bg2": "res://assets/sprites/toilet/bathroom_red.png",
+		"bg2": "res://assets/sprites/toilet/Bathroom_red.png",
 		"bgm": "res://assets/music/Red.wav"
 	},
 	{
 		"text": "BRING ME WHAT ENDS THINGS",
 		"answer": "knife",
 		"bg1": "res://assets/sprites/kitchen/RED.png",
-		"bg2": "res://assets/sprites/toilet/bathroom_red.png",
+		"bg2": "res://assets/sprites/toilet/Bathroom_red.png",
 		"bgm": "res://assets/music/Red.wav"
 	},
 	{
 		"text": "BRING ME THE STAIN THAT REFUSES TO HIDE GUILT",
 		"answer": "bloody-handkerchief",
 		"bg1": "res://assets/sprites/kitchen/RED.png",
-		"bg2": "res://assets/sprites/toilet/bathroom_red.png",
+		"bg2": "res://assets/sprites/toilet/Bathroom_red.png",
 		"bgm": "res://assets/music/Red.wav"
 	},
 	{
 		"text": "BRING ME WHAT LETS YOU FORGET THE PAIN",
 		"answer": "medicine",
 		"bg1": "res://assets/sprites/kitchen/BLUE.png",
-		"bg2": "res://assets/sprites/toilet/bathroom_blue.png",
+		"bg2": "res://assets/sprites/toilet/Bathroom_blue.png",
 		"bgm": "res://assets/music/Blue.wav"
 	},
 	{
 		"text": "BRING ME THE ONE THAT LIES TO YOU",
 		"answer": "mirror",
 		"bg1": "res://assets/sprites/kitchen/VIOLET.png",
-		"bg2": "res://assets/sprites/toilet/bathroom_violet.png",
+		"bg2": "res://assets/sprites/toilet/Bathroom_violet.png",
 		"bgm": "res://assets/music/Violet.wav"
 	}
 ]

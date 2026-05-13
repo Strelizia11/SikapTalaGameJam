@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c4b1juny4gskt" path="res://scenes/transition.tscn" id="2_trc3a"]
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="3_itemgd"]
 [ext_resource type="Texture2D" uid="uid://cvg0r0d48e3ho" path="res://assets/sprites/toilet/Bathroom_blue.png" id="3_s2vth"]
-[ext_resource type="Script" uid="uid://7pvd05xycsnu" path="res://scripts/Kitchen-background.gd" id="4_e4gda"]
+[ext_resource type="Script" uid="uid://dfip7im01edte" path="res://scripts/Toilet-background.gd" id="4_76opm"]
 [ext_resource type="Texture2D" uid="uid://dgfbtqiu6xy78" path="res://assets/sprites/toilet/Bathroom_red.png" id="5_1bevo"]
 [ext_resource type="PackedScene" uid="uid://b6xx4f6rhwwyc" path="res://scenes/inventory.tscn" id="6_5rr3v"]
 [ext_resource type="Texture2D" uid="uid://ccuqxfwub016f" path="res://assets/sprites/toilet/Bathroom_violet.png" id="6_pxlr2"]
@@ -65,14 +65,8 @@ script = ExtResource("1_yyxms")
 position = Vector2(967.5, 538)
 scale = Vector2(1.0171875, 1)
 texture = ExtResource("3_s2vth")
-script = ExtResource("4_e4gda")
+script = ExtResource("4_76opm")
 background_textures = Array[Texture2D]([ExtResource("3_s2vth"), ExtResource("5_1bevo"), ExtResource("6_pxlr2")])
-
-[node name="toilet" type="TextureRect" parent="." unique_id=212424301]
-layout_mode = 0
-offset_right = 1913.0
-offset_bottom = 1080.0
-texture = ExtResource("3_s2vth")
 
 [node name="door" type="TextureButton" parent="." unique_id=1533863027]
 layout_mode = 0
