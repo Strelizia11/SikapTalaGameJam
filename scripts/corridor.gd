@@ -105,14 +105,13 @@ func check_submission(item_name: String) -> bool:
 		return false
 
 func _on_feedback_timeout() -> void:
-	# ========== NEW: Unblock input when feedback ends ==========
 	set_input_blocked(false)
-	# ========== END ==========
 	
 	if GlobalBackground.current_prompt_data.get("text", "") != prompt_text.text:
 		var was_correct: bool = (prompt_text.text == "CORRECT...")
 		if was_correct:
-			RoundManager.reset_round()
+			if has_node("/root/RoundManager"):  # ✅ safety check
+				RoundManager.reset_round()
 			var has_more: bool = GlobalBackground.pick_new_prompt()
 			if not has_more:
 				_trigger_win()
@@ -133,7 +132,8 @@ func _trigger_win() -> void:
 
 	GlobalBackground.reset_prompts()
 	InventoryManager.clear_inventory()
-	RoundManager.reset_game()
+	if has_node("/root/RoundManager"):  # ✅ safety check
+		RoundManager.reset_game()
 
 	if has_node("/root/GameTimer"):
 		GameTimer.reset_timer()

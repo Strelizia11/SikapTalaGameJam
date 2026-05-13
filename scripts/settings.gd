@@ -144,3 +144,4 @@ func _reset_game_state():
 	if has_node("/root/GlobalBackground"):
 		if GlobalBackground.has_method("reset_prompts"):
 			GlobalBackground.reset_prompts()
+	RoundManager.reset_game() 
