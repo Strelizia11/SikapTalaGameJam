@@ -39,6 +39,9 @@ func _register_all_item_spawn_data() -> void:
 func _ready():
 	_activate_one_random_variant_per_item()
 	_register_all_item_spawn_data()
+	
+	if GlobalBackground.has_method("restore_items_for_room"):
+		GlobalBackground.restore_items_for_room("kitchen")
 
 	var kitchen_items = ["knife", "blade", "clock", "dead-flower", "dead-rat", "mask", "poison-ivy", "wine-bottle"]
 	for item_node in get_children():
