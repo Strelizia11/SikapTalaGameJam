@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3st5qwmrqc6t"]
 
 [ext_resource type="Script" uid="uid://uge474spuj3" path="res://scripts/mainmenu.gd" id="1_3vvtq"]
-[ext_resource type="Texture2D" uid="uid://bpooaxvso688b" path="res://assets/sprites/corridor/Updated Corridor (1).png" id="2_3vvtq"]
+[ext_resource type="Texture2D" uid="uid://c1r5x5ygvftow" path="res://assets/sprites/corridor/NEW CORRIDOR2_20260513091404.png" id="2_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://evq6h6olljf2" path="res://assets/sprites/Mainmenu/title with shadow.png" id="3_s5g8n"]
 [ext_resource type="FontFile" uid="uid://o41nvun1hoi6" path="res://assets/fonts/Capture it.ttf" id="4_7yvfd"]
 [ext_resource type="AudioStream" uid="uid://btj6qypwybmrq" path="res://assets/music/Corridor.wav" id="5_s5g8n"]
@@ -18,7 +18,7 @@ script = ExtResource("1_3vvtq")
 [node name="Background" type="TextureRect" parent="." unique_id=1028230537]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_3vvtq")
+texture = ExtResource("2_s5g8n")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=58938616]
 color = Color(0.5370987, 0.5370987, 0.5370987, 1)
