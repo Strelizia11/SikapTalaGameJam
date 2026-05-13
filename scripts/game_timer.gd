@@ -3,6 +3,26 @@ extends Node
 const GAMEPLAY_DURATION  : float = 420.0
 const WRONG_ITEM_PENALTY : float = 30.0
 
+# ── TIMER POSITION & SIZE SETTINGS (Edit these values) ───────────────────────
+# Position (X, Y) - screen coordinates
+var TIMER_POSITION_X : float = 850.0  # Move right (default 16)
+var TIMER_POSITION_Y : float = 16.0    # Keep at top
+
+# Size settings
+var TIMER_FONT_SIZE : int = 100       # Bigger font (default 52)
+var TIMER_WIDTH : float = 280          # Wider box (default 220)
+var TIMER_HEIGHT : float = 150         # Taller box (default 80)
+
+# Color (R, G, B, A) - 255 is max
+var TIMER_COLOR_R : int = 255
+var TIMER_COLOR_G : int = 255
+var TIMER_COLOR_B : int = 255
+var TIMER_COLOR_A : int = 255
+# ─────────────────────────────────────────────────────────────────────────────
+
+var CUSTOM_FONT_PATH : String = "res://assets/fonts/Digital Dismay.otf"
+var FONT_STYLE : String = "bold"
+
 var _time_left     : float = GAMEPLAY_DURATION
 var _running       : bool  = false
 var _dead          : bool  = false
@@ -72,16 +92,38 @@ func _ready() -> void:
 	_label.text    = get_time_left_formatted()
 	_label.visible = false
 
-	_label.add_theme_color_override("font_color", Color(255, 255, 255, 255))
-	_label.add_theme_font_size_override("font_size", 52)
+	# Try to load and apply custom font
+	if CUSTOM_FONT_PATH != "" and ResourceLoader.exists(CUSTOM_FONT_PATH):
+		var custom_font = load(CUSTOM_FONT_PATH)
+		if custom_font:
+			_label.add_theme_font_override("font", custom_font)
+			print("Custom font loaded: ", CUSTOM_FONT_PATH)
+		else:
+			print("Failed to load font: ", CUSTOM_FONT_PATH)
+	else:
+		print("Font file not found: ", CUSTOM_FONT_PATH)
+	
+	# Apply custom color
+	var timer_color = Color(
+		TIMER_COLOR_R / 255.0,
+		TIMER_COLOR_G / 255.0,
+		TIMER_COLOR_B / 255.0,
+		TIMER_COLOR_A / 255.0
+	)
+	_label.add_theme_color_override("font_color", timer_color)
+	
+	# Apply custom font size
+	_label.add_theme_font_size_override("font_size", TIMER_FONT_SIZE)
 
 	_label.set_anchors_preset(Control.PRESET_TOP_LEFT)
 	_label.grow_horizontal = Control.GROW_DIRECTION_END
 	_label.grow_vertical   = Control.GROW_DIRECTION_END
-	_label.offset_left   = 16
-	_label.offset_top    = 16
-	_label.offset_right  = 220
-	_label.offset_bottom = 80
+	
+	# Apply custom position and size
+	_label.offset_left   = TIMER_POSITION_X
+	_label.offset_top    = TIMER_POSITION_Y
+	_label.offset_right  = TIMER_POSITION_X + TIMER_WIDTH
+	_label.offset_bottom = TIMER_POSITION_Y + TIMER_HEIGHT
 
 	_canvas.add_child(_label)
 
