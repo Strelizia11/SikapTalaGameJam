@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brkks4xiyk3qa" path="res://scripts/item.gd" id="2_item"]
 [ext_resource type="Texture2D" uid="uid://bf7trcykdbi0c" path="res://assets/sprites/items/Knife.png" id="2_wcdq6"]
+[ext_resource type="Texture2D" uid="uid://ci527fsigsjuw" path="res://assets/sprites/items/silhouette/S-Knife.png" id="3_ae7td"]
 
 [node name="Knife" type="Area2D" unique_id=1788846417]
 position = Vector2(168, 90)
@@ -9,7 +10,7 @@ script = ExtResource("2_item")
 item_name = "knife"
 room_name = "kitchen"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1527069146]
+[node name="MainImage" type="Sprite2D" parent="." unique_id=1527069146]
 position = Vector2(758.25, 338.5)
 rotation = 2.3596852
 scale = Vector2(1.5, 1.639)
@@ -18,3 +19,10 @@ flip_v = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1677438388]
 polygon = PackedVector2Array(855, 245, 859, 231, 860, 226, 852, 218, 834, 221, 826, 226, 786, 278, 778, 290, 766, 306, 730, 353, 691, 404, 669, 438, 659, 459, 711, 435, 732, 418, 797, 349, 795, 339, 785, 321, 786, 310, 796, 304, 808, 295, 830, 267, 839, 253, 846, 248, 856, 249)
+
+[node name="Silhouette" type="Sprite2D" parent="." unique_id=1701909708]
+position = Vector2(759.088, 344.2227)
+rotation = 2.3596852
+scale = Vector2(1.4839561, 1.7045282)
+texture = ExtResource("3_ae7td")
+flip_v = true
