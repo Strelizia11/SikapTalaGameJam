@@ -146,3 +146,8 @@ func _trigger_win() -> void:
 		GameTimer.reset_timer()
 
 	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
+
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_F9:  # Press F9 to instantly trigger win
+			_trigger_win()

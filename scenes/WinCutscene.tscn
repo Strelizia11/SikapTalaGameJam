@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://edwgxnw8otrc"]
 
 [ext_resource type="Script" uid="uid://deibur166d5hd" path="res://scripts/win_cutscene.gd" id="1_nbolr"]
+[ext_resource type="VideoStream" uid="uid://bt063m34krn72" path="res://assets/video/win.ogv" id="2_ia1d6"]
 
 [node name="WinCutscene" type="CanvasLayer" unique_id=852110862]
 script = ExtResource("1_nbolr")
@@ -11,6 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+stream = ExtResource("2_ia1d6")
+volume_db = 23.999998
 expand = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1843088498]
